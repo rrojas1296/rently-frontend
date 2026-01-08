@@ -61,7 +61,7 @@ const Sidebar = () => {
   return (
     <div
       className={cn(
-        "fixed lg:sticky top-0 left-0 inset-0 transition-[width] w-full h-full lg:w-fit z-10 lg:h-screen overflow-hidden",
+        "fixed lg:sticky top-0 left-0 inset-0 transition-[width] w-full h-full lg:w-fit z-20 lg:h-screen overflow-hidden",
         open
           ? "pointer-events-auto lg:w-72"
           : "pointer-events-none lg:pointer-events-auto lg:w-21",
