@@ -24,9 +24,19 @@ body {
   --color-success: var(--success);
   --color-danger: var(--danger);
   --color-warning: var(--warning);
+  --animate-fade-in: fade-in 0.3s ease-in-out;
 }
 
 .custom-scroll {
   scrollbar-width: thin;
   scrollbar-color: var(--color-text-2) var(--color-bg-2);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

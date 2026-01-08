@@ -4,9 +4,9 @@ import Sidebar from "../modules/common/components/Sidebar/Sidebar";
 
 const AppLayout = () => {
   return (
-    <div className="lg:flex h-screen overflow-auto custom-scroll">
+    <div className="lg:flex h-dvh overflow-auto custom-scroll">
       <Sidebar />
-      <div className="flex-1">
+      <div className="flex-1 relative z-10">
         <Header />
         <div className="p-5 lg:p-6 text-text-1">
           <Outlet />

@@ -52,11 +52,11 @@ const NextPaymentCard = ({
       <div className="flex flex-col gap-2">
         <h1 className="font-semibold text-base">{tenantName}</h1>
         <p className="text-text-2 gap-2 flex items-center">
-          <BuildingIcon className="w-5 h-5" />
+          <BuildingIcon className="w-5 h-5 stroke-[1.5px]" />
           <span className="text-sm">{apartment}</span>
         </p>
         <p className="text-text-2 gap-2 flex items-center">
-          <CalendarIcon className="w-5 h-5" />
+          <CalendarIcon className="w-5 h-5 stroke-[1.5px]" />
 
           <span className="text-sm">{formattedDate}</span>
         </p>

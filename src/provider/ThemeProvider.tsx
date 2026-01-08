@@ -4,11 +4,12 @@ import { THEME_KEY, useThemeStore, type Theme } from "../store/useTheme";
 interface Props {
   children: React.ReactNode;
 }
+
 const ThemeProvider = ({ children }: Props) => {
   const { theme, setTheme } = useThemeStore();
   useEffect(() => {
     const localTheme = localStorage.getItem(THEME_KEY) as Theme;
-    if (localTheme) setTheme(localTheme);
+    if (localTheme) return setTheme(localTheme);
     const osTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";

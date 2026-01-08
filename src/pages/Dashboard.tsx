@@ -9,7 +9,7 @@ import TenantDashboardCard from "../modules/dashboard/components/TenantDashboard
 const DashboardPage = () => {
   const { t } = useTranslation();
   return (
-    <div>
+    <div className="animate-fade-in">
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {dashboardStats.map(({ title, value, id }) => (
           <Card className="text-text-1 flex flex-col gap-2" key={id}>
