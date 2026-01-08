@@ -12,7 +12,6 @@ import { useTranslation } from "react-i18next";
 import { useSidebar } from "../../../../store/useSidebar";
 import { useThemeStore } from "../../../../store/useTheme";
 import { useLocation } from "react-router";
-import Dialog from "../Dialog/Dialog";
 
 const Header = () => {
   const { t } = useTranslation();
