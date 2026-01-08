@@ -1,5 +1,60 @@
 {
   "Header": {
-    "logo": "Rently"
+    "logo": "Rently",
+    "title": {
+      "dashboard": "Dashboard",
+      "properties": "Properties",
+      "payments": "Payments",
+      "requests": "Requests",
+      "tenants": "Tenants",
+      "reports": "Reports"
+    }
+  },
+  "Sidebar": {
+    "logo": "Rently",
+    "options": {
+      "dashboard": "Dashboard",
+      "properties": "Properties",
+      "payments": "Payments",
+      "requests": "Requests",
+      "tenants": "Tenants",
+      "reports": "Reports"
+    },
+    "main": "Main"
+  },
+  "Dashboard": {
+    "stats": {
+      "lastDays": "Last 30 days",
+      "properties": {
+        "title": "Total properties"
+      },
+      "rented": {
+        "title": "Rented properties"
+      },
+      "requests": {
+        "title": "Requests"
+      },
+      "totalRevenue": {
+        "title": "Total revenue"
+      }
+    },
+    "monthlyRevenue": {
+      "title": "Monthly revenue",
+      "description": "Chart of the revenue from the last 6 months."
+    },
+    "tenantsStatus": {
+      "title": "Tenants status",
+      "description": "Chart of the tenants and their statuses."
+    },
+    "nextPayments": {
+      "title": "Upcoming payments",
+      "description": "Latest payments that are approaching or already overdue.",
+      "showAll": "View all"
+    },
+    "lastTenants": {
+      "title": "Latest registered tenants",
+      "description": "List of the last 5 tenants registered on the platform.",
+      "showAll": "View all"
+    }
   }
 }

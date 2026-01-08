@@ -4,7 +4,7 @@ import es from "../messages/es.json";
 import en from "../messages/en.json";
 
 i18n.use(initReactI18next).init({
-  fallbackLng: "es",
+  fallbackLng: "en",
   debug: import.meta.env.DEV,
   resources: {
     en: {

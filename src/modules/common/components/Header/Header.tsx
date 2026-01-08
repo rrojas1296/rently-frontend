@@ -12,13 +12,22 @@ import { useTranslation } from "react-i18next";
 import { useSidebar } from "../../../../store/useSidebar";
 import { useThemeStore } from "../../../../store/useTheme";
 import { useLocation } from "react-router";
+import dayjs from "dayjs";
 
 const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const locale = i18n.language;
   const { pathname } = useLocation();
   const headerTitle = `Header.title.${pathname.split("/")[1]}`;
   const { setTheme, theme } = useThemeStore();
   const { setOpen, open: openSidebar } = useSidebar();
+
+  const formats: Record<string, string> = {
+    es: "D [de] MMMM [del] YYYY",
+    en: "MMMM D, YYYY",
+  };
+
+  const formattedDate = dayjs().locale(locale).format(formats[locale]);
   return (
     <div className="sticky z-10 top-0 left-0 h-18 lg:h-20 bg-bg-1 flex items-center justify-between px-5 lg:px-6 border-b border-border-2">
       <Button
@@ -38,7 +47,7 @@ const Header = () => {
         </Button>
         <div className="flex flex-col gap-1">
           <h1 className="text-text-1 font-bold text-2xl">{t(headerTitle)}</h1>
-          <p className="text-text-2 text-sm">22 de enero dek 2026</p>
+          <p className="text-text-2 text-sm">{formattedDate}</p>
         </div>
       </div>
       <span className="text-2xl font-bold text-text-1 lg:hidden">
