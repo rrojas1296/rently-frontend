@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@import "./theme.css";
+@import "@fontsource-variable/inter";
+
+body {
+  font-family: "Inter Variable", sans-serif;
+}
+
+@theme {
+  --color-bg-1: var(--bg-1);
+  --color-bg-2: var(--bg-2);
+
+  --color-text-1: var(--text-1);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+
+  --color-border-2: var(--border-2);
+
+  --color-overlay: var(--overlay);
+
+  --color-primary-500: var(--primary-500);
+  --color-primary-400: var(--primary-400);
+
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text-2) var(--color-bg-2);
+}

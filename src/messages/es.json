@@ -1,0 +1,60 @@
+{
+  "Header": {
+    "logo": "Rently",
+    "title": {
+      "dashboard": "Panel de control",
+      "properties": "Propiedades",
+      "payments": "Pagos",
+      "requests": "Solicitudes",
+      "tenants": "Inquilinos",
+      "reports": "Reportes"
+    }
+  },
+  "Sidebar": {
+    "logo": "Rently",
+    "options": {
+      "dashboard": "Dashboard",
+      "properties": "Propiedades",
+      "payments": "Pagos",
+      "requests": "Solicitudes",
+      "tenants": "Inquilinos",
+      "reports": "Reportes"
+    },
+    "main": "Principal"
+  },
+  "Dashboard": {
+    "stats": {
+      "lastDays": "Últimos 30 días",
+      "properties": {
+        "title": "Total de propiedades"
+      },
+      "rented": {
+        "title": "Propiedades alquiladas"
+      },
+      "requests": {
+        "title": "Solicitudes"
+      },
+      "totalRevenue": {
+        "title": "Ganancia total"
+      }
+    },
+    "monthlyRevenue": {
+      "title": "Ganancias mensuales",
+      "description": "Grafico de las ganancias de los ultimos 6 meses."
+    },
+    "tenantsStatus": {
+      "title": "Estado de los inquilinos",
+      "description": "Grafica de los inquilinos y sus estados."
+    },
+    "nextPayments": {
+      "title": "Próximos pagos",
+      "description": "Ultimos pagos que se acercan o ya vencieron.",
+      "showAll": "Ver todos"
+    },
+    "lastTenants": {
+      "title": "Últimos inquilinos registrados",
+      "description": "Lista de los ultimos 5 inquilinos registrados en la plataforma.",
+      "showAll": "Ver todos"
+    }
+  }
+}
