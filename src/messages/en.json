@@ -27,6 +27,7 @@
     }
   },
   "Dashboard": {
+    "title": "Dashboard",
     "stats": {
       "lastDays": "Last 30 days",
       "properties": {

@@ -13,6 +13,7 @@ import { useThemeStore } from "../../../../store/useTheme";
 import { useLocation } from "react-router";
 import dayjs from "dayjs";
 import { Button } from "rently-components";
+import { dateFormats, type Language } from "../../../../constants/dateFormats";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -22,12 +23,9 @@ const Header = () => {
   const { setTheme, theme } = useThemeStore();
   const { setOpen, open: openSidebar } = useSidebar();
 
-  const formats: Record<string, string> = {
-    es: "D [de] MMMM [del] YYYY",
-    en: "MMMM D, YYYY",
-  };
-
-  const formattedDate = dayjs().locale(locale).format(formats[locale]);
+  const formattedDate = dayjs()
+    .locale(locale)
+    .format(dateFormats[locale as Language]);
   return (
     <div className="sticky z-10 top-0 left-0 h-18 lg:h-20 bg-bg-1 flex items-center justify-between px-5 lg:px-6 border-b border-border-2">
       <Button

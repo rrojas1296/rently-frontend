@@ -27,6 +27,7 @@
     }
   },
   "Dashboard": {
+    "title": "Panel de control",
     "stats": {
       "lastDays": "Últimos 30 días",
       "properties": {
@@ -59,6 +60,26 @@
       "title": "Últimos inquilinos registrados",
       "description": "Lista de los ultimos 5 inquilinos registrados en la plataforma.",
       "showAll": "Ver todos"
+    }
+  },
+  "Properties": {
+    "title": "Propiedades",
+    "propertyCard": {
+      "states": {
+        "available": "Disponible",
+        "occupied": "Alquilada",
+        "maintenance": "En mantenimiento"
+      },
+      "tenantName": "Inquilino: ",
+      "currencies": {
+        "PEN": "S/. ",
+        "USD": "$ ",
+        "EUR": "€ "
+      },
+      "rooms": "cuartos",
+      "bathrooms": "baños",
+      "area": "m2",
+      "price": "Precio mensual"
     }
   }
 }

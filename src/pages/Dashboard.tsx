@@ -4,12 +4,24 @@ import { dashboardStats, lastTenants, nextPayments } from "../data/dashboard";
 import { ChevronRightIcon } from "lucide-react";
 import NextPaymentCard from "../modules/dashboard/components/NextPaymentCard/NextPaymentCard";
 import TenantDashboardCard from "../modules/dashboard/components/TenantDashboardCard/TenantDashboardCard";
+import dayjs from "dayjs";
 import { Button } from "rently-components";
+import { dateFormats, type Language } from "../constants/dateFormats";
 
 const DashboardPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const locale = i18n.language;
+  const formattedDate = dayjs()
+    .locale(locale)
+    .format(dateFormats[locale as Language]);
   return (
     <div className="animate-fade-in">
+      <div className="flex flex-col gap-1 mb-5 lg:hidden">
+        <h1 className="text-text-1 font-bold text-2xl">
+          {t("Dashboard.title")}
+        </h1>
+        <p className="text-text-2 text-sm">{formattedDate}</p>
+      </div>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {dashboardStats.map(({ title, value, id }) => (
           <Card className="text-text-1 flex flex-col gap-2" key={id}>

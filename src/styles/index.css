@@ -26,6 +26,10 @@ body {
   --color-warning: var(--warning);
 
   --animate-fade-in: fade-in 0.3s ease-in-out;
+
+  --breakpoint-3xl: 112rem;
+  --breakpoint-4xl: 128rem;
+  --breakpoint-5xl: 144rem;
 }
 
 .custom-scroll {

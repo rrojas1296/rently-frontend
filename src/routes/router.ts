@@ -2,10 +2,10 @@ import { createBrowserRouter } from "react-router";
 import AppLayout from "../layouts/AppLayout";
 import DashboardPage from "../pages/Dashboard";
 import TenantsPage from "../pages/Tenants";
-import ApartmentsPage from "../pages/Apartments";
 import PaymentsPage from "../pages/Payments";
 import ReportsPage from "../pages/Reports";
 import RequestsPage from "../pages/Requests";
+import PropertiesPage from "../pages/Properties";
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/properties",
-        Component: ApartmentsPage,
+        Component: PropertiesPage,
       },
       {
         path: "/payments",
