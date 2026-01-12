@@ -17,7 +17,7 @@
         "react-dom": "^19.2.0",
         "react-i18next": "^16.5.1",
         "react-router": "^7.12.0",
-        "rently-components": "^0.1.12",
+        "rently-components": "^0.1.13",
         "tailwind-merge": "^3.4.0",
         "tailwindcss": "^4.1.18",
         "zustand": "^5.0.9",
@@ -661,7 +661,7 @@
 
     "react-style-singleton": ["react-style-singleton@2.2.3", "", { "dependencies": { "get-nonce": "^1.0.0", "tslib": "^2.0.0" }, "peerDependencies": { "@types/react": "*", "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc" }, "optionalPeers": ["@types/react"] }, "sha512-b6jSvxvVnyptAiLjbkWLE/lOnR4lfTtDAl+eUC7RZy+QQWc6wRzIV2CE6xBuMmDxc2qIihtDCZD5NPOFl7fRBQ=="],
 
-    "rently-components": ["rently-components@0.1.12", "", { "dependencies": { "@radix-ui/react-select": "^2.2.6", "@radix-ui/react-switch": "^1.2.6", "class-variance-authority": "^0.7.1", "clsx": "^2.1.1", "lucide-react": "^0.562.0", "radix-ui": "^1.4.3", "tailwind-merge": "^3.4.0", "vite-tsconfig-paths": "^6.0.4" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" }, "bin": { "rently-components": "dist/index.umd.js" } }, "sha512-HaRTy71t8TKzZA58qOJRCIjlLHnt3C4U/OARZ0JhKpy0UplKcfRsCcXQdC5ttZM4OvbCoox/5bwHYVicHWzpaw=="],
+    "rently-components": ["rently-components@0.1.13", "", { "dependencies": { "@radix-ui/react-select": "^2.2.6", "@radix-ui/react-switch": "^1.2.6", "class-variance-authority": "^0.7.1", "clsx": "^2.1.1", "lucide-react": "^0.562.0", "radix-ui": "^1.4.3", "tailwind-merge": "^3.4.0", "vite-tsconfig-paths": "^6.0.4" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" }, "bin": { "rently-components": "dist/index.umd.js" } }, "sha512-UdfS5+niyQbSzSVLLLHDt4rUKR2AcnlknHu13aL4E+xY2vvuUG916WGwFuSuM4Tq+bn5YMpiuswHWq7vZQvUOg=="],
 
     "resolve-from": ["resolve-from@4.0.0", "", {}, "sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g=="],
 

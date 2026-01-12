@@ -24,6 +24,7 @@ body {
   --color-success: var(--success);
   --color-danger: var(--danger);
   --color-warning: var(--warning);
+
   --animate-fade-in: fade-in 0.3s ease-in-out;
 }
 

@@ -1,4 +1,4 @@
-import { BuildingIcon, CalendarIcon, MailIcon } from "lucide-react";
+import { BuildingIcon, CalendarIcon } from "lucide-react";
 import { cn } from "../../../common/utils/cn";
 import dayjs from "dayjs";
 import { useTranslation } from "react-i18next";
@@ -57,7 +57,6 @@ const NextPaymentCard = ({
         </p>
         <p className="text-text-2 gap-2 flex items-center">
           <CalendarIcon className="w-5 h-5" />
-
           <span className="text-sm">{formattedDate}</span>
         </p>
       </div>

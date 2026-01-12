@@ -17,6 +17,10 @@
   --success: #3ec23e;
   --danger: #f86262;
   --warning: #f7ba5e;
+
+  --bg-success: #dbffdb;
+  --bg-danger: #ffeded;
+  --bg-warning: #fff4e3;
 }
 
 .dark {
@@ -38,4 +42,8 @@
   --success: #3a963a;
   --danger: #f86262;
   --warning: #f7ba5e;
+
+  --bg-success: #111b14;
+  --bg-danger: #241618;
+  --bg-warning: #241f17;
 }
