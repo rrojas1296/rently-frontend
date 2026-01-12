@@ -12,15 +12,19 @@
   },
   "Sidebar": {
     "logo": "Rently",
-    "options": {
-      "dashboard": "Dashboard",
-      "properties": "Properties",
-      "payments": "Payments",
-      "requests": "Requests",
-      "tenants": "Tenants",
-      "reports": "Reports"
-    },
-    "main": "Main"
+    "sections": {
+      "main": {
+        "title": "Main",
+        "options": {
+          "dashboard": "Dashboard",
+          "properties": "Properties",
+          "payments": "Payments",
+          "requests": "Requests",
+          "tenants": "Tenants",
+          "reports": "Reports"
+        }
+      }
+    }
   },
   "Dashboard": {
     "stats": {
@@ -39,16 +43,16 @@
       }
     },
     "monthlyRevenue": {
-      "title": "Monthly revenue",
-      "description": "Chart of the revenue from the last 6 months."
+      "title": "Monthly earnings",
+      "description": "Chart of the earnings for the last 6 months."
     },
     "tenantsStatus": {
       "title": "Tenants status",
-      "description": "Chart of the tenants and their statuses."
+      "description": "Chart showing the tenants and their statuses."
     },
     "nextPayments": {
       "title": "Upcoming payments",
-      "description": "Latest payments that are approaching or already overdue.",
+      "description": "Upcoming or overdue payments.",
       "showAll": "View all"
     },
     "lastTenants": {

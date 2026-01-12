@@ -12,15 +12,19 @@
   },
   "Sidebar": {
     "logo": "Rently",
-    "options": {
-      "dashboard": "Dashboard",
-      "properties": "Propiedades",
-      "payments": "Pagos",
-      "requests": "Solicitudes",
-      "tenants": "Inquilinos",
-      "reports": "Reportes"
-    },
-    "main": "Principal"
+    "sections": {
+      "main": {
+        "title": "Principal",
+        "options": {
+          "dashboard": "Dashboard",
+          "properties": "Propiedades",
+          "payments": "Pagos",
+          "requests": "Solicitudes",
+          "tenants": "Inquilinos",
+          "reports": "Reportes"
+        }
+      }
+    }
   },
   "Dashboard": {
     "stats": {

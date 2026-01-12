@@ -5,6 +5,7 @@ import TenantsPage from "../pages/Tenants";
 import ApartmentsPage from "../pages/Apartments";
 import PaymentsPage from "../pages/Payments";
 import ReportsPage from "../pages/Reports";
+import RequestsPage from "../pages/Requests";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "/payments",
         Component: PaymentsPage,
+      },
+      {
+        path: "/requests",
+        Component: RequestsPage,
       },
       {
         path: "/reports",

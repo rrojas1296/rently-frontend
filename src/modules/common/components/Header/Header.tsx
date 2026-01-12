@@ -6,13 +6,13 @@ import {
   MoonIcon,
   SunIcon,
 } from "lucide-react";
-import Button from "../Button/Button";
 import { DEFAULT_USER_IMAGE } from "../../../../constants/defaults";
 import { useTranslation } from "react-i18next";
 import { useSidebar } from "../../../../store/useSidebar";
 import { useThemeStore } from "../../../../store/useTheme";
 import { useLocation } from "react-router";
 import dayjs from "dayjs";
+import { Button } from "rently-components";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -38,7 +38,11 @@ const Header = () => {
         <MenuIcon className="w-5 h-5" />
       </Button>
       <div className="hidden lg:flex lg:items-center gap-4">
-        <Button variant="icon" onClick={() => setOpen(!openSidebar)}>
+        <Button
+          variant="icon"
+          className="cursor-pointer"
+          onClick={() => setOpen(!openSidebar)}
+        >
           {openSidebar ? (
             <ChevronLeftIcon className="w-5 h-5" />
           ) : (

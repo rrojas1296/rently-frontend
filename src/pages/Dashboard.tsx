@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import Card from "../modules/dashboard/components/Card/Card";
 import { dashboardStats, lastTenants, nextPayments } from "../data/dashboard";
-import Button from "../modules/common/components/Button/Button";
 import { ChevronRightIcon } from "lucide-react";
 import NextPaymentCard from "../modules/dashboard/components/NextPaymentCard/NextPaymentCard";
 import TenantDashboardCard from "../modules/dashboard/components/TenantDashboardCard/TenantDashboardCard";
+import { Button } from "rently-components";
 
 const DashboardPage = () => {
   const { t } = useTranslation();
@@ -78,7 +78,7 @@ const DashboardPage = () => {
               </p>
             </div>
             <Button variant="ghost" className="text-primary-400 hidden lg:flex">
-              {t("Dashboard.nextPayments.showAll")}
+              {t("Dashboard.lastTenants.showAll")}
 
               <ChevronRightIcon className="w-5 h-5" />
             </Button>

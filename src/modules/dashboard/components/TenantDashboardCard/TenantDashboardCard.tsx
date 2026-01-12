@@ -1,9 +1,9 @@
 import { MailIcon } from "lucide-react";
-import Button from "../../../common/components/Button/Button";
 import WhatsappIcon from "../../../common/components/Icons/WhatsappIcon";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { useTranslation } from "react-i18next";
+import { Button } from "rently-components";
 
 dayjs.extend(relativeTime);
 
