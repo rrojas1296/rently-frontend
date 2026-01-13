@@ -66,9 +66,50 @@
     "title": "Propiedades",
     "searchAndFilters": {
       "add": "Crear propiedad",
-      "search": "Bsucar propiedad",
+      "search": "Buscar propiedad",
       "filters": "Filtros"
     },
+    "filtersColumn": {
+      "title": "Filtros",
+      "buttons": {
+        "clear": "Limpiar filtros"
+      },
+      "status": {
+        "placeholder": "Estado",
+        "label": "Estado",
+        "options": {
+          "all": "Todos",
+          "available": "Disponible",
+          "occupied": "Alquilada",
+          "maintenance": "En mantenimiento"
+        }
+      },
+      "rooms": {
+        "placeholder": "Cuartos",
+        "label": "Cuartos",
+        "all": "Todos"
+      },
+      "currency": {
+        "placeholder": "Moneda",
+        "label": "Moneda",
+        "options": {
+          "all": "Todas",
+          "PEN": "Soles",
+          "USD": "Dolares",
+          "EUR": "Euros"
+        }
+      },
+      "bathrooms": {
+        "placeholder": "Baños",
+        "label": "Baños",
+        "all": "Todos"
+      },
+      "price": {
+        "label": "Precio minimo",
+        "placeholder": "200"
+      }
+    },
+
     "propertyCard": {
       "states": {
         "available": "Disponible",
