@@ -64,6 +64,11 @@
   },
   "Properties": {
     "title": "Propiedades",
+    "searchAndFilters": {
+      "add": "Crear propiedad",
+      "search": "Bsucar propiedad",
+      "filters": "Filtros"
+    },
     "propertyCard": {
       "states": {
         "available": "Disponible",
@@ -80,6 +85,177 @@
       "bathrooms": "baños",
       "area": "m2",
       "price": "Precio mensual"
+    }
+  },
+  "NewProperty": {
+    "title": "Crear nueva propiedad",
+    "description": "Aqui puedes crear una nueva propiedad para empezar a administrarla.",
+    "steps": {
+      "mainInformation": "Información principal",
+      "physicalDetails": "Detalles físicos",
+      "financialInformation": "Información financiera"
+    },
+    "mainInformation": {
+      "title": "Información principal",
+      "buttons": {
+        "cancel": "Cancelar",
+        "next": "Siguiente"
+      },
+      "form": {
+        "name": {
+          "placeholder": "Departamento 101",
+          "label": "Nombre",
+          "errors": {
+            "required": "El nombre es requerido"
+          }
+        },
+        "address": {
+          "placeholder": "Calle 123",
+          "label": "Dirección",
+          "errors": {
+            "required": "La dirección es requerida"
+          }
+        },
+        "internalCode": {
+          "placeholder": "C-101",
+          "label": "Código interno",
+          "errors": {
+            "required": "El código interno es requerido"
+          }
+        },
+        "floor": {
+          "placeholder": "1",
+          "label": "Piso",
+          "errors": {
+            "required": "El piso es requerido",
+            "min": "El piso debe ser mayor a 0"
+          }
+        },
+        "area": {
+          "placeholder": "100",
+          "label": "Área(m2)",
+          "errors": {
+            "required": "La área es requerida",
+            "min": "La área debe ser mayor a 0"
+          }
+        },
+        "status": {
+          "label": "Estado",
+          "placeholder": "Selecciona un estado",
+          "options": {
+            "available": "Disponible",
+            "occupied": "Alquilada",
+            "maintenance": "En mantenimiento"
+          },
+          "errors": {
+            "required": "El estado es requerido"
+          }
+        }
+      }
+    },
+    "physicalDetails": {
+      "title": "Detalles físicos",
+      "buttons": {
+        "next": "Siguiente",
+        "back": "Atrás"
+      },
+      "form": {
+        "persons": {
+          "placeholder": "2",
+          "label": "Personas",
+          "errors": {
+            "required": "El número de personas es requerido",
+            "min": "El número de personas debe ser mayor a 0"
+          }
+        },
+        "rooms": {
+          "placeholder": "2",
+          "label": "Cuartos",
+          "errors": {
+            "required": "El número de cuartos es requerido",
+            "min": "El número de cuartos debe ser mayor a 0"
+          }
+        },
+        "bathrooms": {
+          "placeholder": "2",
+          "label": "Baños",
+          "errors": {
+            "required": "El número de baños es requerido",
+            "min": "El número de baños debe ser mayor a 0"
+          }
+        },
+        "floors": {
+          "placeholder": "2",
+          "label": "Pisos",
+          "errors": {
+            "required": "El número de pisos es requerido",
+            "min": "El número de pisos debe ser mayor a 0"
+          }
+        },
+        "condition": {
+          "label": "Condición",
+          "placeholder": "Selecciona una condición",
+          "options": {
+            "new": "Nuevo",
+            "remodeled": "Remodelado",
+            "maintenance": "En mantenimiento"
+          },
+          "errors": {
+            "required": "La condición es requerida"
+          }
+        },
+        "furnished": {
+          "label": "Departamento amoblado"
+        },
+        "pets": {
+          "label": "Se permiten mascotas"
+        }
+      }
+    },
+    "financialInformation": {
+      "title": "Información financiera",
+      "buttons": {
+        "back": "Atrás",
+        "finish": "Finalizar"
+      },
+      "form": {
+        "monthlyPayment": {
+          "placeholder": "1000",
+          "label": "Pago mensual",
+          "errors": {
+            "required": "El pago mensual es requerido",
+            "min": "El pago mensual debe ser mayor a 0"
+          }
+        },
+        "garanty": {
+          "placeholder": "1000",
+          "label": "Garantía",
+          "errors": {
+            "required": "La garantía es requerida",
+            "min": "La garantía debe ser mayor a 0"
+          }
+        },
+        "currency": {
+          "label": "Moneda",
+          "placeholder": "Selecciona una moneda",
+          "options": {
+            "pen": "Soles",
+            "usd": "Dolares",
+            "eur": "Euros"
+          },
+          "errors": {
+            "required": "La moneda es requerida"
+          }
+        },
+        "monthlyFee": {
+          "placeholder": "1000",
+          "label": "Cuota de mantenimiento",
+          "errors": {
+            "required": "El cargo mensual es requerido",
+            "min": "El cargo mensual debe ser mayor a 0"
+          }
+        }
+      }
     }
   }
 }

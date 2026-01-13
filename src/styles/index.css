@@ -32,6 +32,15 @@ body {
   --breakpoint-5xl: 144rem;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  @apply appearance-none m-0;
+}
+
+input[type="number"] {
+  @apply [appearance:textfield];
+}
+
 .custom-scroll {
   scrollbar-width: thin;
   scrollbar-color: var(--color-text-2) var(--color-bg-2);

@@ -19,9 +19,9 @@ const AppLayout = () => {
         open={open}
         setOpen={setOpen}
       />
-      <div className="flex-1 z-10 h-dvh overflow-y-auto custom-scroll">
+      <div className="flex-1 flex flex-col z-10 h-dvh overflow-y-auto custom-scroll">
         <Header />
-        <div className="p-5 lg:p-6 text-text-1">
+        <div className="p-5 lg:p-6 text-text-1 flex-1">
           <Outlet />
         </div>
       </div>

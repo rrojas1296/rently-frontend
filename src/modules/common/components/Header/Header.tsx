@@ -27,7 +27,7 @@ const Header = () => {
     .locale(locale)
     .format(dateFormats[locale as Language]);
   return (
-    <div className="sticky z-10 top-0 left-0 h-18 lg:h-20 bg-bg-1 flex items-center justify-between px-5 lg:px-6 border-b border-border-2">
+    <div className="sticky z-10 top-0 shrink-0 left-0 h-18 lg:h-20 bg-bg-1 flex items-center justify-between px-5 lg:px-6 border-b border-border-2">
       <Button
         variant="icon"
         className="lg:hidden"
