@@ -29,9 +29,6 @@ const FiltersColumn = ({ show = false, filters, setFilters }: Props) => {
         show ? "lg:flex" : "lg:hidden",
       )}
     >
-      <p className="font-medium text-lg">
-        {t("Properties.filtersColumn.title")}
-      </p>
       <div className="flex flex-col gap-px">
         <label htmlFor="status" className="text-sm text-text-1">
           {t("Properties.filtersColumn.status.label")}

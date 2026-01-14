@@ -109,7 +109,11 @@
         "placeholder": "200"
       }
     },
-
+    "noProperties": {
+      "title": "No hay departamentos registrados",
+      "description": "Crea tu primer departamento para comenzar a gestionar alquileres, inquilinos y pagos desde la plataforma.",
+      "add": "Crear departamento"
+    },
     "propertyCard": {
       "states": {
         "available": "Disponible",

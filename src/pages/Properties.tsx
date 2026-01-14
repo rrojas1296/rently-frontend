@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { useTranslation } from "react-i18next";
 import { dateFormats, type Language } from "../constants/dateFormats";
 import { Button, Input } from "rently-components";
-import { FilterIcon, PlusIcon, SearchIcon } from "lucide-react";
+import { Building2Icon, FilterIcon, PlusIcon, SearchIcon } from "lucide-react";
 import { propertiesMock } from "../data/properties";
 import PropertyCard from "../modules/properties/components/PropertyCard";
 import { Link } from "react-router";
@@ -10,6 +10,7 @@ import FiltersColumn from "../modules/properties/components/FiltersColumn";
 import { useMemo, useState } from "react";
 import { cn } from "../modules/common/utils/cn";
 import type { PropertyFilters } from "../modules/properties/types/Filters.interface";
+import NoProperties from "../modules/properties/components/NoProperties";
 
 const PropertiesPage = () => {
   const { t, i18n } = useTranslation();
@@ -40,7 +41,8 @@ const PropertiesPage = () => {
       );
     });
   }, [filters]);
-  return (
+
+  return propertiesMock.length > 0 ? (
     <div className="animate-fade-in">
       <div className="flex flex-col gap-1 mb-5 lg:hidden">
         <h1 className="text-text-1 font-bold text-2xl">
@@ -102,6 +104,8 @@ const PropertiesPage = () => {
         ))}
       </div>
     </div>
+  ) : (
+    <NoProperties />
   );
 };
 
