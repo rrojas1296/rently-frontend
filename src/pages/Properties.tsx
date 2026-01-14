@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { useTranslation } from "react-i18next";
 import { dateFormats, type Language } from "../constants/dateFormats";
 import { Button, Input } from "rently-components";
-import { Building2Icon, FilterIcon, PlusIcon, SearchIcon } from "lucide-react";
+import { FilterIcon, PlusIcon, SearchIcon } from "lucide-react";
 import { propertiesMock } from "../data/properties";
 import PropertyCard from "../modules/properties/components/PropertyCard";
 import { Link } from "react-router";
