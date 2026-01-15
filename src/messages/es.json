@@ -302,5 +302,25 @@
         }
       }
     }
+  },
+  "Tenants": {
+    "searchAndFilters": {
+      "add": "Crear inquilino",
+      "search": "Buscar inquilino",
+      "filters": "Filtros"
+    },
+    "tenantsCard": {
+      "information": {
+        "nationality": "Nacionalidad",
+        "email": "Correo",
+        "phone": "Celular"
+      },
+      "entryDate": "Fecha de ingreso",
+      "monthlyPayment": "Pago mensual",
+      "status": {
+        "paid": "Al dia",
+        "overdue": "Atrasado"
+      }
+    }
   }
 }

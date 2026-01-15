@@ -18,7 +18,7 @@ interface Props {
 
 const FiltersColumn = ({ show = false, filters, setFilters }: Props) => {
   const { t } = useTranslation();
-  const numberOptions = Array.from({ length: 8 }).map((_, index) => ({
+  const numberOptions = Array.from({ length: 10 }).map((_, index) => ({
     label: (index + 1).toString(),
     value: (index + 1).toString(),
   }));
@@ -97,7 +97,6 @@ const FiltersColumn = ({ show = false, filters, setFilters }: Props) => {
         </label>
         <Select
           placeholder={t("Properties.filtersColumn.rooms.placeholder")}
-          className="w-44"
           value={filters.rooms}
           onChange={(value) => setFilters({ ...filters, rooms: value })}
           options={[
