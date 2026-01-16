@@ -1,0 +1,175 @@
+import { Button, Datepicker, Select } from "rently-components";
+import {
+  type TenantNationality,
+  type TenantStatus,
+} from "../../types/Tenant.interface";
+import { useTranslation } from "react-i18next";
+import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
+import type { Language } from "../../../../constants/dateFormats";
+import type { Filters } from "../../../../pages/Tenants";
+import type { Dispatch, SetStateAction } from "react";
+import { XIcon } from "lucide-react";
+import { cn } from "../../../common/utils/cn";
+import {
+  TenantNationalityEnum,
+  TenantStatusEnum,
+} from "../../types/Tenants.enum";
+
+const buildingOptions = [
+  {
+    label: "Edificio 1",
+    value: "1",
+  },
+  {
+    label: "Edificio 2",
+    value: "2",
+  },
+  {
+    label: "Edificio 3",
+    value: "3",
+  },
+  {
+    label: "Edificio 4",
+    value: "4",
+  },
+  {
+    label: "Edificio 5",
+    value: "5",
+  },
+];
+
+interface Props {
+  filters: Filters;
+  showFilters: boolean;
+  setFilters: Dispatch<SetStateAction<Filters>>;
+}
+
+const TenantsColumnFilters = ({ filters, setFilters, showFilters }: Props) => {
+  const { t, i18n } = useTranslation();
+  const locale = i18n.language as Language;
+  const nationalityOptions = Object.keys(TENANT_NATIONALITY_LABELS).map(
+    (key) => ({
+      value: TenantNationalityEnum[key as TenantNationality],
+      label: TENANT_NATIONALITY_LABELS[key as TenantNationality][locale],
+    }),
+  );
+
+  return (
+    <div
+      className={cn(
+        "p-5 lg:flex gap-5 overflow-hidden items-end bg-bg-1 border-border-2 rounded-lg border mt-5 hidden",
+        showFilters ? "lg:flex" : "lg:hidden",
+      )}
+    >
+      <div className="flex flex-col gap-2">
+        <span className="text-sm text-text-1">
+          {t("Tenants.filtersColumn.status.label")}
+        </span>
+        <Select
+          value={filters.status}
+          className="w-45"
+          onChange={(val) => {
+            setFilters((prev) => ({
+              ...prev,
+              status: val as TenantStatus | "all",
+            }));
+          }}
+          options={[
+            {
+              label: t("Tenants.filtersColumn.status.options.all"),
+              value: "all",
+            },
+            {
+              label: t("Tenants.filtersColumn.status.options.paid"),
+              value: TenantStatusEnum.PAID,
+            },
+            {
+              label: t("Tenants.filtersColumn.status.options.overdue"),
+              value: TenantStatusEnum.OVERDUE,
+            },
+          ]}
+        />
+      </div>
+      <div className="flex flex-col gap-2">
+        <span className="text-sm text-text-1">
+          {t("Tenants.filtersColumn.building.label")}
+        </span>
+        <Select
+          value={filters.building}
+          className="w-45"
+          onChange={(val) => {
+            setFilters((prev) => ({
+              ...prev,
+              building: val,
+            }));
+          }}
+          options={[
+            {
+              label: t("Tenants.filtersColumn.building.options.all"),
+              value: "all",
+            },
+            ...buildingOptions,
+          ]}
+        />
+      </div>
+      <div className="flex flex-col gap-2">
+        <span className="text-sm text-text-1">
+          {t("Tenants.filtersColumn.nationality.label")}
+        </span>
+        <Select
+          value={filters.nationality}
+          className="w-45"
+          onChange={(val) => {
+            setFilters((prev) => ({
+              ...prev,
+              nationality: val as TenantNationality | "all",
+            }));
+          }}
+          options={[
+            {
+              label: t("Tenants.filtersColumn.nationality.options.all"),
+              value: "all",
+            },
+            ...nationalityOptions,
+          ]}
+        />
+      </div>
+      <div className="flex flex-col gap-2">
+        <span className="text-sm text-text-1">Fecha de ingreso</span>
+        <Datepicker
+          selected={filters.entryDate}
+          placeholder="01-02-2000"
+          className="w-45 min-w-0"
+          setSelected={(date) =>
+            setFilters((prev) => ({
+              ...prev,
+              entryDate: date,
+            }))
+          }
+        />
+      </div>
+      {filters.status !== "all" ||
+      filters.building !== "all" ||
+      filters.nationality !== "all" ||
+      filters.entryDate ? (
+        <Button
+          variant="outlined"
+          className="border-danger text-danger"
+          onClick={() => {
+            setFilters({
+              status: "all",
+              building: "all",
+              nationality: "all",
+              entryDate: undefined,
+            });
+          }}
+        >
+          <XIcon className="w-5 h-5" />
+          {t("Tenants.filtersColumn.clearFilters")}
+        </Button>
+      ) : null}
+    </div>
+  );
+};
+
+export default TenantsColumnFilters;

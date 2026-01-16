@@ -40,6 +40,7 @@ export type TenantNationality =
   | "VENEZUELA";
 
 export interface ITenant {
+  id: string;
   name: string;
   apartmentName: string;
   status: TenantStatus;

@@ -13,12 +13,12 @@ select::-webkit-scrollbar {
 }
 
 select::-webkit-scrollbar-track {
-  background: var(--color-bg-2); /* track color */
+  background: var(--color-bg-2);
   border-radius: 4px;
 }
 
 select::-webkit-scrollbar-thumb {
-  background: var(--color-text-2); /* thumb color */
+  background: var(--color-text-2);
   border-radius: 4px;
 }
 
@@ -41,7 +41,9 @@ select::-webkit-scrollbar-thumb {
   --color-danger: var(--danger);
   --color-warning: var(--warning);
 
-  --animate-fade-in: fade-in 0.3s ease-in-out;
+  --animate-fade-in: fade-in 0.3s ease-in-out forwards;
+  --animate-slide-up: slide-up 0.3s ease-in-out forwards;
+  --animate-card-fade-in: card-fade-in 0.3s ease-in-out forwards;
 
   --breakpoint-3xl: 112rem;
   --breakpoint-4xl: 128rem;
@@ -68,6 +70,26 @@ input[type="number"] {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(1rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

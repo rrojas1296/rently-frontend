@@ -7,18 +7,20 @@ import type {
 
 export const tenantsMock: ITenant[] = [
   {
+    id: "1",
     name: "Carlos Ramirez",
     apartmentName: "Apt 101",
     status: "PAID",
     nationality: "PERU",
     email: "carlos.ramirez@example.com",
     phone: "+51 999123456",
-    entryDate: "2024-01-10T00:00:00.000Z",
+    entryDate: "2024-01-10T00:00:01.000Z",
     monthlyPayment: 750,
     curreny: "PEN",
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "2",
     name: "Ana Gonzalez",
     apartmentName: "Apt 102",
     status: "OVERDUE",
@@ -30,6 +32,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "USD",
   },
   {
+    id: "3",
     name: "John Smith",
     apartmentName: "Apt 103",
     status: "PAID",
@@ -41,6 +44,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "USD",
   },
   {
+    id: "4",
     name: "Luis Herrera",
     apartmentName: "Apt 104",
     status: "PAID",
@@ -53,6 +57,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "5",
     name: "Maria Silva",
     apartmentName: "Apt 105",
     status: "OVERDUE",
@@ -65,6 +70,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "6",
     name: "Pedro Alvarez",
     apartmentName: "Apt 106",
     status: "PAID",
@@ -77,6 +83,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "7",
     name: "Valentina Rojas",
     apartmentName: "Apt 107",
     status: "PAID",
@@ -88,6 +95,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "USD",
   },
   {
+    id: "8",
     name: "Miguel Torres",
     apartmentName: "Apt 108",
     status: "OVERDUE",
@@ -99,6 +107,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "USD",
   },
   {
+    id: "9",
     name: "Emily Johnson",
     apartmentName: "Apt 109",
     status: "PAID",
@@ -111,6 +120,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "10",
     name: "Jose Martinez",
     apartmentName: "Apt 110",
     status: "PAID",
@@ -122,6 +132,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "EUR",
   },
   {
+    id: "11",
     name: "Carla Lopez",
     apartmentName: "Apt 201",
     status: "PAID",
@@ -134,6 +145,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "12",
     name: "Daniel Castro",
     apartmentName: "Apt 202",
     status: "OVERDUE",
@@ -145,6 +157,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "USD",
   },
   {
+    id: "13",
     name: "Sofia Perez",
     apartmentName: "Apt 203",
     status: "PAID",
@@ -156,6 +169,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "USD",
   },
   {
+    id: "14",
     name: "Ricardo Mendoza",
     apartmentName: "Apt 204",
     status: "OVERDUE",
@@ -168,6 +182,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "15",
     name: "Andrea Flores",
     apartmentName: "Apt 205",
     status: "PAID",
@@ -180,6 +195,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "16",
     name: "Kevin Brown",
     apartmentName: "Apt 206",
     status: "PAID",
@@ -191,6 +207,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "USD",
   },
   {
+    id: "17",
     name: "Lucia Fernandez",
     apartmentName: "Apt 207",
     status: "OVERDUE",
@@ -202,6 +219,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "USD",
   },
   {
+    id: "18",
     name: "Oscar Diaz",
     apartmentName: "Apt 208",
     status: "PAID",
@@ -214,6 +232,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "19",
     name: "Natalia Cruz",
     apartmentName: "Apt 209",
     status: "PAID",
@@ -225,6 +244,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "USD",
   },
   {
+    id: "20",
     name: "Gabriel Santos",
     apartmentName: "Apt 210",
     status: "PAID",
@@ -237,6 +257,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "21",
     name: "Elena Vargas",
     apartmentName: "Apt 211",
     status: "OVERDUE",
@@ -248,6 +269,7 @@ export const tenantsMock: ITenant[] = [
     curreny: "USD",
   },
   {
+    id: "22",
     name: "Adrian Gomez",
     apartmentName: "Apt 212",
     status: "PAID",
@@ -260,6 +282,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "23",
     name: "Camila Torres",
     apartmentName: "Apt 213",
     status: "PAID",
@@ -272,6 +295,7 @@ export const tenantsMock: ITenant[] = [
     imageUrl: DEFAULT_USER_IMAGE,
   },
   {
+    id: "24",
     name: "Fernando Reyes",
     apartmentName: "Apt 214",
     status: "PAID",
@@ -288,39 +312,45 @@ export const TENANT_NATIONALITY_LABELS: Record<
   TenantNationality,
   Record<Language, string>
 > = {
-  ANTIGUA_AND_BARBUDA: { es: "Antiguano", en: "Antiguan" },
-  ARGENTINA: { es: "Argentino", en: "Argentine" },
-  BAHAMAS: { es: "Bahameño", en: "Bahamian" },
-  BARBADOS: { es: "Barbadense", en: "Barbadian" },
-  BELIZE: { es: "Beliceño", en: "Belizean" },
-  BOLIVIA: { es: "Boliviano", en: "Bolivian" },
-  BRAZIL: { es: "Brasileño", en: "Brazilian" },
-  CANADA: { es: "Canadiense", en: "Canadian" },
-  CHILE: { es: "Chileno", en: "Chilean" },
-  COLOMBIA: { es: "Colombiano", en: "Colombian" },
-  COSTA_RICA: { es: "Costarricense", en: "Costa Rican" },
-  CUBA: { es: "Cubano", en: "Cuban" },
-  DOMINICA: { es: "Dominiqués", en: "Dominican (Dominica)" },
-  DOMINICAN_REPUBLIC: { es: "Dominicano", en: "Dominican" },
-  ECUADOR: { es: "Ecuatoriano", en: "Ecuadorian" },
-  EL_SALVADOR: { es: "Salvadoreño", en: "Salvadoran" },
-  GRENADA: { es: "Granadino", en: "Grenadian" },
-  GUATEMALA: { es: "Guatemalteco", en: "Guatemalan" },
-  GUYANA: { es: "Guyanés", en: "Guyanese" },
-  HAITI: { es: "Haitiano", en: "Haitian" },
-  HONDURAS: { es: "Hondureño", en: "Honduran" },
-  JAMAICA: { es: "Jamaiquino", en: "Jamaican" },
-  MEXICO: { es: "Mexicano", en: "Mexican" },
-  NICARAGUA: { es: "Nicaragüense", en: "Nicaraguan" },
-  PANAMA: { es: "Panameño", en: "Panamanian" },
-  PARAGUAY: { es: "Paraguayo", en: "Paraguayan" },
-  PERU: { es: "Peruano", en: "Peruvian" },
-  SAINT_KITTS_AND_NEVIS: { es: "Sancristobaleño", en: "Kittitian / Nevisian" },
-  SAINT_LUCIA: { es: "Santalucense", en: "Saint Lucian" },
-  SAINT_VINCENT_AND_THE_GRENADINES: { es: "Sanvicentino", en: "Vincentian" },
-  SURINAME: { es: "Surinamés", en: "Surinamese" },
-  TRINIDAD_AND_TOBAGO: { es: "Trinitense", en: "Trinidadian / Tobagonian" },
-  UNITED_STATES: { es: "Estadounidense", en: "American" },
-  URUGUAY: { es: "Uruguayo", en: "Uruguayan" },
-  VENEZUELA: { es: "Venezolano", en: "Venezuelan" },
+  ANTIGUA_AND_BARBUDA: { es: "Antigua y Barbuda", en: "Antigua and Barbuda" },
+  ARGENTINA: { es: "Argentina", en: "Argentina" },
+  BAHAMAS: { es: "Bahamas", en: "Bahamas" },
+  BARBADOS: { es: "Barbados", en: "Barbados" },
+  BELIZE: { es: "Belice", en: "Belize" },
+  BOLIVIA: { es: "Bolivia", en: "Bolivia" },
+  BRAZIL: { es: "Brasil", en: "Brazil" },
+  CANADA: { es: "Canadá", en: "Canada" },
+  CHILE: { es: "Chile", en: "Chile" },
+  COLOMBIA: { es: "Colombia", en: "Colombia" },
+  COSTA_RICA: { es: "Costa Rica", en: "Costa Rica" },
+  CUBA: { es: "Cuba", en: "Cuba" },
+  DOMINICA: { es: "Dominica", en: "Dominica" },
+  DOMINICAN_REPUBLIC: { es: "República Dominicana", en: "Dominican Republic" },
+  ECUADOR: { es: "Ecuador", en: "Ecuador" },
+  EL_SALVADOR: { es: "El Salvador", en: "El Salvador" },
+  GRENADA: { es: "Granada", en: "Grenada" },
+  GUATEMALA: { es: "Guatemala", en: "Guatemala" },
+  GUYANA: { es: "Guyana", en: "Guyana" },
+  HAITI: { es: "Haití", en: "Haiti" },
+  HONDURAS: { es: "Honduras", en: "Honduras" },
+  JAMAICA: { es: "Jamaica", en: "Jamaica" },
+  MEXICO: { es: "México", en: "Mexico" },
+  NICARAGUA: { es: "Nicaragua", en: "Nicaragua" },
+  PANAMA: { es: "Panamá", en: "Panama" },
+  PARAGUAY: { es: "Paraguay", en: "Paraguay" },
+  PERU: { es: "Perú", en: "Peru" },
+  SAINT_KITTS_AND_NEVIS: {
+    es: "San Cristóbal y Nieves",
+    en: "Saint Kitts and Nevis",
+  },
+  SAINT_LUCIA: { es: "Santa Lucía", en: "Saint Lucia" },
+  SAINT_VINCENT_AND_THE_GRENADINES: {
+    es: "San Vicente y las Granadinas",
+    en: "Saint Vincent and the Grenadines",
+  },
+  SURINAME: { es: "Surinam", en: "Suriname" },
+  TRINIDAD_AND_TOBAGO: { es: "Trinidad y Tobago", en: "Trinidad and Tobago" },
+  UNITED_STATES: { es: "Estados Unidos", en: "United States" },
+  URUGUAY: { es: "Uruguay", en: "Uruguay" },
+  VENEZUELA: { es: "Venezuela", en: "Venezuela" },
 };

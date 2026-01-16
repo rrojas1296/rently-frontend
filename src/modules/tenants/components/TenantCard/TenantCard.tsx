@@ -5,11 +5,14 @@ import { CalendarIcon, EllipsisVerticalIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
 import type { Language } from "../../../../constants/dateFormats";
+import { cn } from "../../../common/utils/cn";
 
 interface Props {
   tenant: ITenant;
+  className?: string;
+  style?: React.CSSProperties;
 }
-const TenantCard = ({ tenant }: Props) => {
+const TenantCard = ({ tenant, className, style }: Props) => {
   const { t, i18n } = useTranslation();
   const locale = i18n.language as Language;
   const {
@@ -34,8 +37,15 @@ const TenantCard = ({ tenant }: Props) => {
     OVERDUE: "error",
     PAID: "success",
   };
+
   return (
-    <div className="p-5 bg-bg-1 border-border-2 border rounded-lg flex flex-col gap-4">
+    <div
+      className={cn(
+        "p-5 bg-bg-1 border-border-2 border rounded-lg flex flex-col gap-4",
+        className,
+      )}
+      style={style}
+    >
       <div className="flex justify-between items-start">
         <div className="flex items-start gap-2">
           {imageUrl ? (
@@ -84,7 +94,7 @@ const TenantCard = ({ tenant }: Props) => {
         <p className="text-text-2">{t("Tenants.tenantsCard.entryDate")}</p>
         <p className="flex gap-2 items-center">
           <CalendarIcon className="w-5 h-5 text-text-2" />
-          <span> {dayjs(entryDate).locale(locale).format("DD-MM-YYYY")}</span>
+          <span>{dayjs(entryDate).locale(locale).format("DD-MM-YYYY")}</span>
         </p>
       </div>
       <hr className="w-full text-border-2" />

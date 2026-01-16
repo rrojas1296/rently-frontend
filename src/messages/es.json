@@ -321,6 +321,29 @@
         "paid": "Al dia",
         "overdue": "Atrasado"
       }
+    },
+    "filtersColumn": {
+      "status": {
+        "label": "Estado",
+        "options": {
+          "all": "Todos",
+          "paid": "Al dia",
+          "overdue": "Atrasado"
+        }
+      },
+      "building": {
+        "label": "Edificio",
+        "options": {
+          "all": "Todos"
+        }
+      },
+      "nationality": {
+        "label": "Nacionalidad",
+        "options": {
+          "all": "Todos"
+        }
+      },
+      "clearFilters": "Limpiar filtros"
     }
   }
 }

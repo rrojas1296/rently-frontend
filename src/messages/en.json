@@ -44,22 +44,305 @@
       }
     },
     "monthlyRevenue": {
-      "title": "Monthly earnings",
-      "description": "Chart of the earnings for the last 6 months."
+      "title": "Monthly revenue",
+      "description": "Chart of the revenue for the last 6 months."
     },
     "tenantsStatus": {
-      "title": "Tenants status",
-      "description": "Chart showing the tenants and their statuses."
+      "title": "Tenant status",
+      "description": "Chart of tenants and their statuses."
     },
     "nextPayments": {
       "title": "Upcoming payments",
-      "description": "Upcoming or overdue payments.",
+      "description": "Recent payments that are coming up or already overdue.",
       "showAll": "View all"
     },
     "lastTenants": {
       "title": "Latest registered tenants",
       "description": "List of the last 5 tenants registered on the platform.",
       "showAll": "View all"
+    }
+  },
+  "Properties": {
+    "title": "Properties",
+    "searchAndFilters": {
+      "add": "Create property",
+      "search": "Search property",
+      "filters": "Filters"
+    },
+    "filtersColumn": {
+      "title": "Filters",
+      "buttons": {
+        "clear": "Clear filters"
+      },
+      "status": {
+        "placeholder": "Status",
+        "label": "Status",
+        "options": {
+          "all": "All",
+          "available": "Available",
+          "occupied": "Rented",
+          "maintenance": "Under maintenance"
+        }
+      },
+      "rooms": {
+        "placeholder": "Rooms",
+        "label": "Rooms",
+        "all": "All"
+      },
+      "currency": {
+        "placeholder": "Currency",
+        "label": "Currency",
+        "options": {
+          "all": "All",
+          "PEN": "Soles",
+          "USD": "Dollars",
+          "EUR": "Euros"
+        }
+      },
+      "bathrooms": {
+        "placeholder": "Bathrooms",
+        "label": "Bathrooms",
+        "all": "All"
+      },
+      "price": {
+        "label": "Minimum price",
+        "placeholder": "200"
+      }
+    },
+    "noProperties": {
+      "title": "No properties registered",
+      "description": "Create your first property to start managing rentals, tenants and payments from the platform.",
+      "add": "Create property"
+    },
+    "propertyCard": {
+      "states": {
+        "available": "Available",
+        "occupied": "Rented",
+        "maintenance": "Under maintenance"
+      },
+      "tenantName": "Tenant: ",
+      "currencies": {
+        "PEN": "S/. ",
+        "USD": "$ ",
+        "EUR": "€ "
+      },
+      "rooms": "rooms",
+      "bathrooms": "bathrooms",
+      "area": "m2",
+      "price": "Monthly price"
+    }
+  },
+  "NewProperty": {
+    "title": "Create new property",
+    "description": "Here you can create a new property to start managing it.",
+    "steps": {
+      "mainInformation": "Main information",
+      "physicalDetails": "Physical details",
+      "financialInformation": "Financial information"
+    },
+    "mainInformation": {
+      "title": "Main information",
+      "buttons": {
+        "cancel": "Cancel",
+        "next": "Next"
+      },
+      "form": {
+        "name": {
+          "placeholder": "Apartment 101",
+          "label": "Name",
+          "errors": {
+            "required": "Name is required"
+          }
+        },
+        "address": {
+          "placeholder": "Street 123",
+          "label": "Address",
+          "errors": {
+            "required": "Address is required"
+          }
+        },
+        "internalCode": {
+          "placeholder": "C-101",
+          "label": "Internal code",
+          "errors": {
+            "required": "Internal code is required"
+          }
+        },
+        "floor": {
+          "placeholder": "1",
+          "label": "Floor",
+          "errors": {
+            "required": "Floor is required",
+            "min": "Floor must be greater than 0"
+          }
+        },
+        "area": {
+          "placeholder": "100",
+          "label": "Area (m2)",
+          "errors": {
+            "required": "Area is required",
+            "min": "Area must be greater than 0"
+          }
+        },
+        "status": {
+          "label": "Status",
+          "placeholder": "Select a status",
+          "options": {
+            "available": "Available",
+            "occupied": "Rented",
+            "maintenance": "Under maintenance"
+          },
+          "errors": {
+            "required": "Status is required"
+          }
+        }
+      }
+    },
+    "physicalDetails": {
+      "title": "Physical details",
+      "buttons": {
+        "next": "Next",
+        "back": "Back"
+      },
+      "form": {
+        "persons": {
+          "placeholder": "2",
+          "label": "People",
+          "errors": {
+            "required": "Number of people is required",
+            "min": "Number of people must be greater than 0"
+          }
+        },
+        "rooms": {
+          "placeholder": "2",
+          "label": "Rooms",
+          "errors": {
+            "required": "Number of rooms is required",
+            "min": "Number of rooms must be greater than 0"
+          }
+        },
+        "bathrooms": {
+          "placeholder": "2",
+          "label": "Bathrooms",
+          "errors": {
+            "required": "Number of bathrooms is required",
+            "min": "Number of bathrooms must be greater than 0"
+          }
+        },
+        "floors": {
+          "placeholder": "2",
+          "label": "Floors",
+          "errors": {
+            "required": "Number of floors is required",
+            "min": "Number of floors must be greater than 0"
+          }
+        },
+        "condition": {
+          "label": "Condition",
+          "placeholder": "Select a condition",
+          "options": {
+            "new": "New",
+            "remodeled": "Remodeled",
+            "maintenance": "Under maintenance"
+          },
+          "errors": {
+            "required": "Condition is required"
+          }
+        },
+        "furnished": {
+          "label": "Furnished apartment"
+        },
+        "pets": {
+          "label": "Pets allowed"
+        }
+      }
+    },
+    "financialInformation": {
+      "title": "Financial information",
+      "buttons": {
+        "back": "Back",
+        "finish": "Finish"
+      },
+      "form": {
+        "monthlyPayment": {
+          "placeholder": "1000",
+          "label": "Monthly payment",
+          "errors": {
+            "required": "Monthly payment is required",
+            "min": "Monthly payment must be greater than 0"
+          }
+        },
+        "garanty": {
+          "placeholder": "1000",
+          "label": "Guarantee",
+          "errors": {
+            "required": "Guarantee is required",
+            "min": "Guarantee must be greater than 0"
+          }
+        },
+        "currency": {
+          "label": "Currency",
+          "placeholder": "Select a currency",
+          "options": {
+            "pen": "Soles",
+            "usd": "Dollars",
+            "eur": "Euros"
+          },
+          "errors": {
+            "required": "Currency is required"
+          }
+        },
+        "monthlyFee": {
+          "placeholder": "1000",
+          "label": "Maintenance fee",
+          "errors": {
+            "required": "Maintenance fee is required",
+            "min": "Maintenance fee must be greater than 0"
+          }
+        }
+      }
+    }
+  },
+  "Tenants": {
+    "searchAndFilters": {
+      "add": "Create tenant",
+      "search": "Search tenant",
+      "filters": "Filters"
+    },
+    "tenantsCard": {
+      "information": {
+        "nationality": "Nationality",
+        "email": "Email",
+        "phone": "Phone"
+      },
+      "entryDate": "Entry date",
+      "monthlyPayment": "Monthly payment",
+      "status": {
+        "paid": "Up to date",
+        "overdue": "Overdue"
+      }
+    },
+    "filtersColumn": {
+      "status": {
+        "label": "Status",
+        "options": {
+          "all": "All",
+          "paid": "Up to date",
+          "overdue": "Overdue"
+        }
+      },
+      "building": {
+        "label": "Building",
+        "options": {
+          "all": "All"
+        }
+      },
+      "nationality": {
+        "label": "Nationality",
+        "options": {
+          "all": "All"
+        }
+      }
     }
   }
 }
