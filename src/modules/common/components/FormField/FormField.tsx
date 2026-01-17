@@ -2,6 +2,7 @@ import { Input, Select, Switch } from "rently-components";
 import type { FormFieldOption, FormFieldType } from "../../types/formField";
 import type { ComponentProps } from "react";
 import { Controller, type Control } from "react-hook-form";
+import { DatePicker } from "rently-components";
 
 interface Props extends ComponentProps<"input"> {
   type: FormFieldType;
@@ -57,12 +58,27 @@ const FormField = ({
             )}
           />
         );
+      case "date":
+        return (
+          <Controller
+            name={name ?? ""}
+            control={control}
+            render={({ field }) => (
+              <DatePicker
+                placeholder={placeholder ?? ""}
+                error={error}
+                date={field.value}
+                setDate={field.onChange}
+              />
+            )}
+          />
+        );
       default:
         return (
           <Input
             type={type}
             name={name ?? ""}
-            containerClassName="w-full"
+            className="w-full"
             placeholder={placeholder}
             error={error}
             {...other}

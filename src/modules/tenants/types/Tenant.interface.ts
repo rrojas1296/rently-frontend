@@ -2,6 +2,8 @@ import type { PropertyCurrency } from "../../properties/types/Property.interface
 
 export type TenantStatus = "PAID" | "OVERDUE";
 
+export type TenantDocumentType = "DNI" | "PASSPORT";
+
 export type TenantNationality =
   | "ANTIGUA_AND_BARBUDA"
   | "ARGENTINA"

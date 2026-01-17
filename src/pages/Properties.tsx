@@ -54,7 +54,7 @@ const PropertiesPage = () => {
         <div className="flex gap-5 w-full lg:w-fit">
           <Input
             placeholder="Buscar propiedad"
-            containerClassName="w-full lg:w-sm"
+            className="w-full lg:w-sm"
             Icon={SearchIcon}
           />
           <Button
@@ -94,9 +94,9 @@ const PropertiesPage = () => {
         </Link>
       </div>
       <FiltersColumn
-        show={showFiltersColumn}
         filters={filters}
         setFilters={setFilters}
+        showFilters={showFiltersColumn}
       />
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 4xl:grid-cols-5 5xl:grid-cols-6">
         {properties.map((property) => (

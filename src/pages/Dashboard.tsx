@@ -7,6 +7,7 @@ import TenantDashboardCard from "../modules/dashboard/components/TenantDashboard
 import dayjs from "dayjs";
 import { Button } from "rently-components";
 import { dateFormats, type Language } from "../constants/dateFormats";
+import { Link } from "react-router";
 
 const DashboardPage = () => {
   const { t, i18n } = useTranslation();
@@ -89,11 +90,16 @@ const DashboardPage = () => {
                 {t("Dashboard.lastTenants.description")}
               </p>
             </div>
-            <Button variant="ghost" className="text-primary-400 hidden lg:flex">
-              {t("Dashboard.lastTenants.showAll")}
+            <Link to="/tenants">
+              <Button
+                variant="ghost"
+                className="text-primary-400 hidden lg:flex"
+              >
+                {t("Dashboard.lastTenants.showAll")}
 
-              <ChevronRightIcon className="w-5 h-5" />
-            </Button>
+                <ChevronRightIcon className="w-5 h-5" />
+              </Button>
+            </Link>
           </div>
           <div className="grid gap-6 mt-5">
             {lastTenants.map((tenant) => (

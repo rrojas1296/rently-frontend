@@ -1,15 +1,19 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import AppLayout from "../layouts/AppLayout";
 import DashboardPage from "../pages/Dashboard";
-import TenantsPage from "../pages/Tenants";
 import PaymentsPage from "../pages/Payments";
 import ReportsPage from "../pages/Reports";
 import RequestsPage from "../pages/Requests";
-import PropertiesPage from "../pages/Properties";
 import NewProperty from "../modules/properties/components/NewProperty";
 import MainInformationForm from "../modules/properties/components/MainInformationForm";
 import PhysicalDetailsForm from "../modules/properties/components/PhysicalDetailsForm";
 import FinancialInformationForm from "../modules/properties/components/FinancialInformationForm";
+import NewTenant from "../modules/tenants/components/NewTentant/NewTenant";
+import TenantMainInformationForm from "../modules/tenants/components/TenantMainInformationForm/TenantMainInformatioForm";
+import { lazy } from "react";
+
+const TenantsPage = lazy(() => import("../pages/Tenants"));
+const PropertiesPage = lazy(() => import("../pages/Properties"));
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +29,26 @@ export const router = createBrowserRouter([
       },
       {
         path: "tenants",
-        element: <TenantsPage />,
+        children: [
+          {
+            index: true,
+            element: <TenantsPage />,
+          },
+          {
+            path: "new",
+            element: <NewTenant />,
+            children: [
+              {
+                index: true,
+                element: <Navigate to="1" replace />,
+              },
+              {
+                path: "1",
+                element: <TenantMainInformationForm />,
+              },
+            ],
+          },
+        ],
       },
       {
         path: "properties",

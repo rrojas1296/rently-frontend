@@ -3,6 +3,11 @@ export enum TenantStatusEnum {
   OVERDUE = "OVERDUE",
 }
 
+export enum TenantDocumentTypeEnum {
+  DNI = "DNI",
+  PASSPORT = "PASSPORT",
+}
+
 export enum TenantNationalityEnum {
   ANTIGUA_AND_BARBUDA = "ANTIGUA_AND_BARBUDA",
   ARGENTINA = "ARGENTINA",

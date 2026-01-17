@@ -1,4 +1,4 @@
-import { Button, Datepicker, Select } from "rently-components";
+import { Button, DatePicker, Select } from "rently-components";
 import {
   type TenantNationality,
   type TenantStatus,
@@ -6,14 +6,18 @@ import {
 import { useTranslation } from "react-i18next";
 import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
 import type { Language } from "../../../../constants/dateFormats";
-import type { Filters } from "../../../../pages/Tenants";
-import type { Dispatch, SetStateAction } from "react";
+import { useMemo } from "react";
 import { XIcon } from "lucide-react";
 import { cn } from "../../../common/utils/cn";
 import {
   TenantNationalityEnum,
   TenantStatusEnum,
 } from "../../types/Tenants.enum";
+import { useTenantsFilters } from "../../store/useTenantsFilters";
+
+interface Props {
+  showFilters: boolean;
+}
 
 const buildingOptions = [
   {
@@ -38,27 +42,23 @@ const buildingOptions = [
   },
 ];
 
-interface Props {
-  filters: Filters;
-  showFilters: boolean;
-  setFilters: Dispatch<SetStateAction<Filters>>;
-}
-
-const TenantsColumnFilters = ({ filters, setFilters, showFilters }: Props) => {
+const TenantsColumnFilters = ({ showFilters }: Props) => {
   const { t, i18n } = useTranslation();
   const locale = i18n.language as Language;
-  const nationalityOptions = Object.keys(TENANT_NATIONALITY_LABELS).map(
-    (key) => ({
+  const { filters, setFilters } = useTenantsFilters();
+  const nationalityOptions = useMemo(() => {
+    return Object.keys(TENANT_NATIONALITY_LABELS).map((key) => ({
       value: TenantNationalityEnum[key as TenantNationality],
       label: TENANT_NATIONALITY_LABELS[key as TenantNationality][locale],
-    }),
-  );
+    }));
+  }, [locale]);
+
+  if (!showFilters) return null;
 
   return (
     <div
       className={cn(
         "p-5 lg:flex gap-5 overflow-hidden items-end bg-bg-1 border-border-2 rounded-lg border mt-5 hidden",
-        showFilters ? "lg:flex" : "lg:hidden",
       )}
     >
       <div className="flex flex-col gap-2">
@@ -69,10 +69,10 @@ const TenantsColumnFilters = ({ filters, setFilters, showFilters }: Props) => {
           value={filters.status}
           className="w-45"
           onChange={(val) => {
-            setFilters((prev) => ({
-              ...prev,
+            setFilters({
+              ...filters,
               status: val as TenantStatus | "all",
-            }));
+            });
           }}
           options={[
             {
@@ -98,10 +98,10 @@ const TenantsColumnFilters = ({ filters, setFilters, showFilters }: Props) => {
           value={filters.building}
           className="w-45"
           onChange={(val) => {
-            setFilters((prev) => ({
-              ...prev,
-              building: val,
-            }));
+            setFilters({
+              ...filters,
+              building: val as string | "all",
+            });
           }}
           options={[
             {
@@ -120,10 +120,10 @@ const TenantsColumnFilters = ({ filters, setFilters, showFilters }: Props) => {
           value={filters.nationality}
           className="w-45"
           onChange={(val) => {
-            setFilters((prev) => ({
-              ...prev,
+            setFilters({
+              ...filters,
               nationality: val as TenantNationality | "all",
-            }));
+            });
           }}
           options={[
             {
@@ -136,16 +136,16 @@ const TenantsColumnFilters = ({ filters, setFilters, showFilters }: Props) => {
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-sm text-text-1">Fecha de ingreso</span>
-        <Datepicker
-          selected={filters.entryDate}
+        <DatePicker
+          date={filters.entryDate}
           placeholder="01-02-2000"
           className="w-45 min-w-0"
-          setSelected={(date) =>
-            setFilters((prev) => ({
-              ...prev,
+          setDate={(date) => {
+            setFilters({
+              ...filters,
               entryDate: date,
-            }))
-          }
+            });
+          }}
         />
       </div>
       {filters.status !== "all" ||

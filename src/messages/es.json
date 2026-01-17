@@ -345,5 +345,69 @@
       },
       "clearFilters": "Limpiar filtros"
     }
+  },
+  "NewTenant": {
+    "title": "Crear nuevo inquilino",
+    "description": "Aqui puedes crear un nuevo inquilino para empezar la administracion de tu departamento",
+    "steps": {
+      "tenantInformation": "Informacion del inquilino",
+      "contactInformation": "Informacion de contacto",
+      "contractInformation": "Informacion del contrato"
+    },
+    "mainInformation": {
+      "title": "Informacion principal",
+      "buttons": {
+        "next": "Siguiente",
+        "cancel": "Cancelar"
+      },
+      "form": {
+        "firstName": {
+          "label": "Nombres",
+          "placeholder": "Jorge Ricardo",
+          "errors": {
+            "required": "Los nombres son requeridos"
+          }
+        },
+        "lastName": {
+          "label": "Apellidos",
+          "placeholder": "Mendoza Salazar",
+          "errors": {
+            "required": "Los apellidos son requeridos"
+          }
+        },
+        "documentType": {
+          "label": "Tipo de documento",
+          "placeholder": "Dni - Pasaporte",
+          "errors": {
+            "required": "El tipo de documento es requerido"
+          },
+          "options": {
+            "dni": "Dni",
+            "passport": "Pasaporte"
+          }
+        },
+        "documentNumber": {
+          "label": "Numero de documento",
+          "placeholder": "12345678",
+          "errors": {
+            "required": "El numero de documento es requerido"
+          }
+        },
+        "birthDate": {
+          "label": "Fecha de nacimiento",
+          "placeholder": "dd-mm-aaaa",
+          "errors": {
+            "required": "La fecha de nacimiento es requerida"
+          }
+        },
+        "nationality": {
+          "label": "Nacionalidad",
+          "placeholder": "Peru - Colombia - Chile - etc",
+          "errors": {
+            "required": "La nacionalidad es requerida"
+          }
+        }
+      }
+    }
   }
 }

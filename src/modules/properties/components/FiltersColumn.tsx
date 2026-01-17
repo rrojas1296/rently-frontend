@@ -11,22 +11,23 @@ import { XIcon } from "lucide-react";
 import type { PropertyFilters } from "../types/Filters.interface";
 
 interface Props {
-  show: boolean;
   filters: PropertyFilters;
   setFilters: (filters: PropertyFilters) => void;
+  showFilters: boolean;
 }
 
-const FiltersColumn = ({ show = false, filters, setFilters }: Props) => {
+const FiltersColumn = ({ filters, setFilters, showFilters }: Props) => {
   const { t } = useTranslation();
+
   const numberOptions = Array.from({ length: 10 }).map((_, index) => ({
     label: (index + 1).toString(),
     value: (index + 1).toString(),
   }));
+  if (!showFilters) return null;
   return (
     <div
       className={cn(
-        "hidden gap-5 bg-bg-1 px-5 rounded-lg py-5 border border-border-2 items-center mb-5 flex-wrap",
-        show ? "lg:flex" : "lg:hidden",
+        "hidden lg:flex gap-5 bg-bg-1 px-5 rounded-lg py-5 border border-border-2 items-center mb-5 flex-wrap",
       )}
     >
       <div className="flex flex-col gap-px">
@@ -134,7 +135,7 @@ const FiltersColumn = ({ show = false, filters, setFilters }: Props) => {
           placeholder={t("Properties.filtersColumn.price.placeholder")}
           value={filters.price}
           onChange={(e) => setFilters({ ...filters, price: e.target.value })}
-          containerClassName="w-48"
+          className="w-48"
         />
       </div>
       {filters.status !== "all" ||
