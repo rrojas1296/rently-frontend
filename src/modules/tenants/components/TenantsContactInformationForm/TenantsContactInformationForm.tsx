@@ -1,35 +1,37 @@
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import {
-  tenantMainInformationControls,
-  tenantMainInformationSchema,
-  type TenantMainInformationSchema,
-} from "../../schemas/tenantMainInformation.schema";
 import { useTranslation } from "react-i18next";
 import FormField from "../../../common/components/FormField/FormField";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { Button } from "rently-components";
-import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
-import { TenantNationalityEnum } from "../../types/Tenants.enum";
-import type { TenantNationality } from "../../types/Tenant.interface";
-import type { Language } from "../../../../constants/dateFormats";
+import {
+  tenantContactInformationSchema,
+  tenantsContactInformationControls,
+  type TenantsContactInformationSchema,
+} from "../../schemas/tenantsContactInformation.schema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-const TenantMainInformationForm = () => {
-  console.log("Render");
-  const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
+const TenantsContactInformationForm = () => {
+  const { t } = useTranslation();
   const {
+    register,
     handleSubmit,
     formState: { errors },
     control,
-    register,
+    watch,
   } = useForm({
-    resolver: zodResolver(tenantMainInformationSchema),
+    resolver: zodResolver(tenantContactInformationSchema),
+    defaultValues: {
+      phone: "+51",
+      emergencyPhone: "+51",
+    },
   });
 
-  const handlerNextStep = (data: TenantMainInformationSchema) => {
+  console.log({
+    form: watch(),
+  });
+
+  const handlerNextStep = (data: TenantsContactInformationSchema) => {
     console.log({ data });
-    navigate("/tenants/new/2");
   };
   return (
     <form onSubmit={handleSubmit(handlerNextStep)}>
@@ -37,23 +39,12 @@ const TenantMainInformationForm = () => {
         {t("NewTenant.mainInformation.title")}
       </h1>
       <div className="grid gap-5 w-full mt-5 lg:grid-cols-2">
-        {tenantMainInformationControls.map(
+        {tenantsContactInformationControls.map(
           ({ name, label, placeholder, type, required, options }) => {
-            let optionsTranslated = options?.map((opt) => ({
+            const optionsTranslated = options?.map((opt) => ({
               ...opt,
               label: t(opt.label),
             }));
-            if (name === "nationality") {
-              optionsTranslated = Object.keys(TENANT_NATIONALITY_LABELS).map(
-                (key) => ({
-                  value: TenantNationalityEnum[key as TenantNationality],
-                  label:
-                    TENANT_NATIONALITY_LABELS[key as TenantNationality][
-                      i18n.language as Language
-                    ],
-                }),
-              );
-            }
 
             const errorTranslated = errors[name]?.message
               ? t(errors[name].message)
@@ -91,4 +82,4 @@ const TenantMainInformationForm = () => {
   );
 };
 
-export default TenantMainInformationForm;
+export default TenantsContactInformationForm;

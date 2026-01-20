@@ -98,6 +98,7 @@ const FiltersColumn = ({ filters, setFilters, showFilters }: Props) => {
         </label>
         <Select
           placeholder={t("Properties.filtersColumn.rooms.placeholder")}
+          className="w-44"
           value={filters.rooms}
           onChange={(value) => setFilters({ ...filters, rooms: value })}
           options={[

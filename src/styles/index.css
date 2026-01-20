@@ -5,95 +5,98 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 body {
-  font-family: "Inter Variable", sans-serif;
+    font-family: "Inter Variable", sans-serif;
 }
 
 select::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 select::-webkit-scrollbar-track {
-  background: var(--color-bg-2);
-  border-radius: 4px;
+    background: var(--color-bg-2);
+    border-radius: 4px;
 }
 
 select::-webkit-scrollbar-thumb {
-  background: var(--color-text-2);
-  border-radius: 4px;
+    background: var(--color-text-2);
+    border-radius: 4px;
 }
 
 @theme {
-  --color-bg-1: var(--bg-1);
-  --color-bg-2: var(--bg-2);
+    --color-bg-1: var(--bg-1);
+    --color-bg-2: var(--bg-2);
 
-  --color-text-1: var(--text-1);
-  --color-text-2: var(--text-2);
-  --color-text-3: var(--text-3);
+    --color-text-1: var(--text-1);
+    --color-text-2: var(--text-2);
+    --color-text-3: var(--text-3);
 
-  --color-border-2: var(--border-2);
+    --color-border-2: var(--border-2);
 
-  --color-overlay: var(--overlay);
+    --color-overlay: var(--overlay);
 
-  --color-primary-500: var(--primary-500);
-  --color-primary-400: var(--primary-400);
+    --color-primary-500: var(--primary-500);
+    --color-primary-400: var(--primary-400);
 
-  --color-success: var(--success);
-  --color-danger: var(--danger);
-  --color-warning: var(--warning);
+    --color-success: var(--success);
+    --color-danger: var(--danger);
+    --color-warning: var(--warning);
 
-  --animate-fade-in: fade-in 0.3s ease-in-out forwards;
-  --animate-slide-up: slide-up 0.3s ease-in-out forwards;
-  --animate-card-fade-in: card-fade-in 0.3s ease-in-out forwards;
+    --animate-fade-in: fade-in 0.3s ease-in-out forwards;
+    --animate-slide-up: slide-up 0.3s ease-in-out forwards;
+    --animate-card-fade-in: card-fade-in 0.3s ease-in-out forwards;
 
-  --breakpoint-3xl: 112rem;
-  --breakpoint-4xl: 128rem;
-  --breakpoint-5xl: 144rem;
+    --breakpoint-3xl: 112rem;
+    --breakpoint-4xl: 128rem;
+    --breakpoint-5xl: 144rem;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  @apply appearance-none m-0;
+    @apply appearance-none m-0;
 }
 
 input[type="number"] {
-  @apply [appearance:textfield];
+    @apply [appearance:textfield];
 }
 
 .custom-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-text-2) var(--color-bg-2);
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-text-2) var(--color-bg-2);
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slide-up {
-  from {
-    transform: translateY(1rem);
-  }
-  to {
-    transform: translateY(0);
-  }
+    from {
+        transform: translateY(1rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
 
 @keyframes card-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 svg {
-  stroke-width: 1.5px;
-  flex-shrink: 0;
+    stroke-width: 1.5px;
+    flex-shrink: 0;
 }

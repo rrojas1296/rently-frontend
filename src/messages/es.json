@@ -408,6 +408,31 @@
           }
         }
       }
+    },
+    "contactInformation": {
+      "form": {
+        "phone": {
+          "label": "Celular",
+          "placeholder": "+51 999 999 999",
+          "errors": {
+            "required": "El celular es requerido"
+          }
+        },
+        "email": {
+          "label": "Correo",
+          "placeholder": "T9a3o@example.com",
+          "errors": {
+            "required": "El correo es requerido"
+          }
+        },
+        "emergencyPhone": {
+          "label": "Telefono de emergencia",
+          "placeholder": "+51 999 999 999",
+          "errors": {
+            "required": "El telefono de emergencia es requerido"
+          }
+        }
+      }
     }
   }
 }

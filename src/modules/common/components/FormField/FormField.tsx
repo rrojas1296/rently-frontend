@@ -1,4 +1,4 @@
-import { Input, Select, Switch } from "rently-components";
+import { Input, PhoneInput, Select, Switch } from "rently-components";
 import type { FormFieldOption, FormFieldType } from "../../types/formField";
 import type { ComponentProps } from "react";
 import { Controller, type Control } from "react-hook-form";
@@ -69,6 +69,22 @@ const FormField = ({
                 error={error}
                 date={field.value}
                 setDate={field.onChange}
+              />
+            )}
+          />
+        );
+      case "phone":
+        return (
+          <Controller
+            name={name ?? ""}
+            control={control}
+            render={({ field }) => (
+              <PhoneInput
+                placeholder={placeholder ?? ""}
+                className="w-full"
+                error={error}
+                phone={field.value ?? ""}
+                setPhone={field.onChange}
               />
             )}
           />

@@ -11,6 +11,7 @@ import FinancialInformationForm from "../modules/properties/components/Financial
 import NewTenant from "../modules/tenants/components/NewTentant/NewTenant";
 import TenantMainInformationForm from "../modules/tenants/components/TenantMainInformationForm/TenantMainInformatioForm";
 import { lazy } from "react";
+import TenantsContactInformationForm from "../modules/tenants/components/TenantsContactInformationForm/TenantsContactInformationForm";
 
 const TenantsPage = lazy(() => import("../pages/Tenants"));
 const PropertiesPage = lazy(() => import("../pages/Properties"));
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
               {
                 path: "1",
                 element: <TenantMainInformationForm />,
+              },
+              {
+                path: "2",
+                element: <TenantsContactInformationForm />,
               },
             ],
           },

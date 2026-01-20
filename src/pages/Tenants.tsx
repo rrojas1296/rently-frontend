@@ -20,9 +20,11 @@ export interface Filters {
   nationality: TenantNationality | "all";
   entryDate?: Date;
 }
+
 const TenantsPage = () => {
   const { t } = useTranslation();
   const [showFilters, setShowFilters] = useState(false);
+
   const { filters } = useTenantsFilters();
 
   const tenants = useMemo(() => {

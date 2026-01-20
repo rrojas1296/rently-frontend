@@ -12,6 +12,8 @@ import { cn } from "../modules/common/utils/cn";
 import type { PropertyFilters } from "../modules/properties/types/Filters.interface";
 import NoProperties from "../modules/properties/components/NoProperties";
 
+console.log;
+
 const PropertiesPage = () => {
   const { t, i18n } = useTranslation();
   const [showFiltersColumn, setShowFiltersColumn] = useState(false);
@@ -74,7 +76,7 @@ const PropertiesPage = () => {
             variant="outlined"
             className={cn(
               "text-text-2 hidden lg:flex",
-              showFiltersColumn && "text-primary-400 border-primary-400",
+              showFiltersColumn && "text-primary-400 border-primary-400"
             )}
           >
             <FilterIcon className="w-5 h-5" />

@@ -18,13 +18,9 @@ export const tenantMainInformationSchema = z.object({
   documentNumber: z.number({
     error: "NewTenant.mainInformation.form.documentNumber.errors.required",
   }),
-  birthDate: z
-    .string({
-      error: "NewTenant.mainInformation.form.birthDate.errors.required",
-    })
-    .min(1, {
-      error: "NewTenant.mainInformation.form.birthDate.errors.required",
-    }),
+  birthDate: z.date({
+    error: "NewTenant.mainInformation.form.birthDate.errors.required",
+  }),
   nationality: z.enum(TenantNationalityEnum, {
     error: "NewTenant.mainInformation.form.nationality.errors.required",
   }),
