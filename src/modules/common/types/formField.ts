@@ -3,6 +3,8 @@ import type { ComponentProps } from "react";
 export type FormFieldType =
   | ComponentProps<"input">["type"]
   | "select"
+  | "phone"
+  | "date"
   | "switch";
 
 export interface FormFieldOption {

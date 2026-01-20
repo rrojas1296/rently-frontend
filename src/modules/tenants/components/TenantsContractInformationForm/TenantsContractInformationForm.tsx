@@ -1,51 +1,56 @@
 import { useForm } from "react-hook-form";
+import {
+  tenantsContractInformationControls,
+  tenantsContractInformationSchema,
+  type TenantsContractInformationSchema,
+} from "../../schemas/tenantsContractInformation.schema";
 import { useTranslation } from "react-i18next";
+import { zodResolver } from "@hookform/resolvers/zod";
 import FormField from "../../../common/components/FormField/FormField";
 import { Link } from "react-router";
 import { Button } from "rently-components";
-import {
-  tenantContactInformationSchema,
-  tenantsContactInformationControls,
-  type TenantsContactInformationSchema,
-} from "../../schemas/tenantsContactInformation.schema";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useMemo } from "react";
+import { propertiesMock } from "../../../../data/properties";
 
-const TenantsContactInformationForm = () => {
+const TenantsContractInformationForm = () => {
   const { t } = useTranslation();
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
     control,
     watch,
+    formState: { errors },
   } = useForm({
-    resolver: zodResolver(tenantContactInformationSchema),
-    defaultValues: {
-      phone: "+51",
-      emergencyPhone: "+51",
-    },
+    resolver: zodResolver(tenantsContractInformationSchema),
   });
+
+  const properties = useMemo(() => {
+    return propertiesMock.map((p) => ({
+      label: p.name,
+      value: p.id,
+    }));
+  }, []);
 
   console.log({
     form: watch(),
   });
 
-  const handlerNextStep = (data: TenantsContactInformationSchema) => {
-    console.log({ data });
+  const handleRegisterTenant = (data: TenantsContractInformationSchema) => {
+    console.log(data);
   };
+
   return (
-    <form onSubmit={handleSubmit(handlerNextStep)}>
+    <form
+      onSubmit={handleSubmit(handleRegisterTenant)}
+      className="animate-fade-in"
+    >
       <h1 className="text-text-1 font-semibold text-2xl lg:hidden">
-        {t("NewTenant.contactInformation.title")}
+        {t("NewTenant.contractInformation.title")}
       </h1>
       <div className="grid gap-5 w-full mt-5 lg:grid-cols-2">
-        {tenantsContactInformationControls.map(
-          ({ name, label, placeholder, type, required, options }) => {
-            const optionsTranslated = options?.map((opt) => ({
-              ...opt,
-              label: t(opt.label),
-            }));
-
+        {tenantsContractInformationControls.map(
+          ({ name, label, placeholder, type, required }) => {
             const errorTranslated = errors[name]?.message
               ? t(errors[name].message)
               : "";
@@ -56,7 +61,7 @@ const TenantsContactInformationForm = () => {
                 type={type}
                 placeholder={placeholder && t(placeholder)}
                 required={required}
-                options={optionsTranslated}
+                options={properties}
                 control={control}
                 error={errorTranslated}
                 {...register(name, {
@@ -68,13 +73,13 @@ const TenantsContactInformationForm = () => {
         )}
 
         <div className="flex justify-between items-center lg:col-span-2">
-          <Link to="/properties">
+          <Link to="/tenants/new/2">
             <Button variant="ghost" type="button">
-              {t("NewTenant.contactInformation.buttons.back")}
+              {t("NewTenant.contractInformation.buttons.back")}
             </Button>
           </Link>
           <Button variant="filled" type="submit">
-            {t("NewTenant.contactInformation.buttons.next")}
+            {t("NewTenant.contractInformation.buttons.finish")}
           </Button>
         </div>
       </div>
@@ -82,4 +87,4 @@ const TenantsContactInformationForm = () => {
   );
 };
 
-export default TenantsContactInformationForm;
+export default TenantsContractInformationForm;

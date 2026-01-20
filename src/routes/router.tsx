@@ -12,6 +12,7 @@ import NewTenant from "../modules/tenants/components/NewTentant/NewTenant";
 import TenantMainInformationForm from "../modules/tenants/components/TenantMainInformationForm/TenantMainInformatioForm";
 import { lazy } from "react";
 import TenantsContactInformationForm from "../modules/tenants/components/TenantsContactInformationForm/TenantsContactInformationForm";
+import TenantsContractInformationForm from "../modules/tenants/components/TenantsContractInformationForm/TenantsContractInformationForm";
 
 const TenantsPage = lazy(() => import("../pages/Tenants"));
 const PropertiesPage = lazy(() => import("../pages/Properties"));
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
               {
                 path: "2",
                 element: <TenantsContactInformationForm />,
+              },
+              {
+                path: "3",
+                element: <TenantsContractInformationForm />,
               },
             ],
           },

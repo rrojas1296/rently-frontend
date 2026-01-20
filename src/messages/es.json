@@ -410,6 +410,11 @@
       }
     },
     "contactInformation": {
+      "title": "Contacto",
+      "buttons": {
+        "back": "Atras",
+        "next": "Siguiente"
+      },
       "form": {
         "phone": {
           "label": "Celular",
@@ -430,6 +435,45 @@
           "placeholder": "+51 999 999 999",
           "errors": {
             "required": "El telefono de emergencia es requerido"
+          }
+        }
+      }
+    },
+    "contractInformation": {
+      "title": "Contrato",
+      "buttons": {
+        "back": "Atras",
+        "finish": "Finalizar"
+      },
+      "form": {
+        "property": {
+          "label": "Propiedad",
+          "placeholder": "Propiedad",
+          "errors": {
+            "required": "La propiedad es requerida"
+          }
+        },
+        "entryDate": {
+          "label": "Fecha de ingreso",
+          "placeholder": "dd-mm-aaaa",
+          "errors": {
+            "required": "La fecha de ingreso es requerida"
+          }
+        },
+        "exitDate": {
+          "label": "Fecha de salida",
+          "placeholder": "dd-mm-aaaa",
+          "errors": {
+            "required": "La fecha de salida es requerida"
+          }
+        },
+        "paymentDay": {
+          "label": "Dia de pago",
+          "placeholder": "1",
+          "errors": {
+            "required": "El dia de pago es requerido",
+            "min": "El dia de pago debe ser mayor a 0",
+            "max": "El dia de pago debe ser menor a 31"
           }
         }
       }
