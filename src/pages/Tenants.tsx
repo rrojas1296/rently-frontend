@@ -13,6 +13,7 @@ import type {
 import { cn } from "../modules/common/utils/cn";
 import { Link } from "react-router";
 import { useTenantsFilters } from "../modules/tenants/store/useTenantsFilters";
+import NoTenantsMessage from "../modules/tenants/components/NoTenantsMessage/NoTenantsMessage";
 
 export interface Filters {
   status: TenantStatus | "all";
@@ -39,7 +40,7 @@ const TenantsPage = () => {
     });
   }, [filters]);
 
-  return (
+  return tenants.length ? (
     <div className="animate-fade-in">
       <div className="flex justify-between gap-5">
         <div className="flex gap-5 w-full lg:w-fit">
@@ -75,6 +76,8 @@ const TenantsPage = () => {
         ))}
       </div>
     </div>
+  ) : (
+    <NoTenantsMessage />
   );
 };
 

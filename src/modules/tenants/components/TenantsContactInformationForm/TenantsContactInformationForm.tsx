@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import FormField from "../../../common/components/FormField/FormField";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { Button } from "rently-components";
 import {
   tenantContactInformationSchema,
@@ -12,6 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const TenantsContactInformationForm = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -31,6 +32,7 @@ const TenantsContactInformationForm = () => {
   });
 
   const handlerNextStep = (data: TenantsContactInformationSchema) => {
+    navigate("/tenants/new/3");
     console.log({ data });
   };
   return (

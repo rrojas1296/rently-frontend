@@ -450,7 +450,7 @@
           "label": "Propiedad",
           "placeholder": "Propiedad",
           "errors": {
-            "required": "La propiedad es requerida"
+            "required": "Seleccione una propiedad o departamento"
           }
         },
         "entryDate": {
@@ -478,5 +478,10 @@
         }
       }
     }
+  },
+  "NoTenantsMessage": {
+    "title": "Aún no tienes inquilinos",
+    "description": "Agrega tu primer inquilino para comenzar a administrar contratos, pagos y solicitudes de mantenimiento desde un solo lugar.",
+    "button": "Crear inquilino"
   }
 }

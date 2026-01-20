@@ -2,22 +2,26 @@ import z from "zod";
 import type { FormField } from "../../common/types/formField";
 
 export const tenantsContractInformationSchema = z.object({
-  property: z.string().min(1, {
-    error: "NewTenant.form.property.errors.required",
-  }),
-  entryDate: z.date().min(new Date(), {
-    error: "NewTenant.form.entryDate.errors.required",
-  }),
-  exitDate: z.date().min(new Date(), {
-    error: "NewTenant.form.exitDate.errors.required",
-  }),
-  paymentDay: z
-    .number()
+  property: z
+    .string({
+      error: "NewTenant.contractInformation.form.property.errors.required",
+    })
     .min(1, {
-      error: "NewTenant.form.paymentDay.errors.min",
+      error: "NewTenant.form.property.errors.required",
+    }),
+  entryDate: z.date({
+    error: "NewTenant.contractInformation.form.entryDate.errors.required",
+  }),
+  exitDate: z.date().optional(),
+  paymentDay: z
+    .number({
+      error: "NewTenant.contractInformation.form.paymentDay.errors.required",
+    })
+    .min(1, {
+      error: "NewTenant.contractInformation.form.paymentDay.errors.min",
     })
     .max(31, {
-      error: "NewTenant.form.paymentDay.errors.max",
+      error: "NewTenant.contractInformation.form.paymentDay.errors.max",
     }),
 });
 
@@ -47,7 +51,7 @@ export const tenantsContractInformationControls: FormField<
     label: "NewTenant.contractInformation.form.exitDate.label",
     placeholder: "NewTenant.contractInformation.form.exitDate.placeholder",
     type: "date",
-    required: true,
+    required: false,
   },
   {
     name: "paymentDay",

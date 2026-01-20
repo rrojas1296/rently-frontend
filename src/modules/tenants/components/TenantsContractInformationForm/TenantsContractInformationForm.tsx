@@ -37,7 +37,7 @@ const TenantsContractInformationForm = () => {
   });
 
   const handleRegisterTenant = (data: TenantsContractInformationSchema) => {
-    console.log(data);
+    console.log({ data });
   };
 
   return (
