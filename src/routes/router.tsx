@@ -13,11 +13,21 @@ import TenantMainInformationForm from "../modules/tenants/components/TenantMainI
 import { lazy } from "react";
 import TenantsContactInformationForm from "../modules/tenants/components/TenantsContactInformationForm/TenantsContactInformationForm";
 import TenantsContractInformationForm from "../modules/tenants/components/TenantsContractInformationForm/TenantsContractInformationForm";
+import LoginPage from "../pages/Login";
+import RegisterPage from "../pages/Register";
 
 const TenantsPage = lazy(() => import("../pages/Tenants"));
 const PropertiesPage = lazy(() => import("../pages/Properties"));
 
 export const router = createBrowserRouter([
+  {
+    path: "login",
+    element: <LoginPage />,
+  },
+  {
+    path: "register",
+    element: <RegisterPage />,
+  },
   {
     element: <AppLayout />,
     children: [

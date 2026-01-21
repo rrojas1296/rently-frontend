@@ -19,7 +19,6 @@ const TenantsContractInformationForm = () => {
     register,
     handleSubmit,
     control,
-    watch,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(tenantsContractInformationSchema),
@@ -31,10 +30,6 @@ const TenantsContractInformationForm = () => {
       value: p.id,
     }));
   }, []);
-
-  console.log({
-    form: watch(),
-  });
 
   const handleRegisterTenant = (data: TenantsContractInformationSchema) => {
     console.log({ data });

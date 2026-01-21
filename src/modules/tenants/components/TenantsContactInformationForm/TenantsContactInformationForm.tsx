@@ -18,17 +18,12 @@ const TenantsContactInformationForm = () => {
     handleSubmit,
     formState: { errors },
     control,
-    watch,
   } = useForm({
     resolver: zodResolver(tenantContactInformationSchema),
     defaultValues: {
       phone: "+51",
       emergencyPhone: "+51",
     },
-  });
-
-  console.log({
-    form: watch(),
   });
 
   const handlerNextStep = (data: TenantsContactInformationSchema) => {

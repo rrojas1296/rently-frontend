@@ -6,7 +6,7 @@ import {
 
 export const propertiesMock: IProperty[] = [
   {
-    id: "prop-1",
+    id: "1b9e2f4a-8d6c-4c7a-9f3e-2a8b6d4e91c1",
     name: "Sunset Apartment",
     address: "123 Palm Street, Lima",
     status: PropertyStatusEnum.AVAILABLE,
@@ -17,7 +17,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.PEN,
   },
   {
-    id: "prop-2",
+    id: "c7a4e8d2-3f1b-4a9c-9e6d-5b2f8a1c7d34",
     name: "Ocean View Loft",
     address: "456 Coast Avenue, Lima",
     status: PropertyStatusEnum.OCCUPIED,
@@ -29,7 +29,7 @@ export const propertiesMock: IProperty[] = [
     tenantName: "Carlos Rivas",
   },
   {
-    id: "prop-3",
+    id: "9e3f6b2d-4a8c-4e7b-8d1f-5c2a9b6e347a",
     name: "Green Garden House",
     address: "789 Park Lane, Arequipa",
     status: PropertyStatusEnum.MAINTENANCE,
@@ -40,7 +40,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.PEN,
   },
   {
-    id: "prop-4",
+    id: "4f1c7b9d-8a2e-4e3c-9d6b-5a1f8e2c7b34",
     name: "Central Studio",
     address: "101 Centro Ave, Lima",
     status: PropertyStatusEnum.AVAILABLE,
@@ -51,7 +51,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.PEN,
   },
   {
-    id: "prop-5",
+    id: "a8c6f2e1-9d3b-4b7a-8f5c-1e9d2b6a734c",
     name: "Luxury Condo",
     address: "202 Miraflores, Lima",
     status: PropertyStatusEnum.OCCUPIED,
@@ -63,7 +63,7 @@ export const propertiesMock: IProperty[] = [
     tenantName: "Ana Torres",
   },
   {
-    id: "prop-6",
+    id: "6b3e9c4f-2a1d-4c8e-9f7b-5a8d1e2c7346",
     name: "Downtown Duplex",
     address: "303 Plaza Norte, Lima",
     status: PropertyStatusEnum.AVAILABLE,
@@ -74,7 +74,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.PEN,
   },
   {
-    id: "prop-7",
+    id: "d5e9a2c8-1b4f-4e7a-9c3d-6f8b2a1e745c",
     name: "Cozy Cabin",
     address: "404 Mountain Road, Cusco",
     status: PropertyStatusEnum.MAINTENANCE,
@@ -85,7 +85,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.EUR,
   },
   {
-    id: "prop-8",
+    id: "3f8a9c2e-7d4b-4e6f-9a5c-1b2d8e746c3a",
     name: "Riverside Home",
     address: "505 River St, Cusco",
     status: PropertyStatusEnum.OCCUPIED,
@@ -97,7 +97,7 @@ export const propertiesMock: IProperty[] = [
     tenantName: "Luis Ramirez",
   },
   {
-    id: "prop-9",
+    id: "8c2e5f1a-9d6b-4a7c-8f3e-2b9d6a1c745e",
     name: "Urban Apartment",
     address: "606 Urban Blvd, Lima",
     status: PropertyStatusEnum.AVAILABLE,
@@ -108,7 +108,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.PEN,
   },
   {
-    id: "prop-10",
+    id: "e6a1b7c5-9d8f-4e3a-8c2b-1f5d9a7c634e",
     name: "Skyline Penthouse",
     address: "707 Skyline Tower, Lima",
     status: PropertyStatusEnum.OCCUPIED,
@@ -120,7 +120,7 @@ export const propertiesMock: IProperty[] = [
     tenantName: "María Lopez",
   },
   {
-    id: "prop-11",
+    id: "5d8c1e7b-2f4a-4e9c-9b6a-3d2f8c1e745a",
     name: "Suburban House",
     address: "808 Country Rd, Trujillo",
     status: PropertyStatusEnum.AVAILABLE,
@@ -131,7 +131,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.PEN,
   },
   {
-    id: "prop-12",
+    id: "1a7d6e9f-4c8b-4e5a-9c2f-3b8d1e746a5c",
     name: "Lakeview Residence",
     address: "909 Lake Drive, Puno",
     status: PropertyStatusEnum.MAINTENANCE,
@@ -142,7 +142,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.EUR,
   },
   {
-    id: "prop-13",
+    id: "c9b5d7a3-1e8f-4a6c-9d2e-8f1b7c5a364d",
     name: "Highland Retreat",
     address: "1001 Andes Rd, Cusco",
     status: PropertyStatusEnum.AVAILABLE,
@@ -153,7 +153,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.PEN,
   },
   {
-    id: "prop-14",
+    id: "7f1a8e5d-9c3b-4e6a-8d2c-b5f7a1e634c9",
     name: "Modern Flat",
     address: "1102 Tech Park, Lima",
     status: PropertyStatusEnum.OCCUPIED,
@@ -165,7 +165,7 @@ export const propertiesMock: IProperty[] = [
     tenantName: "Diego Herrera",
   },
   {
-    id: "prop-15",
+    id: "2c9d8a7e-5f4b-4a1e-9c6b-3d8f7e1a645b",
     name: "Colonial House",
     address: "1203 Historic St, Arequipa",
     status: PropertyStatusEnum.AVAILABLE,
@@ -176,7 +176,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.USD,
   },
   {
-    id: "prop-16",
+    id: "9b6c5e2d-8a1f-4e7b-9d4c-f2a6e5c1378a",
     name: "Minimalist Loft",
     address: "1304 Minimal Ave, Lima",
     status: PropertyStatusEnum.MAINTENANCE,
@@ -187,7 +187,7 @@ export const propertiesMock: IProperty[] = [
     currency: PropertyCurrencyEnum.PEN,
   },
   {
-    id: "prop-17",
+    id: "f3a6c9e1-8d5b-4e2a-9c7f-1b8d6a3e745c",
     name: "Beachside Villa",
     address: "1405 Beach Rd, Piura",
     status: PropertyStatusEnum.OCCUPIED,
@@ -199,7 +199,7 @@ export const propertiesMock: IProperty[] = [
     tenantName: "Fernanda Soto",
   },
   {
-    id: "prop-18",
+    id: "4e7d1c8a-6f5b-4a9e-9c2d-1f7b8a6e345c",
     name: "Eco Home",
     address: "1506 Eco District, Tarapoto",
     status: PropertyStatusEnum.AVAILABLE,

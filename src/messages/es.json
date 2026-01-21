@@ -1,4 +1,85 @@
 {
+  "Login": {
+    "logo": "Rently",
+    "subtitle": "Inicia sesión en tu cuenta",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "noAccount": "¿No tienes una cuenta?",
+    "register": "Regístrate",
+    "divider": "o",
+    "buttons": {
+      "login": "Iniciar sesión",
+      "google": "Iniciar sesión con Google"
+    },
+    "form": {
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "ejemplo@email.com",
+        "errors": {
+          "required": "El correo electrónico es requerido",
+          "invalid": "Ingrese un correo válido"
+        }
+      },
+      "password": {
+        "label": "Contraseña",
+        "placeholder": "Ingresa tu contraseña",
+        "errors": {
+          "required": "La contraseña es requerida",
+          "min": "La contraseña debe tener al menos 6 caracteres"
+        }
+      }
+    }
+  },
+  "Register": {
+    "logo": "Rently",
+    "subtitle": "Crea tu cuenta",
+    "hasAccount": "¿Ya tienes una cuenta?",
+    "login": "Iniciar sesión",
+    "divider": "o",
+    "buttons": {
+      "register": "Crear cuenta",
+      "google": "Continuar con Google"
+    },
+    "form": {
+      "firstName": {
+        "label": "Nombre",
+        "placeholder": "Juan",
+        "errors": {
+          "required": "El nombre es requerido"
+        }
+      },
+      "lastName": {
+        "label": "Apellido",
+        "placeholder": "Pérez",
+        "errors": {
+          "required": "El apellido es requerido"
+        }
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "ejemplo@email.com",
+        "errors": {
+          "required": "El correo electrónico es requerido",
+          "invalid": "Ingrese un correo válido"
+        }
+      },
+      "password": {
+        "label": "Contraseña",
+        "placeholder": "Ingresa tu contraseña",
+        "errors": {
+          "required": "La contraseña es requerida",
+          "min": "La contraseña debe tener al menos 6 caracteres"
+        }
+      },
+      "confirmPassword": {
+        "label": "Confirmar contraseña",
+        "placeholder": "Confirma tu contraseña",
+        "errors": {
+          "required": "Por favor confirma tu contraseña",
+          "mismatch": "Las contraseñas no coinciden"
+        }
+      }
+    }
+  },
   "Header": {
     "logo": "Rently",
     "title": {
@@ -427,14 +508,15 @@
           "label": "Correo",
           "placeholder": "T9a3o@example.com",
           "errors": {
-            "required": "El correo es requerido"
+            "required": "El correo es requerido",
+            "invalid": "Ingrese un correo valido"
           }
         },
         "emergencyPhone": {
           "label": "Telefono de emergencia",
           "placeholder": "+51 999 999 999",
           "errors": {
-            "required": "El telefono de emergencia es requerido"
+            "required": "Ingrese un numero de celular."
           }
         }
       }

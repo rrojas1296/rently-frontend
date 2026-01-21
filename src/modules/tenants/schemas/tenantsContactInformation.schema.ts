@@ -1,13 +1,28 @@
 import z from "zod";
 import type { FormField } from "../../common/types/formField";
+import { EMAIL_REGEX } from "../../../constants/email.regex";
 
 export const tenantContactInformationSchema = z.object({
-  phone: z.string({
-    error: "NewTenant.contactInformation.form.phone.errors.required",
-  }),
-  email: z.email({
-    error: "NewTenant.contactInformation.form.email.errors.required",
-  }),
+  phone: z
+    .string({
+      error: "NewTenant.contactInformation.form.phone.errors.required",
+    })
+    .refine(
+      (number) => {
+        const phone = number.split(" ")[1];
+        return phone;
+      },
+      {
+        error: "NewTenant.contactInformation.form.phone.errors.required",
+      },
+    ),
+  email: z
+    .string({
+      error: "NewTenant.contactInformation.form.email.errors.required",
+    })
+    .regex(EMAIL_REGEX, {
+      error: "NewTenant.contactInformation.form.email.errors.invalid",
+    }),
   emergencyPhone: z.string({
     error: "NewTenant.contactInformation.form.emergencyPhone.errors.required",
   }),
@@ -39,6 +54,6 @@ export const tenantsContactInformationControls: FormField<
     label: "NewTenant.contactInformation.form.emergencyPhone.label",
     placeholder: "NewTenant.contactInformation.form.emergencyPhone.placeholder",
     type: "phone",
-    required: true,
+    required: false,
   },
 ];

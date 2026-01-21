@@ -15,7 +15,6 @@ import type { TenantNationality } from "../../types/Tenant.interface";
 import type { Language } from "../../../../constants/dateFormats";
 
 const TenantMainInformationForm = () => {
-  console.log("Render");
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const {

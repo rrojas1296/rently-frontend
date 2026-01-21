@@ -1,4 +1,85 @@
 {
+  "Login": {
+    "logo": "Rently",
+    "subtitle": "Sign in to your account",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "register": "Sign up",
+    "divider": "or",
+    "buttons": {
+      "login": "Sign in",
+      "google": "Continue with Google"
+    },
+    "form": {
+      "email": {
+        "label": "Email",
+        "placeholder": "example@email.com",
+        "errors": {
+          "required": "Email is required",
+          "invalid": "Enter a valid email"
+        }
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password",
+        "errors": {
+          "required": "Password is required",
+          "min": "Password must be at least 6 characters"
+        }
+      }
+    }
+  },
+  "Register": {
+    "logo": "Rently",
+    "subtitle": "Create your account",
+    "hasAccount": "Already have an account?",
+    "login": "Sign in",
+    "divider": "or",
+    "buttons": {
+      "register": "Create account",
+      "google": "Continue with Google"
+    },
+    "form": {
+      "firstName": {
+        "label": "First name",
+        "placeholder": "John",
+        "errors": {
+          "required": "First name is required"
+        }
+      },
+      "lastName": {
+        "label": "Last name",
+        "placeholder": "Doe",
+        "errors": {
+          "required": "Last name is required"
+        }
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "example@email.com",
+        "errors": {
+          "required": "Email is required",
+          "invalid": "Enter a valid email"
+        }
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password",
+        "errors": {
+          "required": "Password is required",
+          "min": "Password must be at least 6 characters"
+        }
+      },
+      "confirmPassword": {
+        "label": "Confirm password",
+        "placeholder": "Confirm your password",
+        "errors": {
+          "required": "Please confirm your password",
+          "mismatch": "Passwords do not match"
+        }
+      }
+    }
+  },
   "Header": {
     "logo": "Rently",
     "title": {
@@ -342,7 +423,147 @@
         "options": {
           "all": "All"
         }
+      },
+      "clearFilters": "Clear filters"
+    }
+  },
+  "NewTenant": {
+    "title": "Create new tenant",
+    "description": "Here you can create a new tenant to start managing your property",
+    "steps": {
+      "tenantInformation": "Tenant information",
+      "contactInformation": "Contact information",
+      "contractInformation": "Contract information"
+    },
+    "mainInformation": {
+      "title": "Main information",
+      "buttons": {
+        "next": "Next",
+        "cancel": "Cancel"
+      },
+      "form": {
+        "firstName": {
+          "label": "First name",
+          "placeholder": "John Richard",
+          "errors": {
+            "required": "First name is required"
+          }
+        },
+        "lastName": {
+          "label": "Last name",
+          "placeholder": "Doe Smith",
+          "errors": {
+            "required": "Last name is required"
+          }
+        },
+        "documentType": {
+          "label": "Document type",
+          "placeholder": "ID - Passport",
+          "errors": {
+            "required": "Document type is required"
+          },
+          "options": {
+            "dni": "ID",
+            "passport": "Passport"
+          }
+        },
+        "documentNumber": {
+          "label": "Document number",
+          "placeholder": "12345678",
+          "errors": {
+            "required": "Document number is required"
+          }
+        },
+        "birthDate": {
+          "label": "Birth date",
+          "placeholder": "mm-dd-yyyy",
+          "errors": {
+            "required": "Birth date is required"
+          }
+        },
+        "nationality": {
+          "label": "Nationality",
+          "placeholder": "USA - Canada - UK - etc",
+          "errors": {
+            "required": "Nationality is required"
+          }
+        }
+      }
+    },
+    "contactInformation": {
+      "title": "Contact",
+      "buttons": {
+        "back": "Back",
+        "next": "Next"
+      },
+      "form": {
+        "phone": {
+          "label": "Phone",
+          "placeholder": "+1 999 999 9999",
+          "errors": {
+            "required": "Phone is required"
+          }
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "example@email.com",
+          "errors": {
+            "required": "Email is required",
+            "invalid": "Enter a valid email"
+          }
+        },
+        "emergencyPhone": {
+          "label": "Emergency phone",
+          "placeholder": "+1 999 999 9999",
+          "errors": {
+            "required": "Enter a phone number."
+          }
+        }
+      }
+    },
+    "contractInformation": {
+      "title": "Contract",
+      "buttons": {
+        "back": "Back",
+        "finish": "Finish"
+      },
+      "form": {
+        "property": {
+          "label": "Property",
+          "placeholder": "Property",
+          "errors": {
+            "required": "Select a property or apartment"
+          }
+        },
+        "entryDate": {
+          "label": "Entry date",
+          "placeholder": "mm-dd-yyyy",
+          "errors": {
+            "required": "Entry date is required"
+          }
+        },
+        "exitDate": {
+          "label": "Exit date",
+          "placeholder": "mm-dd-yyyy",
+          "errors": {
+            "required": "Exit date is required"
+          }
+        },
+        "paymentDay": {
+          "label": "Payment day",
+          "placeholder": "1",
+          "errors": {
+            "required": "Payment day is required",
+            "min": "Payment day must be greater than 0",
+            "max": "Payment day must be less than 31"
+          }
+        }
       }
     }
+  },
+  "NoTenantsMessage": {
+    "title": "You don't have tenants yet",
+    "description": "Add your first tenant to start managing contracts, payments and maintenance requests from one place.",
+    "button": "Create tenant"
   }
 }
