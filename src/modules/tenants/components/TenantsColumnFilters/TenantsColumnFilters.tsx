@@ -5,10 +5,10 @@ import {
 } from "../../types/Tenant.interface";
 import { useTranslation } from "react-i18next";
 import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
-import type { Language } from "../../../../constants/dateFormats";
+import type { Language } from "@/shared/constants/dateFormats";
 import { useMemo } from "react";
 import { XIcon } from "lucide-react";
-import { cn } from "../../../common/utils/cn";
+import { cn } from "@/shared/utils/cn";
 import {
   TenantNationalityEnum,
   TenantStatusEnum,

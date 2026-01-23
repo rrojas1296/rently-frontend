@@ -10,7 +10,7 @@ import type {
   TenantNationality,
   TenantStatus,
 } from "../modules/tenants/types/Tenant.interface";
-import { cn } from "../modules/common/utils/cn";
+import { cn } from "@/shared/utils/cn";
 import { Link } from "react-router";
 import { useTenantsFilters } from "../modules/tenants/store/useTenantsFilters";
 import NoTenantsMessage from "../modules/tenants/components/NoTenantsMessage/NoTenantsMessage";

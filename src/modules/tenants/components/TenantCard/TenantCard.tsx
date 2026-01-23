@@ -4,8 +4,8 @@ import type { ITenant, TenantStatus } from "../../types/Tenant.interface";
 import { CalendarIcon, EllipsisVerticalIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
-import type { Language } from "../../../../constants/dateFormats";
-import { cn } from "../../../common/utils/cn";
+import type { Language } from "@/shared/constants/dateFormats";
+import { cn } from "@/shared/utils/cn";
 
 interface Props {
   tenant: ITenant;

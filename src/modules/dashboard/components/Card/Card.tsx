@@ -1,4 +1,4 @@
-import { cn } from "../../../common/utils/cn";
+import { cn } from "@/shared/utils/cn";
 
 interface Props {
   children?: React.ReactNode;

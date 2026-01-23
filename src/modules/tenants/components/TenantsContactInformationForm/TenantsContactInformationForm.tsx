@@ -1,14 +1,14 @@
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import FormField from "../../../common/components/FormField/FormField";
+import FormField from "@/shared/components/FormField/FormField";
 import { Link, useNavigate } from "react-router";
 import { Button } from "rently-components";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   tenantContactInformationSchema,
   tenantsContactInformationControls,
   type TenantsContactInformationSchema,
 } from "../../schemas/tenantsContactInformation.schema";
-import { zodResolver } from "@hookform/resolvers/zod";
 
 const TenantsContactInformationForm = () => {
   const { t } = useTranslation();

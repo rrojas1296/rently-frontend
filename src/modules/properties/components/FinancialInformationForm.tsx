@@ -6,7 +6,7 @@ import {
   type FinancialInformationSchema,
 } from "../schemas/financialInformation.schema";
 import { useTranslation } from "react-i18next";
-import FormField from "../../common/components/FormField/FormField";
+import FormField from "@/shared/components/FormField/FormField";
 import { Link } from "react-router";
 import { Button } from "rently-components";
 

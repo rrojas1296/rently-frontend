@@ -1,4 +1,4 @@
-import { DEFAULT_USER_IMAGE } from "../constants/defaults";
+import { DEFAULT_USER_IMAGE } from "@/shared/constants/defaults";
 
 export const dashboardStats = [
   {

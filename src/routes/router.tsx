@@ -15,6 +15,8 @@ import TenantsContactInformationForm from "../modules/tenants/components/Tenants
 import TenantsContractInformationForm from "../modules/tenants/components/TenantsContractInformationForm/TenantsContractInformationForm";
 import LoginPage from "../pages/Login";
 import RegisterPage from "../pages/Register";
+import PrivateRoute from "@/shared/guards/PrivateRoute";
+import PublicRoute from "@/shared/guards/PublicRoute";
 
 const TenantsPage = lazy(() => import("../pages/Tenants"));
 const PropertiesPage = lazy(() => import("../pages/Properties"));
@@ -22,14 +24,26 @@ const PropertiesPage = lazy(() => import("../pages/Properties"));
 export const router = createBrowserRouter([
   {
     path: "login",
-    element: <LoginPage />,
+    element: (
+      <PublicRoute>
+        <LoginPage />
+      </PublicRoute>
+    ),
   },
   {
     path: "register",
-    element: <RegisterPage />,
+    element: (
+      <PublicRoute>
+        <RegisterPage />
+      </PublicRoute>
+    ),
   },
   {
-    element: <AppLayout />,
+    element: (
+      <PrivateRoute>
+        <AppLayout />
+      </PrivateRoute>
+    ),
     children: [
       {
         index: true,

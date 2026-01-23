@@ -1,5 +1,5 @@
 import { MailIcon } from "lucide-react";
-import WhatsappIcon from "../../../common/components/Icons/WhatsappIcon";
+import WhatsappIcon from "@/shared/components/Icons/WhatsappIcon";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { useTranslation } from "react-i18next";

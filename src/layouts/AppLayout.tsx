@@ -1,12 +1,15 @@
 import { Outlet } from "react-router";
-import Header from "../modules/common/components/Header/Header";
+import Header from "@/shared/components/Header/Header";
 import { SideNavigation } from "rently-components";
-import { useSidebar } from "../store/useSidebar";
+import { useSidebar } from "@/shared/hooks/useSidebar";
 import { GamepadDirectionalIcon } from "lucide-react";
-import useSidebarOptions from "../modules/common/hooks/useSidebarOptions";
+import useSidebarOptions from "@/shared/hooks/useSidebarOptions";
+import { useLoading } from "@/shared/store/useLoading";
+import Loading from "@/shared/components/Loading/Loading";
 
 const AppLayout = () => {
   const { open, setOpen } = useSidebar();
+  const { loading } = useLoading();
   const { sections, pathname } = useSidebarOptions();
   return (
     <div className="lg:flex h-dvh">
@@ -25,6 +28,7 @@ const AppLayout = () => {
           <Outlet />
         </div>
       </div>
+      {loading && <Loading />}
     </div>
   );
 };

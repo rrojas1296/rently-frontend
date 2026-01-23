@@ -1,15 +1,23 @@
 import z from "zod";
-import type { FormField } from "../../common/types/formField";
-import { EMAIL_REGEX } from "../../../constants/email.regex";
+import type { FormField } from "@/shared/types/formField";
+import { EMAIL_REGEX } from "@/shared/constants/email.regex";
 
 export const registerSchema = z
   .object({
-    firstName: z.string({
-      error: "Register.form.firstName.errors.required",
-    }),
-    lastName: z.string({
-      error: "Register.form.lastName.errors.required",
-    }),
+    firstName: z
+      .string({
+        error: "Register.form.firstName.errors.required",
+      })
+      .min(1, {
+        error: "Register.form.firstName.errors.required",
+      }),
+    lastName: z
+      .string({
+        error: "Register.form.lastName.errors.required",
+      })
+      .min(1, {
+        error: "Register.form.lastName.errors.required",
+      }),
     email: z
       .string({
         error: "Register.form.email.errors.required",

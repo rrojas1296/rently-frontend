@@ -1,6 +1,6 @@
 import z from "zod";
 import { PropertyStatusEnum } from "../types/Property.interface";
-import type { FormField } from "../../common/types/formField";
+import type { FormField } from "@/shared/types/formField";
 
 export const mainInformationSchema = z.object({
   name: z.string().min(1, {

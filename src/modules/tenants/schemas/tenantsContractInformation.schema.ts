@@ -1,5 +1,5 @@
 import z from "zod";
-import type { FormField } from "../../common/types/formField";
+import type { FormField } from "@/shared/types/formField";
 
 export const tenantsContractInformationSchema = z.object({
   property: z

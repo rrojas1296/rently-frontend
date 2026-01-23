@@ -6,17 +6,25 @@ import {
   MoonIcon,
   SunIcon,
 } from "lucide-react";
-import { DEFAULT_USER_IMAGE } from "../../../../constants/defaults";
+import { DEFAULT_USER_IMAGE } from "@/shared/constants/defaults";
 import { useTranslation } from "react-i18next";
-import { useSidebar } from "../../../../store/useSidebar";
-import { useThemeStore } from "../../../../store/useTheme";
+import { useSidebar } from "@/shared/hooks/useSidebar";
+import { useThemeStore } from "@/shared/hooks/useTheme";
 import { useLocation } from "react-router";
 import dayjs from "dayjs";
-import { Button } from "rently-components";
-import { dateFormats, type Language } from "../../../../constants/dateFormats";
+import {
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "rently-components";
+import { dateFormats, type Language } from "@/shared/constants/dateFormats";
+import useLogout from "@/modules/auth/hooks/useLogout";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
+  const { mutate } = useLogout();
   const locale = i18n.language;
   const { pathname } = useLocation();
   const headerTitle = `Header.title.${pathname.split("/")[1]}`;
@@ -26,6 +34,10 @@ const Header = () => {
   const formattedDate = dayjs()
     .locale(locale)
     .format(dateFormats[locale as Language]);
+
+  const handlerLogout = () => {
+    mutate();
+  };
   return (
     <div className="sticky z-10 top-0 shrink-0 left-0 h-18 lg:h-20 bg-bg-1 flex items-center justify-between px-5 lg:px-6 border-b border-border-2">
       <Button
@@ -70,11 +82,18 @@ const Header = () => {
             <SunIcon className="w-5 h-5" />
           )}
         </Button>
-        <img
-          src={DEFAULT_USER_IMAGE}
-          alt="User profile"
-          className="w-10 h-10 rounded-lg object-cover"
-        />
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <img
+              src={DEFAULT_USER_IMAGE}
+              alt="User profile"
+              className="w-10 h-10 rounded-lg object-cover cursor-pointer"
+            />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent sideOffset={8} onClick={handlerLogout}>
+            <DropdownMenuItem className="text-danger">Logout</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </div>
   );

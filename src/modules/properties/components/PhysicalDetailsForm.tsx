@@ -6,7 +6,7 @@ import {
   type PhysicalDetailsSchema,
 } from "../schemas/physicalDetails.schema";
 import { useTranslation } from "react-i18next";
-import FormField from "../../common/components/FormField/FormField";
+import FormField from "@/shared/components/FormField/FormField";
 import { Link, useNavigate } from "react-router";
 import { Button } from "rently-components";
 

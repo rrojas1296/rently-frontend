@@ -6,13 +6,13 @@ import {
   type TenantMainInformationSchema,
 } from "../../schemas/tenantMainInformation.schema";
 import { useTranslation } from "react-i18next";
-import FormField from "../../../common/components/FormField/FormField";
+import FormField from "@/shared/components/FormField/FormField";
 import { Link, useNavigate } from "react-router";
 import { Button } from "rently-components";
 import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
 import { TenantNationalityEnum } from "../../types/Tenants.enum";
 import type { TenantNationality } from "../../types/Tenant.interface";
-import type { Language } from "../../../../constants/dateFormats";
+import type { Language } from "@/shared/constants/dateFormats";
 
 const TenantMainInformationForm = () => {
   const { t, i18n } = useTranslation();

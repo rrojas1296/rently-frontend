@@ -2,7 +2,7 @@ import { Badge, Button, type BadgeType } from "rently-components";
 import type { IProperty, PropertyStatus } from "../types/Property.interface";
 import { EllipsisVertical } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { cn } from "../../common/utils/cn";
+import { cn } from "@/shared/utils/cn";
 
 interface Props {
   property: IProperty;

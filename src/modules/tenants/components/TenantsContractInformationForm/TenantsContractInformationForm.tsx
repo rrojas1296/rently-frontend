@@ -6,11 +6,11 @@ import {
 } from "../../schemas/tenantsContractInformation.schema";
 import { useTranslation } from "react-i18next";
 import { zodResolver } from "@hookform/resolvers/zod";
-import FormField from "../../../common/components/FormField/FormField";
+import FormField from "@/shared/components/FormField/FormField";
 import { Link } from "react-router";
 import { Button } from "rently-components";
 import { useMemo } from "react";
-import { propertiesMock } from "../../../../data/properties";
+import { propertiesMock } from "@/data/properties";
 
 const TenantsContractInformationForm = () => {
   const { t } = useTranslation();

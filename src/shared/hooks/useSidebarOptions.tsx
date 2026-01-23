@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { sideNavigationOptions } from "../../../constants/sideNavigationOptions";
+import { sideNavigationOptions } from "@/shared/constants/sideNavigationOptions";
 import { useLocation, useNavigate } from "react-router";
-import { useSidebar } from "../../../store/useSidebar";
 import { useMemo, useCallback } from "react";
+import { useSidebar } from "./useSidebar";
 
 const useSidebarOptions = () => {
   const { t } = useTranslation();

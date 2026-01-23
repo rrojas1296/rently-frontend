@@ -1,5 +1,5 @@
 import { BuildingIcon, CalendarIcon } from "lucide-react";
-import { cn } from "../../../common/utils/cn";
+import { cn } from "@/shared/utils/cn";
 import dayjs from "dayjs";
 import { useTranslation } from "react-i18next";
 import "dayjs/locale/es";

@@ -1,5 +1,5 @@
-import { cn } from "../../utils/cn";
-import { useSidebar } from "../../../../store/useSidebar";
+import { cn } from "@/shared/utils/cn";
+import { useSidebar } from "@/shared/hooks/useSidebar";
 import {
   BanknoteIcon,
   BoltIcon,

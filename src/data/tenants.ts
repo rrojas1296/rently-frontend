@@ -1,5 +1,5 @@
-import type { Language } from "../constants/dateFormats";
-import { DEFAULT_USER_IMAGE } from "../constants/defaults";
+import type { Language } from "@/shared/constants/dateFormats";
+import { DEFAULT_USER_IMAGE } from "@/shared/constants/defaults";
 import type {
   ITenant,
   TenantNationality,

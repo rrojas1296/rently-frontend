@@ -3,7 +3,7 @@ import {
   TenantDocumentTypeEnum,
   TenantNationalityEnum,
 } from "../types/Tenants.enum";
-import type { FormField } from "../../common/types/formField";
+import type { FormField } from "@/shared/types/formField";
 
 export const tenantMainInformationSchema = z.object({
   firstName: z.string().min(1, {

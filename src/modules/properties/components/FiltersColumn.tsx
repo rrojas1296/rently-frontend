@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Button, Input, Select } from "rently-components";
-import { cn } from "../../common/utils/cn";
+import { cn } from "@/shared/utils/cn";
 import {
   PropertyCurrencyEnum,
   PropertyStatusEnum,

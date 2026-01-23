@@ -1,6 +1,6 @@
 import z from "zod";
 import { PropertyCurrencyEnum } from "../types/Property.interface";
-import type { FormField } from "../../common/types/formField";
+import type { FormField } from "@/shared/types/formField";
 
 export const financialInformationSchema = z.object({
   monthlyPayment: z

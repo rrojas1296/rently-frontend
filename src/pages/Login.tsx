@@ -1,19 +1,21 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { Button } from "rently-components";
-import FormField from "../modules/common/components/FormField/FormField";
+import FormField from "@/shared/components/FormField/FormField";
 import {
   loginControls,
   loginSchema,
   type LoginSchema,
 } from "../modules/auth/schemas/login.schema";
-import WhatsappColorIcon from "../modules/common/components/Icons/WhatsappColorIcon";
+import WhatsappColorIcon from "@/shared/components/Icons/WhatsappColorIcon";
+import useLoginUser from "@/modules/auth/hooks/useLoginUser";
+import { LoaderIcon } from "lucide-react";
 
 const LoginPage = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { mutate, isPending } = useLoginUser();
   const {
     handleSubmit,
     formState: { errors },
@@ -24,8 +26,7 @@ const LoginPage = () => {
   });
 
   const handleLogin = (data: LoginSchema) => {
-    console.log({ data });
-    navigate("/dashboard");
+    mutate(data);
   };
 
   return (
@@ -74,6 +75,9 @@ const LoginPage = () => {
               type="submit"
               className="w-full justify-center"
             >
+              {isPending && (
+                <LoaderIcon className="w-5 h-5 animate-spin text-text-3" />
+              )}
               {t("Login.buttons.login")}
             </Button>
 

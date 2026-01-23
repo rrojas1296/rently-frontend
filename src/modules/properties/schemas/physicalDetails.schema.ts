@@ -1,5 +1,5 @@
 import z from "zod";
-import type { FormField } from "../../common/types/formField";
+import type { FormField } from "@/shared/types/formField";
 import { PropertyConditionEnum } from "../types/Property.interface";
 
 export const physicalDetailsSchema = z.object({

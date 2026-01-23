@@ -1,6 +1,6 @@
 import z from "zod";
-import type { FormField } from "../../common/types/formField";
-import { EMAIL_REGEX } from "../../../constants/email.regex";
+import type { FormField } from "@/shared/types/formField";
+import { EMAIL_REGEX } from "@/shared/constants/email.regex";
 
 export const tenantContactInformationSchema = z.object({
   phone: z

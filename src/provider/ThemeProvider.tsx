@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { THEME_KEY, useThemeStore, type Theme } from "../store/useTheme";
+import { THEME_KEY, useThemeStore, type Theme } from "@/shared/hooks/useTheme";
 
 interface Props {
   children: React.ReactNode;

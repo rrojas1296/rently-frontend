@@ -5,7 +5,7 @@ import {
   mainInformationSchema,
   type MainInformationSchema,
 } from "../schemas/mainInformation.schema";
-import FormField from "../../common/components/FormField/FormField";
+import FormField from "@/shared/components/FormField/FormField";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "rently-components";
 import { Link, useNavigate } from "react-router";

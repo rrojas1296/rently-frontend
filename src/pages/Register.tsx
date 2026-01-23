@@ -1,19 +1,21 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { Button } from "rently-components";
-import FormField from "../modules/common/components/FormField/FormField";
+import FormField from "@/shared/components/FormField/FormField";
 import {
   registerControls,
   registerSchema,
   type RegisterSchema,
 } from "../modules/auth/schemas/register.schema";
-import WhatsappColorIcon from "../modules/common/components/Icons/WhatsappColorIcon";
+import WhatsappColorIcon from "@/shared/components/Icons/WhatsappColorIcon";
+import useRegisterUser from "@/modules/auth/hooks/useRegisterUser";
+import { LoaderIcon } from "lucide-react";
 
 const RegisterPage = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { mutate, isPending } = useRegisterUser();
   const {
     handleSubmit,
     formState: { errors },
@@ -24,8 +26,13 @@ const RegisterPage = () => {
   });
 
   const handleRegister = (data: RegisterSchema) => {
-    console.log({ data });
-    navigate("/login");
+    const { firstName, lastName, email, password } = data;
+    mutate({
+      firstName,
+      lastName,
+      email,
+      password,
+    });
   };
 
   return (
@@ -87,6 +94,7 @@ const RegisterPage = () => {
               type="submit"
               className="w-full justify-center"
             >
+              {isPending && <LoaderIcon className="animate-spin" />}
               {t("Register.buttons.register")}
             </Button>
 

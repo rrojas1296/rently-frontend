@@ -6,7 +6,7 @@ import NextPaymentCard from "../modules/dashboard/components/NextPaymentCard/Nex
 import TenantDashboardCard from "../modules/dashboard/components/TenantDashboardCard/TenantDashboardCard";
 import dayjs from "dayjs";
 import { Button } from "rently-components";
-import { dateFormats, type Language } from "../constants/dateFormats";
+import { dateFormats, type Language } from "@/shared/constants/dateFormats";
 import { Link } from "react-router";
 
 const DashboardPage = () => {
