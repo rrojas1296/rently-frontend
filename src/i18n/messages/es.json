@@ -17,8 +17,8 @@
     },
     "errors": {
       "invalid_credentials": {
-        "title": "Credenciales incorrectas",
-        "description": "El correo o contraseña son incorrectos"
+        "title": "Correo o contraseña incorrectos",
+        "description": "El correo o contraseña ingresados no son correctos."
       }
     },
     "form": {
