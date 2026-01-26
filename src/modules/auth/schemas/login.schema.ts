@@ -28,6 +28,7 @@ export const loginControls: FormField<keyof LoginSchema>[] = [
     placeholder: "Login.form.email.placeholder",
     type: "email",
     required: true,
+    className: "col-span-2",
   },
   {
     name: "password",
@@ -35,5 +36,6 @@ export const loginControls: FormField<keyof LoginSchema>[] = [
     placeholder: "Login.form.password.placeholder",
     type: "password",
     required: true,
+    className: "col-span-2",
   },
 ];

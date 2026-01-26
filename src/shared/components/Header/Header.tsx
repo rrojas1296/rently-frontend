@@ -2,9 +2,12 @@ import {
   BellIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  LogOutIcon,
   MenuIcon,
   MoonIcon,
+  SettingsIcon,
   SunIcon,
+  UserIcon,
 } from "lucide-react";
 import { DEFAULT_USER_IMAGE } from "@/shared/constants/defaults";
 import { useTranslation } from "react-i18next";
@@ -90,8 +93,22 @@ const Header = () => {
               className="w-10 h-10 rounded-lg object-cover cursor-pointer"
             />
           </DropdownMenuTrigger>
-          <DropdownMenuContent sideOffset={8} onClick={handlerLogout}>
-            <DropdownMenuItem className="text-danger">Logout</DropdownMenuItem>
+          <DropdownMenuContent sideOffset={8}>
+            <DropdownMenuItem className="text-text-1 flex gap-3">
+              <UserIcon className="w-5 h-5" />
+              <span>Profile</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="text-text-1 flex gap-3">
+              <SettingsIcon className="w-5 h-5" />
+              <span>Settings</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem
+              className="text-danger flex gap-3"
+              onClick={handlerLogout}
+            >
+              <LogOutIcon className="w-5 h-5" />
+              <span>Logout</span>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

@@ -5,5 +5,6 @@ export const ENDPOINTS = {
     refresh: "/auth/refresh",
     logout: "/auth/logout",
     validate: "/auth/validate",
+    checkEmailExist: "auth/checkEmailExist",
   },
 };

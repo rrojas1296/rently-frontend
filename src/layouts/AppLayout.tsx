@@ -10,6 +10,7 @@ import Loading from "@/shared/components/Loading/Loading";
 const AppLayout = () => {
   const { open, setOpen } = useSidebar();
   const { loading } = useLoading();
+  console.log({ loading });
   const { sections, pathname } = useSidebarOptions();
   return (
     <div className="lg:flex h-dvh">

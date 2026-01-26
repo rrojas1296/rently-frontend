@@ -16,6 +16,7 @@ export interface FormField<T> {
   name: T;
   type: FormFieldType;
   label: string;
+  className?: string;
   placeholder?: string;
   required: boolean;
   options?: FormFieldOption[];

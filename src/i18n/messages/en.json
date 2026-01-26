@@ -1,14 +1,19 @@
 {
   "Login": {
     "logo": "Rently",
-    "subtitle": "Sign in to your account",
-    "forgotPassword": "Forgot password?",
+    "welcomeBack": "Welcome Back",
+    "subtitle": "Enter your email and password to access your account",
+    "forgotPassword": "Forgot your password?",
     "noAccount": "Don't have an account?",
-    "register": "Sign up",
+    "register": "Register Now",
     "divider": "or",
+    "marketing": {
+      "title": "Start managing your properties today",
+      "subtitle": "Create an account to access all features and manage your rentals."
+    },
     "buttons": {
-      "login": "Sign in",
-      "google": "Continue with Google"
+      "login": "Sign In",
+      "google": "Sign in with Google"
     },
     "form": {
       "email": {
@@ -31,13 +36,18 @@
   },
   "Register": {
     "logo": "Rently",
-    "subtitle": "Create your account",
+    "createAccount": "Create an account",
+    "subtitle": "Enter your details to create your account",
     "hasAccount": "Already have an account?",
-    "login": "Sign in",
+    "login": "Sign In",
     "divider": "or",
+    "marketing": {
+      "title": "Start managing your properties today",
+      "subtitle": "Create an account to access all features and manage your rentals."
+    },
     "buttons": {
-      "register": "Create account",
-      "google": "Continue with Google"
+      "register": "Sign Up",
+      "google": "Register with Google"
     },
     "form": {
       "firstName": {

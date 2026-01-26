@@ -1,6 +1,7 @@
 import z from "zod";
 import type { FormField } from "@/shared/types/formField";
 import { EMAIL_REGEX } from "@/shared/constants/email.regex";
+import { checkEmailExistService } from "../services/checkEmailExist";
 
 export const registerSchema = z
   .object({
@@ -36,9 +37,24 @@ export const registerSchema = z
       error: "Register.form.confirmPassword.errors.required",
     }),
   })
-  .refine((data) => data.password === data.confirmPassword, {
-    error: "Register.form.confirmPassword.errors.mismatch",
-    path: ["confirmPassword"],
+  .superRefine(async (data, ctx) => {
+    if (data.password !== data.confirmPassword) {
+      ctx.addIssue({
+        code: "custom",
+        message: "Register.form.confirmPassword.errors.notMatch",
+        path: ["confirmPassword"],
+      });
+    }
+
+    const exist = await checkEmailExistService(data.email);
+    console.log({ exist });
+    if (exist) {
+      ctx.addIssue({
+        code: "custom",
+        message: "Register.form.email.errors.exist",
+        path: ["email"],
+      });
+    }
   });
 
 export type RegisterSchema = z.infer<typeof registerSchema>;
@@ -64,6 +80,7 @@ export const registerControls: FormField<keyof RegisterSchema>[] = [
     placeholder: "Register.form.email.placeholder",
     type: "email",
     required: true,
+    className: "col-span-2",
   },
   {
     name: "password",
@@ -71,6 +88,7 @@ export const registerControls: FormField<keyof RegisterSchema>[] = [
     placeholder: "Register.form.password.placeholder",
     type: "password",
     required: true,
+    className: "col-span-2",
   },
   {
     name: "confirmPassword",
@@ -78,5 +96,6 @@ export const registerControls: FormField<keyof RegisterSchema>[] = [
     placeholder: "Register.form.confirmPassword.placeholder",
     type: "password",
     required: true,
+    className: "col-span-2",
   },
 ];

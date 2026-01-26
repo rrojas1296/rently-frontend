@@ -21,7 +21,7 @@
         "react-hook-form": "^7.71.0",
         "react-i18next": "^16.5.1",
         "react-router": "^7.12.0",
-        "rently-components": "^0.1.41",
+        "rently-components": "^0.1.42",
         "tailwind-merge": "^3.4.0",
         "tailwindcss": "^4.1.18",
         "zod": "^4.3.5",
@@ -730,7 +730,7 @@
 
     "react-style-singleton": ["react-style-singleton@2.2.3", "", { "dependencies": { "get-nonce": "^1.0.0", "tslib": "^2.0.0" }, "peerDependencies": { "@types/react": "*", "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc" }, "optionalPeers": ["@types/react"] }, "sha512-b6jSvxvVnyptAiLjbkWLE/lOnR4lfTtDAl+eUC7RZy+QQWc6wRzIV2CE6xBuMmDxc2qIihtDCZD5NPOFl7fRBQ=="],
 
-    "rently-components": ["rently-components@0.1.41", "", { "dependencies": { "@radix-ui/react-popover": "^1.1.15", "@radix-ui/react-select": "^2.2.6", "@radix-ui/react-switch": "^1.2.6", "class-variance-authority": "^0.7.1", "clsx": "^2.1.1", "dayjs": "^1.11.19", "lucide-react": "^0.562.0", "radix-ui": "^1.4.3", "react-day-picker": "^9.13.0", "tailwind-merge": "^3.4.0", "vite-tsconfig-paths": "^6.0.4" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" }, "bin": { "rently-components": "dist/index.umd.js" } }, "sha512-XZ1BH8y1zhW4vumVVopUaD9MqSV6GfA0dk/6X7sIWCGydcc0wedEkZ+vvKpZz3SvBTfU3FjYzYTyXgd2bOBzrw=="],
+    "rently-components": ["rently-components@0.1.42", "", { "dependencies": { "@radix-ui/react-popover": "^1.1.15", "@radix-ui/react-select": "^2.2.6", "@radix-ui/react-switch": "^1.2.6", "class-variance-authority": "^0.7.1", "clsx": "^2.1.1", "dayjs": "^1.11.19", "lucide-react": "^0.562.0", "radix-ui": "^1.4.3", "react-day-picker": "^9.13.0", "tailwind-merge": "^3.4.0", "vite-tsconfig-paths": "^6.0.4" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" }, "bin": { "rently-components": "dist/index.umd.js" } }, "sha512-PgWJQNVx2KLRQnVqRkKhWfJ+BGHxzbWtb6u/vQxgqxjmgV+ZA93tAIGiYLLqliKNf9MdwBj5XS6QCBMBkj2HuA=="],
 
     "resolve-from": ["resolve-from@4.0.0", "", {}, "sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g=="],
 
