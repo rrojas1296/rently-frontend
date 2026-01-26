@@ -10,7 +10,7 @@ const useLogout = () => {
     mutationKey: ["logout"],
     mutationFn: () => logoutService(),
     onSuccess: () => {
-      console.log("Finished");
+      setLoading(false);
       navigate("/login");
     },
     onMutate: () => {

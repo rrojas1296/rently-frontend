@@ -1,14 +1,25 @@
 {
   "Login": {
     "logo": "Rently",
-    "subtitle": "Inicia sesión en tu cuenta",
-    "forgotPassword": "¿Olvidaste tu contraseña?",
-    "noAccount": "¿No tienes una cuenta?",
-    "register": "Regístrate",
+    "welcomeBack": "Bienvenido de nuevo",
+    "subtitle": "Ingresa tu contraseña y correo para acceder a tu cuenta",
+    "forgotPassword": "Olvidaste tu contraseña ?",
+    "noAccount": "Aun no tienes una cuenta ?",
+    "register": "Registrate",
     "divider": "o",
+    "marketing": {
+      "title": "Comienza a administrar tus propiedades hoy",
+      "subtitle": "Crea una cuenta para acceder a todas las funciones y administrar tus alquileres."
+    },
     "buttons": {
-      "login": "Iniciar sesión",
-      "google": "Iniciar sesión con Google"
+      "login": "Ingresar",
+      "google": "Ingresa con google"
+    },
+    "errors": {
+      "invalid_credentials": {
+        "title": "Correo o contraseña incorrectos",
+        "description": "El correo o contraseña ingresados no son correctos."
+      }
     },
     "form": {
       "email": {
@@ -31,13 +42,18 @@
   },
   "Register": {
     "logo": "Rently",
-    "subtitle": "Crea tu cuenta",
-    "hasAccount": "¿Ya tienes una cuenta?",
-    "login": "Iniciar sesión",
+    "createAccount": "Crea una cuenta",
+    "subtitle": "Ingresa tus datos para crear tu cuenta",
+    "hasAccount": "Ya tienes una cuenta ?",
+    "login": "Ingresa",
     "divider": "o",
+    "marketing": {
+      "title": "Comienza a administrar tus propiedades hoy",
+      "subtitle": "Crea una cuenta para acceder a todas las funciones y administrar tus alquileres."
+    },
     "buttons": {
-      "register": "Crear cuenta",
-      "google": "Continuar con Google"
+      "register": "Ingresar",
+      "google": "Registrate con google"
     },
     "form": {
       "firstName": {
@@ -59,7 +75,8 @@
         "placeholder": "ejemplo@email.com",
         "errors": {
           "required": "El correo electrónico es requerido",
-          "invalid": "Ingrese un correo válido"
+          "invalid": "Ingrese un correo válido",
+          "exist": "El correo ya esta en uso."
         }
       },
       "password": {

@@ -3,6 +3,7 @@ import type { FormFieldOption, FormFieldType } from "../../types/formField";
 import type { ComponentProps } from "react";
 import { Controller, type Control } from "react-hook-form";
 import { DatePicker } from "rently-components";
+import { cn } from "@/shared/utils/cn";
 
 interface Props extends ComponentProps<"input"> {
   type: FormFieldType;
@@ -23,6 +24,7 @@ const FormField = ({
   control,
   required,
   name,
+  className,
   ...other
 }: Props) => {
   const generateControl = () => {
@@ -103,7 +105,7 @@ const FormField = ({
     }
   };
   return (
-    <div className="flex flex-col gap-2">
+    <div className={cn("flex flex-col gap-2", className)}>
       <p className="text-sm text-text-1 ">
         {label}
         {required && <span className="ml-px text-danger">*</span>}
