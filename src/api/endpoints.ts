@@ -7,4 +7,7 @@ export const ENDPOINTS = {
     validate: "/auth/validate",
     checkEmailExist: "auth/checkEmailExist",
   },
+  properties: {
+    create: "/properties",
+  },
 };

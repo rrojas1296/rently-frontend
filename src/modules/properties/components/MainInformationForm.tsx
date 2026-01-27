@@ -9,6 +9,7 @@ import FormField from "@/shared/components/FormField/FormField";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "rently-components";
 import { Link, useNavigate } from "react-router";
+import { usePropertyStore } from "../store/usePropertyStore";
 
 const MainInformationForm = () => {
   const { t } = useTranslation();
@@ -21,9 +22,10 @@ const MainInformationForm = () => {
   } = useForm({
     resolver: zodResolver(mainInformationSchema),
   });
+  const { setStep1 } = usePropertyStore();
 
   const handlerNextStep = (data: MainInformationSchema) => {
-    console.log({ data });
+    setStep1(data);
     navigate("/properties/new/2");
   };
   return (

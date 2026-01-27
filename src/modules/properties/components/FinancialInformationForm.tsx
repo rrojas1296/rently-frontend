@@ -9,6 +9,9 @@ import { useTranslation } from "react-i18next";
 import FormField from "@/shared/components/FormField/FormField";
 import { Link } from "react-router";
 import { Button } from "rently-components";
+import useCreateProperty from "../hooks/useCreateProperty";
+import { usePropertyStore } from "../store/usePropertyStore";
+import type { CreatePropertyDto } from "../dtos/createProperty.dto";
 
 const FinancialInformationForm = () => {
   const { t } = useTranslation();
@@ -20,8 +23,16 @@ const FinancialInformationForm = () => {
   } = useForm({
     resolver: zodResolver(financialInformationSchema),
   });
+  const { form } = usePropertyStore();
+  const { mutate } = useCreateProperty();
   const handlerNextStep = (data: FinancialInformationSchema) => {
-    console.log({ data });
+    const body: CreatePropertyDto = {
+      ...form!.step1,
+      ...form!.step2,
+      ...data,
+    };
+
+    mutate(body);
   };
   return (
     <form onSubmit={handleSubmit(handlerNextStep)}>

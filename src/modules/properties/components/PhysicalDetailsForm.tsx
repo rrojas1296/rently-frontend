@@ -9,10 +9,12 @@ import { useTranslation } from "react-i18next";
 import FormField from "@/shared/components/FormField/FormField";
 import { Link, useNavigate } from "react-router";
 import { Button } from "rently-components";
+import { usePropertyStore } from "../store/usePropertyStore";
 
 const PhysicalDetailsForm = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { setStep2 } = usePropertyStore();
   const {
     handleSubmit,
     formState: { errors },
@@ -27,7 +29,7 @@ const PhysicalDetailsForm = () => {
   });
 
   const handlerNextStep = (data: PhysicalDetailsSchema) => {
-    console.log({ data });
+    setStep2(data);
     navigate("/properties/new/3");
   };
 
