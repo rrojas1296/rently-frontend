@@ -12,7 +12,7 @@ export interface IProperty {
   rooms: number;
   bathrooms: number;
   area: number;
-  price: number;
+  monthlyPayment: number;
   currency: PropertyCurrency;
   tenantName?: string;
 }

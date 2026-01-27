@@ -96,18 +96,18 @@ const Header = () => {
           <DropdownMenuContent sideOffset={8}>
             <DropdownMenuItem className="text-text-1 flex gap-3">
               <UserIcon className="w-5 h-5" />
-              <span>Profile</span>
+              <span>{t("Header.menu.profile")}</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="text-text-1 flex gap-3">
               <SettingsIcon className="w-5 h-5" />
-              <span>Settings</span>
+              <span>{t("Header.menu.settings")}</span>
             </DropdownMenuItem>
             <DropdownMenuItem
               className="text-danger flex gap-3"
               onClick={handlerLogout}
             >
               <LogOutIcon className="w-5 h-5" />
-              <span>Logout</span>
+              <span>{t("Header.menu.logout")}</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

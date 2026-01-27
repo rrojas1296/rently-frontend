@@ -9,5 +9,6 @@ export const ENDPOINTS = {
   },
   properties: {
     create: "/properties",
+    get: "/properties",
   },
 };

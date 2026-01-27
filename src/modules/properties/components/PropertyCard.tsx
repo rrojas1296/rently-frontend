@@ -16,7 +16,7 @@ const PropertyCard = ({ property }: Props) => {
     rooms,
     bathrooms,
     area,
-    price,
+    monthlyPayment,
     currency,
     tenantName,
   } = property;
@@ -67,8 +67,8 @@ const PropertyCard = ({ property }: Props) => {
             {t("Properties.propertyCard.price")}
           </h1>
           <p className="font-bold text-3xl">
-            <span>{t(`Properties.propertyCard.currencies.${currency}`)}</span>
-            {price}
+            {monthlyPayment}
+            <span> {currency}</span>
           </p>
         </div>
       </div>

@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { dateFormats, type Language } from "@/shared/constants/dateFormats";
 import { Button, Input } from "rently-components";
 import { FilterIcon, PlusIcon, SearchIcon } from "lucide-react";
-import { propertiesMock } from "../data/properties";
 import PropertyCard from "../modules/properties/components/PropertyCard";
 import { Link } from "react-router";
 import FiltersColumn from "../modules/properties/components/FiltersColumn";
@@ -11,10 +10,16 @@ import { useMemo, useState } from "react";
 import { cn } from "@/shared/utils/cn";
 import type { PropertyFilters } from "../modules/properties/types/Filters.interface";
 import NoProperties from "../modules/properties/components/NoProperties";
+import useGetProperties from "@/modules/properties/hooks/useGetProperties";
+import Loading from "@/shared/components/Loading/Loading";
+import { useDebounce } from "@/shared/hooks/useDebounce";
 
 const PropertiesPage = () => {
   const { t, i18n } = useTranslation();
   const [showFiltersColumn, setShowFiltersColumn] = useState(false);
+  const { data, isFetching } = useGetProperties();
+  const [search, setSearch] = useState("");
+  const debounceSearch = useDebounce(search, 500);
   const [filters, setFilters] = useState<PropertyFilters>({
     status: "all",
     rooms: "all",
@@ -28,8 +33,9 @@ const PropertiesPage = () => {
     .format(dateFormats[locale as Language]);
 
   const properties = useMemo(() => {
-    return propertiesMock.filter((property) => {
+    return (data?.properties || []).filter((property) => {
       return (
+        property.name.toLowerCase().includes(debounceSearch.toLowerCase()) &&
         (property.status === filters.status || filters.status === "all") &&
         (property.rooms.toString() === filters.rooms ||
           filters.rooms === "all") &&
@@ -37,12 +43,17 @@ const PropertiesPage = () => {
           filters.bathrooms === "all") &&
         (property.currency === filters.currency ||
           filters.currency === "all") &&
-        (property.price >= parseInt(filters.price) || filters.price === "")
+        (property.monthlyPayment >= parseInt(filters.price) ||
+          filters.price === "")
       );
     });
-  }, [filters]);
+  }, [filters, data, debounceSearch]);
 
-  return propertiesMock.length > 0 ? (
+  if (isFetching) {
+    return <Loading className="static w-fll h-full bg-bg-2" />;
+  }
+
+  return data?.hasProperties && !isFetching ? (
     <div className="animate-fade-in">
       <div className="flex flex-col gap-1 mb-5 lg:hidden">
         <h1 className="text-text-1 font-bold text-2xl">
@@ -54,6 +65,8 @@ const PropertiesPage = () => {
         <div className="flex gap-5 w-full lg:w-fit">
           <Input
             placeholder="Buscar propiedad"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             className="w-full lg:w-sm"
             Icon={SearchIcon}
           />
