@@ -47,7 +47,6 @@ export const registerSchema = z
     }
 
     const exist = await checkEmailExistService(data.email);
-    console.log({ exist });
     if (exist) {
       ctx.addIssue({
         code: "custom",

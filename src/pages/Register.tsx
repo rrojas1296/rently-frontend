@@ -19,7 +19,7 @@ const RegisterPage = () => {
   const { mutate, isPending } = useRegisterUser();
   const {
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValidating },
     control,
     register,
   } = useForm({
@@ -35,10 +35,6 @@ const RegisterPage = () => {
       password,
     });
   };
-
-  console.log({
-    errors,
-  });
 
   return (
     <div className="h-screen flex custom-scroll overflow-y-auto lg:overflow-visible">
@@ -86,9 +82,10 @@ const RegisterPage = () => {
             type="submit"
             className="w-full justify-center col-span-2"
           >
-            {isPending && (
-              <LoaderIcon className="w-5 h-5 animate-spin text-text-3" />
-            )}
+            {isPending ||
+              (isValidating && (
+                <LoaderIcon className="w-5 h-5 animate-spin text-text-3" />
+              ))}
             {t("Register.buttons.register")}
           </Button>
 

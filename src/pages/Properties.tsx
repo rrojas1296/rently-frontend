@@ -6,54 +6,43 @@ import { FilterIcon, PlusIcon, SearchIcon } from "lucide-react";
 import PropertyCard from "../modules/properties/components/PropertyCard";
 import { Link } from "react-router";
 import FiltersColumn from "../modules/properties/components/FiltersColumn";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { cn } from "@/shared/utils/cn";
-import type { PropertyFilters } from "../modules/properties/types/Filters.interface";
 import NoProperties from "../modules/properties/components/NoProperties";
-import useGetProperties from "@/modules/properties/hooks/useGetProperties";
 import Loading from "@/shared/components/Loading/Loading";
 import { useDebounce } from "@/shared/hooks/useDebounce";
+import Pagination from "@/shared/components/Pagination/Pagination";
+import useProperties from "@/shared/hooks/usePagination";
 
 const PropertiesPage = () => {
   const { t, i18n } = useTranslation();
-  const [showFiltersColumn, setShowFiltersColumn] = useState(false);
-  const { data, isFetching } = useGetProperties();
-  const [search, setSearch] = useState("");
-  const debounceSearch = useDebounce(search, 500);
-  const [filters, setFilters] = useState<PropertyFilters>({
-    status: "all",
-    rooms: "all",
-    bathrooms: "all",
-    currency: "all",
-    price: "",
-  });
   const locale = i18n.language;
   const formattedDate = dayjs()
     .locale(locale)
     .format(dateFormats[locale as Language]);
 
-  const properties = useMemo(() => {
-    return (data?.properties || []).filter((property) => {
-      return (
-        property.name.toLowerCase().includes(debounceSearch.toLowerCase()) &&
-        (property.status === filters.status || filters.status === "all") &&
-        (property.rooms.toString() === filters.rooms ||
-          filters.rooms === "all") &&
-        (property.bathrooms.toString() === filters.bathrooms ||
-          filters.bathrooms === "all") &&
-        (property.currency === filters.currency ||
-          filters.currency === "all") &&
-        (property.monthlyPayment >= parseInt(filters.price) ||
-          filters.price === "")
-      );
-    });
-  }, [filters, data, debounceSearch]);
+  const [search, setSearch] = useState("");
+  const debounceSearch = useDebounce(search, 500);
+  const [showFiltersColumn, setShowFiltersColumn] = useState(false);
+
+  const {
+    hasProperties,
+    properties,
+    filters,
+    setFilters,
+    setPage,
+    page,
+    totalPages,
+    isFetching,
+  } = useProperties({
+    debounceSearch,
+  });
 
   if (isFetching) {
     return <Loading className="static w-fll h-full bg-bg-2" />;
   }
 
-  return data?.hasProperties && !isFetching ? (
+  return hasProperties && !isFetching ? (
     <div className="animate-fade-in">
       <div className="flex flex-col gap-1 mb-5 lg:hidden">
         <h1 className="text-text-1 font-bold text-2xl">
@@ -116,6 +105,7 @@ const PropertiesPage = () => {
           <PropertyCard property={property} key={property.id} />
         ))}
       </div>
+      <Pagination totalPages={totalPages} page={page} setPage={setPage} />
     </div>
   ) : (
     <NoProperties />
