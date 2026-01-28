@@ -4,6 +4,8 @@ import {
   type IProperty,
 } from "../modules/properties/types/Property.interface";
 
+const date = 123
+
 export const propertiesMock: IProperty[] = [
   {
     id: "1b9e2f4a-8d6c-4c7a-9f3e-2a8b6d4e91c1",

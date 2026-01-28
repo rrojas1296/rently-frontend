@@ -15,7 +15,6 @@ const useLoginUser = () => {
     mutationKey: ["login-user"],
     mutationFn: (data: LoginUserDto) => loginUserService(data),
     onSuccess: () => {
-      console.log("Here");
       navigate("/dashboard", { replace: true });
     },
     onError: (err: AxiosError) => {
