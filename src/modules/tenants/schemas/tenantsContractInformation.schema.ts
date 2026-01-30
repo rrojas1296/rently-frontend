@@ -44,6 +44,7 @@ export const tenantsContractInformationControls: FormField<
     label: "NewTenant.contractInformation.form.entryDate.label",
     placeholder: "NewTenant.contractInformation.form.entryDate.placeholder",
     type: "date",
+    disablePast: true,
     required: true,
   },
   {
@@ -51,6 +52,7 @@ export const tenantsContractInformationControls: FormField<
     label: "NewTenant.contractInformation.form.exitDate.label",
     placeholder: "NewTenant.contractInformation.form.exitDate.placeholder",
     type: "date",
+    disablePast: true,
     required: false,
   },
   {

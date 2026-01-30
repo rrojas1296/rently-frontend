@@ -11,4 +11,7 @@ export const ENDPOINTS = {
     create: "/properties",
     get: "/properties",
   },
+  tenants: {
+    create: "/tenants",
+  },
 };

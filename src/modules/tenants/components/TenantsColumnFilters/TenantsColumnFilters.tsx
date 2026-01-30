@@ -84,13 +84,13 @@ const TenantsColumnFilters = ({ showFilters }: Props) => {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">
-              <span> {t("Tenants.filtersColumn.status.options.all")}</span>
+              {t("Tenants.filtersColumn.status.options.all")}
             </SelectItem>
             <SelectItem value={TenantStatusEnum.PAID}>
-              <span> {t("Tenants.filtersColumn.status.options.paid")}</span>
+              {t("Tenants.filtersColumn.status.options.paid")}
             </SelectItem>
             <SelectItem value={TenantStatusEnum.OVERDUE}>
-              <span> {t("Tenants.filtersColumn.status.options.overdue")}</span>
+              {t("Tenants.filtersColumn.status.options.overdue")}{" "}
             </SelectItem>
           </SelectContent>
         </Select>
@@ -108,11 +108,11 @@ const TenantsColumnFilters = ({ showFilters }: Props) => {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">
-              <span> {t("Tenants.filtersColumn.building.options.all")}</span>
+              {t("Tenants.filtersColumn.building.options.all")}
             </SelectItem>
             {buildingOptions.map((option) => (
               <SelectItem key={option.value} value={option.value}>
-                <span> {option.label}</span>
+                {option.label}
               </SelectItem>
             ))}
           </SelectContent>
@@ -137,7 +137,7 @@ const TenantsColumnFilters = ({ showFilters }: Props) => {
             </SelectItem>
             {nationalityOptions.map((option) => (
               <SelectItem key={option.value} value={option.value}>
-                <span>{option.label}</span>
+                {option.label}
               </SelectItem>
             ))}
           </SelectContent>

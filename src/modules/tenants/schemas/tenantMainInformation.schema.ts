@@ -71,6 +71,7 @@ export const tenantMainInformationControls: FormField<TenantMainInformationField
       label: "NewTenant.mainInformation.form.birthDate.label",
       required: true,
       type: "date",
+      disableFuture: true,
     },
     {
       name: "documentNumber",

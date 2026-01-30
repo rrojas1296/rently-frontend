@@ -19,9 +19,11 @@ interface Props extends ComponentProps<"input"> {
   label: string;
   placeholder?: string;
   options?: FormFieldOption[];
-  error?: string;
   required: boolean;
+  error?: string;
   control?: Control<any>;
+  disableFuture?: boolean;
+  disablePast?: boolean;
 }
 
 const FormField = ({
@@ -34,6 +36,8 @@ const FormField = ({
   required,
   name,
   className,
+  disableFuture,
+  disablePast,
   ...other
 }: Props) => {
   const generateControl = () => {
@@ -64,7 +68,6 @@ const FormField = ({
                   <SelectValue placeholder={placeholder} />
                 </SelectTrigger>
                 <SelectContent>
-                  k{" "}
                   {options?.map((opt) => (
                     <SelectItem key={opt.value} value={opt.value}>
                       <span> {opt.label}</span>
@@ -86,6 +89,8 @@ const FormField = ({
                 error={error}
                 date={field.value}
                 setDate={field.onChange}
+                disableFuture={disableFuture}
+                disablePast={disablePast}
               />
             )}
           />

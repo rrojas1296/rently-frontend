@@ -53,22 +53,16 @@ const FiltersColumn = ({ filters, setFilters, showFilters }: Props) => {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">
-              <span> {t("Properties.filtersColumn.status.options.all")}</span>
+              {t("Properties.filtersColumn.status.options.all")}
             </SelectItem>
             <SelectItem value={PropertyStatusEnum.AVAILABLE}>
-              <span>
-                {t("Properties.filtersColumn.status.options.available")}
-              </span>
+              {t("Properties.filtersColumn.status.options.available")}
             </SelectItem>
             <SelectItem value={PropertyStatusEnum.OCCUPIED}>
-              <span>
-                {t("Properties.filtersColumn.status.options.occupied")}
-              </span>
+              {t("Properties.filtersColumn.status.options.occupied")}
             </SelectItem>
             <SelectItem value={PropertyStatusEnum.MAINTENANCE}>
-              <span>
-                {t("Properties.filtersColumn.status.options.maintenance")}
-              </span>
+              {t("Properties.filtersColumn.status.options.maintenance")}
             </SelectItem>
           </SelectContent>
         </Select>
@@ -88,16 +82,16 @@ const FiltersColumn = ({ filters, setFilters, showFilters }: Props) => {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">
-              <span> {t("Properties.filtersColumn.currency.options.all")}</span>
+              {t("Properties.filtersColumn.currency.options.all")}
             </SelectItem>
             <SelectItem value={PropertyCurrencyEnum.PEN}>
-              <span> {t("Properties.filtersColumn.currency.options.PEN")}</span>
+              {t("Properties.filtersColumn.currency.options.PEN")}
             </SelectItem>
             <SelectItem value={PropertyCurrencyEnum.USD}>
-              <span> {t("Properties.filtersColumn.currency.options.USD")}</span>
+              {t("Properties.filtersColumn.currency.options.USD")}
             </SelectItem>
             <SelectItem value={PropertyCurrencyEnum.EUR}>
-              <span> {t("Properties.filtersColumn.currency.options.EUR")}</span>
+              {t("Properties.filtersColumn.currency.options.EUR")}
             </SelectItem>
           </SelectContent>
         </Select>
@@ -115,11 +109,11 @@ const FiltersColumn = ({ filters, setFilters, showFilters }: Props) => {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">
-              <span> {t("Properties.filtersColumn.rooms.all")}</span>
+              {t("Properties.filtersColumn.rooms.all")}
             </SelectItem>
             {numberOptions.map((option) => (
               <SelectItem key={option.value} value={option.value}>
-                <span> {option.label}</span>
+                {option.label}
               </SelectItem>
             ))}
           </SelectContent>
@@ -138,11 +132,11 @@ const FiltersColumn = ({ filters, setFilters, showFilters }: Props) => {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">
-              <span> {t("Properties.filtersColumn.bathrooms.all")}</span>
+              {t("Properties.filtersColumn.bathrooms.all")}
             </SelectItem>
             {numberOptions.map((option) => (
               <SelectItem key={option.value} value={option.value}>
-                <span> {option.label}</span>
+                {option.label}
               </SelectItem>
             ))}
           </SelectContent>

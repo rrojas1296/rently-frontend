@@ -3,15 +3,17 @@ import {
   tenantsContractInformationControls,
   tenantsContractInformationSchema,
   type TenantsContractInformationSchema,
-} from "../../schemas/tenantsContractInformation.schema";
+} from "@/modules/tenants/schemas/tenantsContractInformation.schema";
 import { useTranslation } from "react-i18next";
 import { zodResolver } from "@hookform/resolvers/zod";
 import FormField from "@/shared/components/FormField/FormField";
 import { Link } from "react-router";
 import { Button } from "rently-components";
-import { useMemo } from "react";
-import { propertiesMock } from "@/data/properties";
 import { useTenantsStore } from "../../store/useTenantsStore";
+import useGetProperties from "@/modules/properties/hooks/useGetProperties";
+import useCreateTenant from "../../hooks/useCreateTenant";
+import type { CreateTenantDto } from "../../dtos/CreateTenant.dto";
+import { LoaderIcon } from "lucide-react";
 
 const TenantsContractInformationForm = () => {
   const { t } = useTranslation();
@@ -25,21 +27,22 @@ const TenantsContractInformationForm = () => {
   } = useForm({
     resolver: zodResolver(tenantsContractInformationSchema),
   });
+  const { mutate } = useCreateTenant();
 
-  const properties = useMemo(() => {
-    return propertiesMock.map((p) => ({
-      label: p.name,
-      value: p.id,
-    }));
-  }, []);
+  const { data, isPending } = useGetProperties();
+
+  const properties = data?.properties.map((p) => ({
+    value: p.id,
+    label: p.name,
+  }));
 
   const handleRegisterTenant = (data: TenantsContractInformationSchema) => {
-    const body = {
+    const body: CreateTenantDto = {
       ...form!.step1,
       ...form!.step2,
       ...data,
     };
-    console.log({ body });
+    mutate(body);
   };
 
   return (
@@ -52,7 +55,15 @@ const TenantsContractInformationForm = () => {
       </h1>
       <div className="grid gap-5 w-full mt-5 lg:grid-cols-2">
         {tenantsContractInformationControls.map(
-          ({ name, label, placeholder, type, required }) => {
+          ({
+            name,
+            label,
+            placeholder,
+            type,
+            required,
+            disablePast,
+            disableFuture,
+          }) => {
             const errorTranslated = errors[name]?.message
               ? t(errors[name].message)
               : "";
@@ -66,6 +77,8 @@ const TenantsContractInformationForm = () => {
                 options={properties}
                 control={control}
                 error={errorTranslated}
+                disableFuture={disableFuture}
+                disablePast={disablePast}
                 {...register(name, {
                   valueAsNumber: type === "number",
                 })}
@@ -81,6 +94,7 @@ const TenantsContractInformationForm = () => {
             </Button>
           </Link>
           <Button variant="filled" type="submit">
+            {isPending && <LoaderIcon className="animate-spin h-5 w-5" />}
             {t("NewTenant.contractInformation.buttons.finish")}
           </Button>
         </div>

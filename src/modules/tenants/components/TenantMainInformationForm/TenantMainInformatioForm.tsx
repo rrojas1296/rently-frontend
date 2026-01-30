@@ -39,7 +39,15 @@ const TenantMainInformationForm = () => {
       </h1>
       <div className="grid gap-5 w-full mt-5 lg:grid-cols-2">
         {tenantMainInformationControls.map(
-          ({ name, label, placeholder, type, required, options }) => {
+          ({
+            name,
+            label,
+            placeholder,
+            type,
+            required,
+            options,
+            disableFuture,
+          }) => {
             let optionsTranslated = options?.map((opt) => ({
               ...opt,
               label: t(opt.label),
@@ -69,6 +77,7 @@ const TenantMainInformationForm = () => {
                 options={optionsTranslated}
                 control={control}
                 error={errorTranslated}
+                disableFuture={disableFuture}
                 {...register(name, {
                   valueAsNumber: type === "number",
                 })}

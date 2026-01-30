@@ -20,4 +20,6 @@ export interface FormField<T> {
   placeholder?: string;
   required: boolean;
   options?: FormFieldOption[];
+  disableFuture?: boolean;
+  disablePast?: boolean;
 }
