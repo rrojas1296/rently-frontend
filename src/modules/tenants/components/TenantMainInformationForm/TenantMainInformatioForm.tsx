@@ -13,10 +13,12 @@ import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
 import { TenantNationalityEnum } from "../../types/Tenants.enum";
 import type { TenantNationality } from "../../types/Tenant.interface";
 import type { Language } from "@/shared/constants/dateFormats";
+import { useTenantsStore } from "../../store/useTenantsStore";
 
 const TenantMainInformationForm = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const { setStep1 } = useTenantsStore();
   const {
     handleSubmit,
     formState: { errors },
@@ -27,7 +29,7 @@ const TenantMainInformationForm = () => {
   });
 
   const handlerNextStep = (data: TenantMainInformationSchema) => {
-    console.log({ data });
+    setStep1(data);
     navigate("/tenants/new/2");
   };
   return (

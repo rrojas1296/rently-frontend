@@ -66,18 +66,18 @@ export const tenantMainInformationControls: FormField<TenantMainInformationField
       ],
     },
     {
-      name: "documentNumber",
-      placeholder: "NewTenant.mainInformation.form.documentNumber.placeholder",
-      label: "NewTenant.mainInformation.form.documentNumber.label",
-      required: true,
-      type: "number",
-    },
-    {
       name: "birthDate",
       placeholder: "NewTenant.mainInformation.form.birthDate.placeholder",
       label: "NewTenant.mainInformation.form.birthDate.label",
       required: true,
       type: "date",
+    },
+    {
+      name: "documentNumber",
+      placeholder: "NewTenant.mainInformation.form.documentNumber.placeholder",
+      label: "NewTenant.mainInformation.form.documentNumber.label",
+      required: true,
+      type: "number",
     },
 
     {

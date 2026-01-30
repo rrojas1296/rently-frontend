@@ -9,10 +9,12 @@ import {
   tenantsContactInformationControls,
   type TenantsContactInformationSchema,
 } from "../../schemas/tenantsContactInformation.schema";
+import { useTenantsStore } from "../../store/useTenantsStore";
 
 const TenantsContactInformationForm = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { setStep2 } = useTenantsStore();
   const {
     register,
     handleSubmit,
@@ -27,8 +29,8 @@ const TenantsContactInformationForm = () => {
   });
 
   const handlerNextStep = (data: TenantsContactInformationSchema) => {
+    setStep2(data);
     navigate("/tenants/new/3");
-    console.log({ data });
   };
   return (
     <form onSubmit={handleSubmit(handlerNextStep)}>

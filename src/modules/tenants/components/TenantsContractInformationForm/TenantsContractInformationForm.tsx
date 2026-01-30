@@ -11,9 +11,11 @@ import { Link } from "react-router";
 import { Button } from "rently-components";
 import { useMemo } from "react";
 import { propertiesMock } from "@/data/properties";
+import { useTenantsStore } from "../../store/useTenantsStore";
 
 const TenantsContractInformationForm = () => {
   const { t } = useTranslation();
+  const { form } = useTenantsStore();
 
   const {
     register,
@@ -32,7 +34,12 @@ const TenantsContractInformationForm = () => {
   }, []);
 
   const handleRegisterTenant = (data: TenantsContractInformationSchema) => {
-    console.log({ data });
+    const body = {
+      ...form!.step1,
+      ...form!.step2,
+      ...data,
+    };
+    console.log({ body });
   };
 
   return (

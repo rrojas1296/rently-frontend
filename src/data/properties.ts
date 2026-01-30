@@ -4,8 +4,6 @@ import {
   type IProperty,
 } from "../modules/properties/types/Property.interface";
 
-const date = 123
-
 export const propertiesMock: IProperty[] = [
   {
     id: "1b9e2f4a-8d6c-4c7a-9f3e-2a8b6d4e91c1",
@@ -15,7 +13,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 2,
     bathrooms: 1,
     area: 75,
-    price: 550,
+    monthlyPayment: 550,
     currency: PropertyCurrencyEnum.PEN,
   },
   {
@@ -26,7 +24,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 1,
     bathrooms: 1,
     area: 60,
-    price: 450,
+    monthlyPayment: 450,
     currency: PropertyCurrencyEnum.USD,
     tenantName: "Carlos Rivas",
   },
@@ -38,7 +36,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 3,
     bathrooms: 2,
     area: 120,
-    price: 900,
+    monthlyPayment: 900,
     currency: PropertyCurrencyEnum.PEN,
   },
   {
@@ -49,7 +47,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 1,
     bathrooms: 1,
     area: 40,
-    price: 380,
+    monthlyPayment: 380,
     currency: PropertyCurrencyEnum.PEN,
   },
   {
@@ -60,7 +58,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 3,
     bathrooms: 3,
     area: 150,
-    price: 1500,
+    monthlyPayment: 1500,
     currency: PropertyCurrencyEnum.USD,
     tenantName: "Ana Torres",
   },
@@ -72,7 +70,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 2,
     bathrooms: 2,
     area: 95,
-    price: 750,
+    monthlyPayment: 750,
     currency: PropertyCurrencyEnum.PEN,
   },
   {
@@ -83,7 +81,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 2,
     bathrooms: 1,
     area: 80,
-    price: 600,
+    monthlyPayment: 600,
     currency: PropertyCurrencyEnum.EUR,
   },
   {
@@ -94,7 +92,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 4,
     bathrooms: 2,
     area: 140,
-    price: 1100,
+    monthlyPayment: 1100,
     currency: PropertyCurrencyEnum.PEN,
     tenantName: "Luis Ramirez",
   },
@@ -106,7 +104,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 2,
     bathrooms: 1,
     area: 70,
-    price: 500,
+    monthlyPayment: 500,
     currency: PropertyCurrencyEnum.PEN,
   },
   {
@@ -117,7 +115,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 3,
     bathrooms: 3,
     area: 180,
-    price: 2500,
+    monthlyPayment: 2500,
     currency: PropertyCurrencyEnum.USD,
     tenantName: "María Lopez",
   },
@@ -129,7 +127,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 3,
     bathrooms: 2,
     area: 130,
-    price: 850,
+    monthlyPayment: 850,
     currency: PropertyCurrencyEnum.PEN,
   },
   {
@@ -140,7 +138,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 2,
     bathrooms: 1,
     area: 90,
-    price: 700,
+    monthlyPayment: 700,
     currency: PropertyCurrencyEnum.EUR,
   },
   {
@@ -151,7 +149,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 2,
     bathrooms: 2,
     area: 85,
-    price: 620,
+    monthlyPayment: 620,
     currency: PropertyCurrencyEnum.PEN,
   },
   {
@@ -162,7 +160,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 1,
     bathrooms: 1,
     area: 55,
-    price: 430,
+    monthlyPayment: 430,
     currency: PropertyCurrencyEnum.PEN,
     tenantName: "Diego Herrera",
   },
@@ -174,7 +172,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 4,
     bathrooms: 2,
     area: 160,
-    price: 1000,
+    monthlyPayment: 1000,
     currency: PropertyCurrencyEnum.USD,
   },
   {
@@ -185,7 +183,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 1,
     bathrooms: 1,
     area: 50,
-    price: 450,
+    monthlyPayment: 450,
     currency: PropertyCurrencyEnum.PEN,
   },
   {
@@ -196,7 +194,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 5,
     bathrooms: 4,
     area: 210,
-    price: 3200,
+    monthlyPayment: 3200,
     currency: PropertyCurrencyEnum.USD,
     tenantName: "Fernanda Soto",
   },
@@ -208,7 +206,7 @@ export const propertiesMock: IProperty[] = [
     rooms: 3,
     bathrooms: 2,
     area: 115,
-    price: 780,
+    monthlyPayment: 780,
     currency: PropertyCurrencyEnum.PEN,
   },
 ];

@@ -1,4 +1,13 @@
-import { Input, PhoneInput, Select, Switch } from "rently-components";
+import {
+  Input,
+  PhoneInput,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  Switch,
+} from "rently-components";
 import type { FormFieldOption, FormFieldType } from "../../types/formField";
 import type { ComponentProps } from "react";
 import { Controller, type Control } from "react-hook-form";
@@ -50,13 +59,18 @@ const FormField = ({
             name={name ?? ""}
             control={control}
             render={({ field }) => (
-              <Select
-                onChange={field.onChange}
-                value={field.value ?? ""}
-                options={options ?? []}
-                placeholder={placeholder ?? ""}
-                error={error}
-              />
+              <Select onValueChange={field.onChange} value={field.value}>
+                <SelectTrigger>
+                  <SelectValue placeholder={placeholder} />
+                </SelectTrigger>
+                <SelectContent>
+                  {options?.map((opt) => (
+                    <SelectItem key={opt.value} value={opt.value}>
+                      <span> {opt.label}</span>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             )}
           />
         );
