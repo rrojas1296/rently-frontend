@@ -1,4 +1,12 @@
-import { Button, DatePicker, Select } from "rently-components";
+import {
+  Button,
+  DatePicker,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "rently-components";
 import {
   type TenantNationality,
   type TenantStatus,
@@ -67,28 +75,25 @@ const TenantsColumnFilters = ({ showFilters }: Props) => {
         </span>
         <Select
           value={filters.status}
-          className="w-45"
-          onChange={(val) => {
-            setFilters({
-              ...filters,
-              status: val as TenantStatus | "all",
-            });
-          }}
-          options={[
-            {
-              label: t("Tenants.filtersColumn.status.options.all"),
-              value: "all",
-            },
-            {
-              label: t("Tenants.filtersColumn.status.options.paid"),
-              value: TenantStatusEnum.PAID,
-            },
-            {
-              label: t("Tenants.filtersColumn.status.options.overdue"),
-              value: TenantStatusEnum.OVERDUE,
-            },
-          ]}
-        />
+          onValueChange={(val: TenantStatus) =>
+            setFilters({ ...filters, status: val })
+          }
+        >
+          <SelectTrigger className="w-45">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">
+              <span> {t("Tenants.filtersColumn.status.options.all")}</span>
+            </SelectItem>
+            <SelectItem value={TenantStatusEnum.PAID}>
+              <span> {t("Tenants.filtersColumn.status.options.paid")}</span>
+            </SelectItem>
+            <SelectItem value={TenantStatusEnum.OVERDUE}>
+              <span> {t("Tenants.filtersColumn.status.options.overdue")}</span>
+            </SelectItem>
+          </SelectContent>
+        </Select>
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-sm text-text-1">
@@ -96,21 +101,22 @@ const TenantsColumnFilters = ({ showFilters }: Props) => {
         </span>
         <Select
           value={filters.building}
-          className="w-45"
-          onChange={(val) => {
-            setFilters({
-              ...filters,
-              building: val as string | "all",
-            });
-          }}
-          options={[
-            {
-              label: t("Tenants.filtersColumn.building.options.all"),
-              value: "all",
-            },
-            ...buildingOptions,
-          ]}
-        />
+          onValueChange={(val) => setFilters({ ...filters, building: val })}
+        >
+          <SelectTrigger className="w-45">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">
+              <span> {t("Tenants.filtersColumn.building.options.all")}</span>
+            </SelectItem>
+            {buildingOptions.map((option) => (
+              <SelectItem key={option.value} value={option.value}>
+                <span> {option.label}</span>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-sm text-text-1">
@@ -118,21 +124,24 @@ const TenantsColumnFilters = ({ showFilters }: Props) => {
         </span>
         <Select
           value={filters.nationality}
-          className="w-45"
-          onChange={(val) => {
-            setFilters({
-              ...filters,
-              nationality: val as TenantNationality | "all",
-            });
-          }}
-          options={[
-            {
-              label: t("Tenants.filtersColumn.nationality.options.all"),
-              value: "all",
-            },
-            ...nationalityOptions,
-          ]}
-        />
+          onValueChange={(val: TenantNationality) =>
+            setFilters({ ...filters, nationality: val })
+          }
+        >
+          <SelectTrigger className="w-45">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">
+              {t("Tenants.filtersColumn.nationality.options.all")}
+            </SelectItem>
+            {nationalityOptions.map((option) => (
+              <SelectItem key={option.value} value={option.value}>
+                <span>{option.label}</span>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-sm text-text-1">Fecha de ingreso</span>

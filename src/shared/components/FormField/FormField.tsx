@@ -8,11 +8,11 @@ import {
   SelectValue,
   Switch,
 } from "rently-components";
-import type { FormFieldOption, FormFieldType } from "../../types/formField";
 import type { ComponentProps } from "react";
 import { Controller, type Control } from "react-hook-form";
 import { DatePicker } from "rently-components";
 import { cn } from "@/shared/utils/cn";
+import type { FormFieldOption, FormFieldType } from "@/shared/types/formField";
 
 interface Props extends ComponentProps<"input"> {
   type: FormFieldType;
@@ -64,6 +64,7 @@ const FormField = ({
                   <SelectValue placeholder={placeholder} />
                 </SelectTrigger>
                 <SelectContent>
+                  k{" "}
                   {options?.map((opt) => (
                     <SelectItem key={opt.value} value={opt.value}>
                       <span> {opt.label}</span>

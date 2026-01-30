@@ -1,5 +1,13 @@
 import { useTranslation } from "react-i18next";
-import { Button, Input, Select } from "rently-components";
+import {
+  Button,
+  Input,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "rently-components";
 import { cn } from "@/shared/utils/cn";
 import {
   PropertyCurrencyEnum,
@@ -30,108 +38,120 @@ const FiltersColumn = ({ filters, setFilters, showFilters }: Props) => {
         "hidden lg:flex gap-5 bg-bg-1 px-5 rounded-lg py-5 border border-border-2 items-center mb-5 flex-wrap",
       )}
     >
-      <div className="flex flex-col gap-px">
-        <label htmlFor="status" className="text-sm text-text-1">
+      <div className="flex flex-col gap-2">
+        <span className="text-sm text-text-1">
           {t("Properties.filtersColumn.status.label")}
-        </label>
+        </span>
         <Select
-          placeholder={t("Properties.filtersColumn.status.placeholder")}
-          className="w-44"
           value={filters.status}
-          onChange={(value) =>
-            setFilters({ ...filters, status: value as PropertyStatus })
+          onValueChange={(val: PropertyStatus | "all") =>
+            setFilters({ ...filters, status: val })
           }
-          options={[
-            {
-              label: t("Properties.filtersColumn.status.options.all"),
-              value: "all",
-            },
-            {
-              label: t("Properties.filtersColumn.status.options.available"),
-              value: PropertyStatusEnum.AVAILABLE,
-            },
-            {
-              label: t("Properties.filtersColumn.status.options.occupied"),
-              value: PropertyStatusEnum.OCCUPIED,
-            },
-            {
-              label: t("Properties.filtersColumn.status.options.maintenance"),
-              value: PropertyStatusEnum.MAINTENANCE,
-            },
-          ]}
-        />
+        >
+          <SelectTrigger className="w-45">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">
+              <span> {t("Properties.filtersColumn.status.options.all")}</span>
+            </SelectItem>
+            <SelectItem value={PropertyStatusEnum.AVAILABLE}>
+              <span>
+                {t("Properties.filtersColumn.status.options.available")}
+              </span>
+            </SelectItem>
+            <SelectItem value={PropertyStatusEnum.OCCUPIED}>
+              <span>
+                {t("Properties.filtersColumn.status.options.occupied")}
+              </span>
+            </SelectItem>
+            <SelectItem value={PropertyStatusEnum.MAINTENANCE}>
+              <span>
+                {t("Properties.filtersColumn.status.options.maintenance")}
+              </span>
+            </SelectItem>
+          </SelectContent>
+        </Select>
       </div>
-      <div className="flex flex-col gap-px">
-        <label htmlFor="status" className="text-sm text-text-1">
+      <div className="flex flex-col gap-2">
+        <span className="text-sm text-text-1">
           {t("Properties.filtersColumn.currency.label")}
-        </label>
+        </span>
         <Select
-          placeholder={t("Properties.filtersColumn.currency.placeholder")}
-          className="w-44"
           value={filters.currency}
-          onChange={(value) =>
-            setFilters({ ...filters, currency: value as PropertyCurrency })
+          onValueChange={(val: PropertyCurrency | "all") =>
+            setFilters({ ...filters, currency: val })
           }
-          options={[
-            {
-              label: t("Properties.filtersColumn.currency.options.all"),
-              value: "all",
-            },
-            {
-              label: t("Properties.filtersColumn.currency.options.PEN"),
-              value: PropertyCurrencyEnum.PEN,
-            },
-            {
-              label: t("Properties.filtersColumn.currency.options.USD"),
-              value: PropertyCurrencyEnum.USD,
-            },
-            {
-              label: t("Properties.filtersColumn.currency.options.EUR"),
-              value: PropertyCurrencyEnum.EUR,
-            },
-          ]}
-        />
+        >
+          <SelectTrigger className="w-45">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">
+              <span> {t("Properties.filtersColumn.currency.options.all")}</span>
+            </SelectItem>
+            <SelectItem value={PropertyCurrencyEnum.PEN}>
+              <span> {t("Properties.filtersColumn.currency.options.PEN")}</span>
+            </SelectItem>
+            <SelectItem value={PropertyCurrencyEnum.USD}>
+              <span> {t("Properties.filtersColumn.currency.options.USD")}</span>
+            </SelectItem>
+            <SelectItem value={PropertyCurrencyEnum.EUR}>
+              <span> {t("Properties.filtersColumn.currency.options.EUR")}</span>
+            </SelectItem>
+          </SelectContent>
+        </Select>
       </div>
-      <div className="flex flex-col gap-px">
-        <label htmlFor="rooms" className="text-sm text-text-1">
+      <div className="flex flex-col gap-2">
+        <span className="text-sm text-text-1">
           {t("Properties.filtersColumn.rooms.label")}
-        </label>
+        </span>
         <Select
-          placeholder={t("Properties.filtersColumn.rooms.placeholder")}
-          className="w-44"
           value={filters.rooms}
-          onChange={(value) => setFilters({ ...filters, rooms: value })}
-          options={[
-            {
-              label: t("Properties.filtersColumn.rooms.all"),
-              value: "all",
-            },
-            ...numberOptions,
-          ]}
-        />
+          onValueChange={(val) => setFilters({ ...filters, rooms: val })}
+        >
+          <SelectTrigger className="w-45">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">
+              <span> {t("Properties.filtersColumn.rooms.all")}</span>
+            </SelectItem>
+            {numberOptions.map((option) => (
+              <SelectItem key={option.value} value={option.value}>
+                <span> {option.label}</span>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
-      <div className="flex flex-col gap-px">
-        <label htmlFor="bathrooms" className="text-sm text-text-1">
+      <div className="flex flex-col gap-2">
+        <span className="text-sm text-text-1">
           {t("Properties.filtersColumn.bathrooms.label")}
-        </label>
+        </span>
         <Select
-          placeholder={t("Properties.filtersColumn.bathrooms.placeholder")}
-          className="w-44"
           value={filters.bathrooms}
-          onChange={(value) => setFilters({ ...filters, bathrooms: value })}
-          options={[
-            {
-              label: t("Properties.filtersColumn.bathrooms.all"),
-              value: "all",
-            },
-            ...numberOptions,
-          ]}
-        />
+          onValueChange={(val) => setFilters({ ...filters, bathrooms: val })}
+        >
+          <SelectTrigger className="w-45">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">
+              <span> {t("Properties.filtersColumn.bathrooms.all")}</span>
+            </SelectItem>
+            {numberOptions.map((option) => (
+              <SelectItem key={option.value} value={option.value}>
+                <span> {option.label}</span>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
-      <div className="flex flex-col gap-px">
-        <label htmlFor="price" className="text-sm text-text-1">
+      <div className="flex flex-col gap-2">
+        <span className="text-sm text-text-1">
           {t("Properties.filtersColumn.price.label")}
-        </label>
+        </span>
         <Input
           placeholder={t("Properties.filtersColumn.price.placeholder")}
           value={filters.price}
