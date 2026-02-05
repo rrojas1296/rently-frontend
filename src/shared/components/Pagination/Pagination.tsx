@@ -11,7 +11,7 @@ interface Props {
 const Pagination = ({ totalPages, page, setPage }: Props) => {
   const pagesArray = Array.from({ length: totalPages }, (_, index) => index);
   return (
-    <div className="flex gap-2 justify-self-center mt-6">
+    <div className="flex gap-2 justify-self-center mt-6 items-center justify-center">
       <Button
         variant="outlined"
         className={cn(

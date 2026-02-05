@@ -1,6 +1,7 @@
 export enum TenantStatusEnum {
   PAID = "PAID",
-  OVERDUE = "OVERDUE",
+  PENDING = "PENDING",
+  DUE_SOON = "DUE_SOON",
 }
 
 export enum TenantDocumentTypeEnum {

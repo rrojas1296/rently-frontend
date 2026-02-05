@@ -17,15 +17,15 @@ const TenantCard = ({ tenant, className, style }: Props) => {
   const locale = i18n.language as Language;
   const {
     name,
-    apartmentName,
-    status,
+    propertyName,
+    paymentStatus,
     email,
     phone,
-    curreny,
     entryDate,
     nationality,
+    currency,
     monthlyPayment,
-    imageUrl,
+    avatarUrl,
   } = tenant;
   const nameInitials = name
     .split(" ")
@@ -34,23 +34,24 @@ const TenantCard = ({ tenant, className, style }: Props) => {
     .join("")
     .toUpperCase();
   const badgeTypes: Record<TenantStatus, BadgeType> = {
-    OVERDUE: "error",
     PAID: "success",
+    PENDING: "warning",
+    DUE_SOON: "warning",
   };
 
   return (
     <div
       className={cn(
-        "p-5 bg-bg-1 border-border-2 border rounded-lg flex flex-col gap-4",
+        "p-5 bg-bg-1 border-border-2 border rounded-lg flex flex-col gap-4 h-fit",
         className,
       )}
       style={style}
     >
       <div className="flex justify-between items-start">
         <div className="flex items-start gap-2">
-          {imageUrl ? (
+          {avatarUrl ? (
             <img
-              src={imageUrl}
+              src={avatarUrl}
               className="w-10.5 h-10.5 rounded-lg object-cover"
               alt="User profile"
             />
@@ -61,7 +62,7 @@ const TenantCard = ({ tenant, className, style }: Props) => {
           )}
           <div className="flex flex-col gap-px">
             <h1 className="font-bold text-text-1 text-base">{name}</h1>
-            <p className="text-text-2 text-sm">{apartmentName}</p>
+            <p className="text-text-2 text-sm">{propertyName}</p>
           </div>
         </div>
         <Button variant="icon">
@@ -69,8 +70,8 @@ const TenantCard = ({ tenant, className, style }: Props) => {
         </Button>
       </div>
       <Badge
-        type={badgeTypes[status]}
-        text={t(`Tenants.tenantsCard.status.${status.toLowerCase()}`)}
+        type={badgeTypes[paymentStatus]}
+        text={t(`Tenants.tenantsCard.status.${paymentStatus.toLowerCase()}`)}
       />
       <hr className="w-full text-border-2" />
       <div className="grid grid-cols-12 text-sm gap-y-2">
@@ -104,7 +105,7 @@ const TenantCard = ({ tenant, className, style }: Props) => {
         </p>
         <p className="text-text-1 font-bold text-3xl flex gap-2">
           <span> {monthlyPayment}</span>
-          <span> {curreny}</span>
+          <span> {currency}</span>
         </p>
       </div>
     </div>

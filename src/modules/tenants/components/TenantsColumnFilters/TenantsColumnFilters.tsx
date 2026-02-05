@@ -89,8 +89,11 @@ const TenantsColumnFilters = ({ showFilters }: Props) => {
             <SelectItem value={TenantStatusEnum.PAID}>
               {t("Tenants.filtersColumn.status.options.paid")}
             </SelectItem>
-            <SelectItem value={TenantStatusEnum.OVERDUE}>
-              {t("Tenants.filtersColumn.status.options.overdue")}{" "}
+            <SelectItem value={TenantStatusEnum.DUE_SOON}>
+              {t("Tenants.filtersColumn.status.options.dueSoon")}
+            </SelectItem>
+            <SelectItem value={TenantStatusEnum.PENDING}>
+              {t("Tenants.filtersColumn.status.options.pending")}
             </SelectItem>
           </SelectContent>
         </Select>

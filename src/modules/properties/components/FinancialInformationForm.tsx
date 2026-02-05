@@ -31,6 +31,7 @@ const FinancialInformationForm = () => {
       ...form!.step2,
       ...data,
     };
+    console.log({ body });
     mutate(body);
   };
   return (

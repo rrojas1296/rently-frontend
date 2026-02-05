@@ -14,6 +14,7 @@ import useGetProperties from "@/modules/properties/hooks/useGetProperties";
 import useCreateTenant from "../../hooks/useCreateTenant";
 import type { CreateTenantDto } from "../../dtos/CreateTenant.dto";
 import { LoaderIcon } from "lucide-react";
+import useGetAvailableProperties from "@/modules/properties/hooks/useGetAvailableProperties";
 
 const TenantsContractInformationForm = () => {
   const { t } = useTranslation();
@@ -29,9 +30,9 @@ const TenantsContractInformationForm = () => {
   });
   const { mutate } = useCreateTenant();
 
-  const { data, isPending } = useGetProperties();
+  const { data, isPending } = useGetAvailableProperties();
 
-  const properties = data?.properties.map((p) => ({
+  const properties = data?.map((p) => ({
     value: p.id,
     label: p.name,
   }));
@@ -42,6 +43,7 @@ const TenantsContractInformationForm = () => {
       ...form!.step2,
       ...data,
     };
+    console.log({ body });
     mutate(body);
   };
 

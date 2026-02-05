@@ -12,7 +12,7 @@ export interface CreateTenantDto {
   property: string;
   paymentDay: number;
   documentType: TenantDocumentType;
-  documentNumber: number;
+  documentNumber: string;
   birthDate: Date;
   nationality: TenantNationality;
   entryDate: Date;

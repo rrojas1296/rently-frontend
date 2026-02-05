@@ -10,8 +10,10 @@ export const ENDPOINTS = {
   properties: {
     create: "/properties",
     get: "/properties",
+    getAvailable: "/properties/available",
   },
   tenants: {
     create: "/tenants",
+    getAll: "/tenants",
   },
 };

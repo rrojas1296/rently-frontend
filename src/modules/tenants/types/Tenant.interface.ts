@@ -1,6 +1,7 @@
 import type { PropertyCurrency } from "../../properties/types/Property.interface";
+import type { TenantDocumentTypeEnum } from "./Tenants.enum";
 
-export type TenantStatus = "PAID" | "OVERDUE";
+export type TenantStatus = "PAID" | "PENDING" | "DUE_SOON";
 
 export type TenantDocumentType = "DNI" | "PASSPORT";
 
@@ -44,13 +45,18 @@ export type TenantNationality =
 export interface ITenant {
   id: string;
   name: string;
-  apartmentName: string;
-  status: TenantStatus;
+  paymentStatus: TenantStatus;
   nationality: TenantNationality;
   email: string;
   phone: string;
   entryDate: string;
+  exitDate?: string;
+  documentType: TenantDocumentTypeEnum;
+  documentNumber: string;
+  emergencyPhone?: string;
+  paymentDay: number;
   monthlyPayment: number;
-  curreny: PropertyCurrency;
-  imageUrl?: string;
+  currency: PropertyCurrency;
+  avatarUrl?: string;
+  propertyName: string;
 }

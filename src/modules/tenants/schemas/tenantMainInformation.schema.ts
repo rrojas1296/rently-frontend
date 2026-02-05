@@ -15,7 +15,7 @@ export const tenantMainInformationSchema = z.object({
   documentType: z.enum(TenantDocumentTypeEnum, {
     error: "NewTenant.mainInformation.form.documentType.errors.required",
   }),
-  documentNumber: z.number({
+  documentNumber: z.string({
     error: "NewTenant.mainInformation.form.documentNumber.errors.required",
   }),
   birthDate: z.date({
@@ -78,7 +78,7 @@ export const tenantMainInformationControls: FormField<TenantMainInformationField
       placeholder: "NewTenant.mainInformation.form.documentNumber.placeholder",
       label: "NewTenant.mainInformation.form.documentNumber.label",
       required: true,
-      type: "number",
+      type: "string",
     },
 
     {

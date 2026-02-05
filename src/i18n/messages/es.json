@@ -422,7 +422,8 @@
       "monthlyPayment": "Pago mensual",
       "status": {
         "paid": "Al dia",
-        "overdue": "Atrasado"
+        "pending": "Pendiente",
+        "due_soon": "Vence pronto"
       }
     },
     "filtersColumn": {
@@ -431,7 +432,8 @@
         "options": {
           "all": "Todos",
           "paid": "Al dia",
-          "overdue": "Atrasado"
+          "dueSoon": "Vence pronto",
+          "pending": "Pendiente"
         }
       },
       "building": {
