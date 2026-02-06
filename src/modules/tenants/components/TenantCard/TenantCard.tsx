@@ -3,9 +3,9 @@ import dayjs from "dayjs";
 import type { ITenant, TenantStatus } from "../../types/Tenant.interface";
 import { CalendarIcon, EllipsisVerticalIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
 import type { Language } from "@/shared/constants/dateFormats";
 import { cn } from "@/shared/utils/cn";
+import { tenantNationality } from "../../constants/nationality";
 
 interface Props {
   tenant: ITenant;
@@ -79,7 +79,11 @@ const TenantCard = ({ tenant, className, style }: Props) => {
           {t("Tenants.tenantsCard.information.nationality")}
         </span>
         <span className="col-span-7">
-          {TENANT_NATIONALITY_LABELS[nationality][locale]}
+          {
+            tenantNationality.find((nat) => nat.value === nationality)?.label[
+              locale
+            ]
+          }
         </span>
         <span className="text-text-2 col-span-5">
           {t("Tenants.tenantsCard.information.email")}

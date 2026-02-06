@@ -1,7 +1,4 @@
-import type {
-  TenantDocumentType,
-  TenantNationality,
-} from "../types/Tenant.interface";
+import type { TenantDocumentType } from "../types/Tenant.interface";
 
 export interface CreateTenantDto {
   firstName: string;
@@ -14,7 +11,7 @@ export interface CreateTenantDto {
   documentType: TenantDocumentType;
   documentNumber: string;
   birthDate: Date;
-  nationality: TenantNationality;
+  nationality: string;
   entryDate: Date;
   exitDate?: Date;
 }

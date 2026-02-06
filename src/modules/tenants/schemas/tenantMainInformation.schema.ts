@@ -1,8 +1,5 @@
 import z from "zod";
-import {
-  TenantDocumentTypeEnum,
-  TenantNationalityEnum,
-} from "../types/Tenants.enum";
+import { TenantDocumentTypeEnum } from "../types/Tenants.enum";
 import type { FormField } from "@/shared/types/formField";
 
 export const tenantMainInformationSchema = z.object({
@@ -21,7 +18,7 @@ export const tenantMainInformationSchema = z.object({
   birthDate: z.date({
     error: "NewTenant.mainInformation.form.birthDate.errors.required",
   }),
-  nationality: z.enum(TenantNationalityEnum, {
+  nationality: z.string({
     error: "NewTenant.mainInformation.form.nationality.errors.required",
   }),
 });

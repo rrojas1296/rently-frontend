@@ -10,17 +10,15 @@ import { Link } from "react-router";
 import { useTenantsFilters } from "../modules/tenants/store/useTenantsFilters";
 import NoTenantsMessage from "../modules/tenants/components/NoTenantsMessage/NoTenantsMessage";
 import useGetTenants from "@/modules/tenants/hooks/useGetTenants";
-import type {
-  TenantNationalityEnum,
-  TenantStatusEnum,
-} from "@/modules/tenants/types/Tenants.enum";
+import type { TenantStatusEnum } from "@/modules/tenants/types/Tenants.enum";
 import Loading from "@/shared/components/Loading/Loading";
 import Pagination from "@/shared/components/Pagination/Pagination";
+import { useDebounce } from "@/shared/hooks/useDebounce";
 
 export interface Filters {
   status: TenantStatusEnum | "all";
   building: string | "all";
-  nationality: TenantNationalityEnum | "all";
+  nationality: string | "all";
   entryDate?: Date;
 }
 
@@ -28,6 +26,8 @@ const TenantsPage = () => {
   const { t } = useTranslation();
   const [showFilters, setShowFilters] = useState(false);
   const { data, isFetching } = useGetTenants();
+  const [search, setSearch] = useState("");
+  const debouncedSearch = useDebounce(search);
 
   const limit = 12;
   const [page, setPage] = useState(0);
@@ -37,6 +37,7 @@ const TenantsPage = () => {
   const filteredTenants = useMemo(() => {
     return (data?.tenants || []).filter((tenant) => {
       return (
+        tenant.name.toLowerCase().includes(debouncedSearch.toLowerCase()) &&
         (filters.status === "all" || tenant.paymentStatus === filters.status) &&
         (filters.nationality === "all" ||
           tenant.nationality === filters.nationality) &&
@@ -44,7 +45,7 @@ const TenantsPage = () => {
           dayjs(tenant.entryDate).isAfter(filters.entryDate))
       );
     });
-  }, [filters, data]);
+  }, [filters, data, debouncedSearch]);
 
   const tenants = useMemo(() => {
     const offset = page * limit;
@@ -67,6 +68,8 @@ const TenantsPage = () => {
           <Input
             className="lg:min-w-sm w-full"
             placeholder={t("Tenants.searchAndFilters.search")}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
           <Button
             variant="outlined"

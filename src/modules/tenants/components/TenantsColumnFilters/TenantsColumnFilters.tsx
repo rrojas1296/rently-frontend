@@ -7,21 +7,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "rently-components";
-import {
-  type TenantNationality,
-  type TenantStatus,
-} from "../../types/Tenant.interface";
+import { type TenantStatus } from "../../types/Tenant.interface";
 import { useTranslation } from "react-i18next";
-import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
 import type { Language } from "@/shared/constants/dateFormats";
-import { useMemo } from "react";
 import { XIcon } from "lucide-react";
 import { cn } from "@/shared/utils/cn";
-import {
-  TenantNationalityEnum,
-  TenantStatusEnum,
-} from "../../types/Tenants.enum";
+import { TenantStatusEnum } from "../../types/Tenants.enum";
 import { useTenantsFilters } from "../../store/useTenantsFilters";
+import { tenantNationality } from "../../constants/nationality";
 
 interface Props {
   showFilters: boolean;
@@ -54,12 +47,10 @@ const TenantsColumnFilters = ({ showFilters }: Props) => {
   const { t, i18n } = useTranslation();
   const locale = i18n.language as Language;
   const { filters, setFilters } = useTenantsFilters();
-  const nationalityOptions = useMemo(() => {
-    return Object.keys(TENANT_NATIONALITY_LABELS).map((key) => ({
-      value: TenantNationalityEnum[key as TenantNationality],
-      label: TENANT_NATIONALITY_LABELS[key as TenantNationality][locale],
-    }));
-  }, [locale]);
+  const nationalityOptions = tenantNationality.map((opt) => ({
+    value: opt.value,
+    label: opt.label[locale as Language],
+  }));
 
   if (!showFilters) return null;
 
@@ -127,9 +118,7 @@ const TenantsColumnFilters = ({ showFilters }: Props) => {
         </span>
         <Select
           value={filters.nationality}
-          onValueChange={(val: TenantNationality) =>
-            setFilters({ ...filters, nationality: val })
-          }
+          onValueChange={(val) => setFilters({ ...filters, nationality: val })}
         >
           <SelectTrigger className="w-45">
             <SelectValue />

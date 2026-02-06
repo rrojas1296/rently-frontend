@@ -10,7 +10,6 @@ import FormField from "@/shared/components/FormField/FormField";
 import { Link } from "react-router";
 import { Button } from "rently-components";
 import { useTenantsStore } from "../../store/useTenantsStore";
-import useGetProperties from "@/modules/properties/hooks/useGetProperties";
 import useCreateTenant from "../../hooks/useCreateTenant";
 import type { CreateTenantDto } from "../../dtos/CreateTenant.dto";
 import { LoaderIcon } from "lucide-react";

@@ -9,11 +9,9 @@ import { useTranslation } from "react-i18next";
 import FormField from "@/shared/components/FormField/FormField";
 import { Link, useNavigate } from "react-router";
 import { Button } from "rently-components";
-import { TENANT_NATIONALITY_LABELS } from "../../../../data/tenants";
-import { TenantNationalityEnum } from "../../types/Tenants.enum";
-import type { TenantNationality } from "../../types/Tenant.interface";
 import type { Language } from "@/shared/constants/dateFormats";
 import { useTenantsStore } from "../../store/useTenantsStore";
+import { tenantNationality } from "../../constants/nationality";
 
 const TenantMainInformationForm = () => {
   const { t, i18n } = useTranslation();
@@ -53,15 +51,10 @@ const TenantMainInformationForm = () => {
               label: t(opt.label),
             }));
             if (name === "nationality") {
-              optionsTranslated = Object.keys(TENANT_NATIONALITY_LABELS).map(
-                (key) => ({
-                  value: TenantNationalityEnum[key as TenantNationality],
-                  label:
-                    TENANT_NATIONALITY_LABELS[key as TenantNationality][
-                      i18n.language as Language
-                    ],
-                }),
-              );
+              optionsTranslated = tenantNationality.map((opt) => ({
+                value: opt.value,
+                label: opt.label[i18n.language as Language],
+              }));
             }
 
             const errorTranslated = errors[name]?.message

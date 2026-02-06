@@ -1,13 +1,10 @@
 import { create } from "zustand";
-import type {
-  TenantNationality,
-  TenantStatus,
-} from "../types/Tenant.interface";
+import type { TenantStatus } from "../types/Tenant.interface";
 
 interface ITenantsFilters {
   status: TenantStatus | "all";
   building: string;
-  nationality: TenantNationality | "all";
+  nationality: string | "all";
   entryDate?: Date;
 }
 interface TenantsFiltersState {
