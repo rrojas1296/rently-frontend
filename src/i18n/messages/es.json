@@ -17,7 +17,7 @@
     },
     "errors": {
       "invalid_credentials": {
-        "title": "Correo o contraseña incorrectos",
+        "title": "Credenciales incorrectas",
         "description": "El correo o contraseña ingresados no son correctos."
       }
     },
@@ -422,8 +422,9 @@
       "monthlyPayment": "Pago mensual",
       "status": {
         "paid": "Al dia",
-        "pending": "Pendiente",
-        "due_soon": "Vence pronto"
+        "due_soon": "Vence pronto",
+        "due_today": "Vence hoy",
+        "unpaid": "Vencido"
       }
     },
     "filtersColumn": {

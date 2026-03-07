@@ -16,8 +16,7 @@ const useCreateTenant = () => {
         setOpen(true);
         setContent({
           type: "success",
-          title: "Success",
-          description: "Tenant created successfully",
+          title: "Tenant created successfully",
         });
         navigate("/tenants");
       }, 100);

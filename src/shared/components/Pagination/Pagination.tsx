@@ -31,7 +31,8 @@ const Pagination = ({ totalPages, page, setPage }: Props) => {
           variant="outlined"
           className={cn(
             "w-10",
-            page === p && "bg-primary-500 border-none hover:bg-primary-400",
+            page === p &&
+              "bg-primary-500 text-text-3 border-none hover:bg-primary-400",
           )}
           onClick={() => setPage(p)}
         >

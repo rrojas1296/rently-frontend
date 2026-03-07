@@ -52,8 +52,8 @@ const Header = () => {
       </Button>
       <div className="hidden lg:flex lg:items-center gap-4">
         <Button
-          variant="icon"
-          className="cursor-pointer"
+          variant="outlined"
+          className="cursor-pointer w-10 h-10 bg-bg-2"
           onClick={() => setOpen(!openSidebar)}
         >
           {openSidebar ? (

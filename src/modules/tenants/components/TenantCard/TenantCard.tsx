@@ -35,8 +35,9 @@ const TenantCard = ({ tenant, className, style }: Props) => {
     .toUpperCase();
   const badgeTypes: Record<TenantStatus, BadgeType> = {
     PAID: "success",
-    PENDING: "warning",
     DUE_SOON: "warning",
+    UNPAID: "error",
+    DUE_TODAY: "warning",
   };
 
   return (
@@ -65,13 +66,13 @@ const TenantCard = ({ tenant, className, style }: Props) => {
             <p className="text-text-2 text-sm">{propertyName}</p>
           </div>
         </div>
-        <Button variant="icon">
+        <Button variant="ghost" className="w-10 h-10">
           <EllipsisVerticalIcon className="w-5 h-5" />
         </Button>
       </div>
       <Badge
         type={badgeTypes[paymentStatus]}
-        text={t(`Tenants.tenantsCard.status.${paymentStatus.toLowerCase()}`)}
+        text={t(`Tenants.tenantsCard.status.${paymentStatus?.toLowerCase()}`)}
       />
       <hr className="w-full text-border-2" />
       <div className="grid grid-cols-12 text-sm gap-y-2">

@@ -12,7 +12,7 @@ import ToastComponent from "./shared/components/ToastComponent/ToastComponent.ts
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ToastProvider duration={2000}>
+    <ToastProvider duration={20000}>
       <QueryProvider>
         <ThemeProvider>
           <RouterProvider router={router} />

@@ -12,6 +12,14 @@ const useCreateProperty = () => {
     mutationFn: (data: CreatePropertyDto) => createPropertyService(data),
     onSuccess: () => {
       navigate("/properties");
+      setOpen(false);
+      setTimeout(() => {
+        setOpen(true);
+        setContent({
+          type: "success",
+          title: "Property created successfully",
+        });
+      }, 100);
     },
     onError: () => {
       setOpen(false);

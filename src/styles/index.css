@@ -30,7 +30,9 @@ select::-webkit-scrollbar-thumb {
   --color-text-2: var(--text-2);
   --color-text-3: var(--text-3);
 
+  --color-border-1: var(--border-1);
   --color-border-2: var(--border-2);
+  --color-border-3: var(--border-3);
 
   --color-overlay: var(--overlay);
 

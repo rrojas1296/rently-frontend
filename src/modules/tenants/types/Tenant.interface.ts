@@ -1,7 +1,7 @@
 import type { PropertyCurrencyEnum } from "../../properties/types/Property.interface";
 import type { TenantDocumentTypeEnum } from "./Tenants.enum";
 
-export type TenantStatus = "PAID" | "PENDING" | "DUE_SOON";
+export type TenantStatus = "PAID" | "DUE_TODAY" | "UNPAID" | "DUE_SOON";
 
 export type TenantDocumentType = "DNI" | "PASSPORT";
 
