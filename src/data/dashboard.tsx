@@ -9,7 +9,7 @@ export const dashboardStats = [
   {
     id: 2,
     title: "Dashboard.stats.rented.title",
-    value: "12 / 24",
+    value: "12",
   },
   {
     id: 3,
@@ -19,7 +19,7 @@ export const dashboardStats = [
   {
     id: 4,
     title: "Dashboard.stats.totalRevenue.title",
-    value: "S/. 3000",
+    value: "3000 PEN",
   },
 ];
 

@@ -53,7 +53,7 @@ const Header = () => {
       <div className="hidden lg:flex lg:items-center gap-4">
         <Button
           variant="outlined"
-          className="cursor-pointer w-10 h-10 bg-bg-2"
+          className="cursor-pointer w-10 h-10"
           onClick={() => setOpen(!openSidebar)}
         >
           {openSidebar ? (
@@ -71,12 +71,12 @@ const Header = () => {
         {t("Header.logo")}
       </span>
       <div className="flex items-center gap-4">
-        <Button variant="icon" className="hidden lg:flex">
+        <Button variant="outlined" className="hidden lg:flex w-10 h-10">
           <BellIcon className="w-5 h-5" />
         </Button>
         <Button
-          variant="icon"
-          className="hidden lg:flex"
+          variant="outlined"
+          className="hidden lg:flex w-10 h-10"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           {theme === "dark" ? (
