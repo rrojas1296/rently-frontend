@@ -167,10 +167,29 @@
   },
   "Properties": {
     "title": "Propiedades",
+    "stats": {
+      "total": {
+        "title": "Total de propiedades",
+        "subtitle": "Desde el inicio de la plataforma."
+      },
+      "available": {
+        "title": "Disponibles",
+        "subtitle": "Desde el inicio de la plataforma."
+      },
+      "occupied": {
+        "title": "Alquiladas",
+        "subtitle": "Desde el inicio de la plataforma."
+      },
+      "maintenance": {
+        "title": "En mantenimiento",
+        "subtitle": "Desde el inicio de la plataforma."
+      }
+    },
     "searchAndFilters": {
       "add": "Crear propiedad",
       "search": "Buscar propiedad",
-      "filters": "Filtros"
+      "filters": "Filtros",
+      "labelSearch": "Buscar"
     },
     "filtersColumn": {
       "title": "Filtros",
@@ -218,6 +237,10 @@
       "add": "Crear departamento"
     },
     "propertyCard": {
+      "status": "Estado",
+      "rooms": "Cuartos",
+      "area": "Area (m²)",
+      "bathrooms": "Baños",
       "states": {
         "available": "Disponible",
         "occupied": "Alquilada",
@@ -229,9 +252,6 @@
         "USD": "$ ",
         "EUR": "€ "
       },
-      "rooms": "cuartos",
-      "bathrooms": "baños",
-      "area": "m2",
       "price": "Precio mensual"
     }
   },
@@ -281,7 +301,7 @@
         },
         "area": {
           "placeholder": "100",
-          "label": "Área(m2)",
+          "label": "Area (m²)",
           "errors": {
             "required": "La área es requerida",
             "min": "La área debe ser mayor a 0"

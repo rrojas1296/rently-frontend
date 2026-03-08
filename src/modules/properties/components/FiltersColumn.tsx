@@ -24,20 +24,15 @@ interface Props {
   showFilters: boolean;
 }
 
-const FiltersColumn = ({ filters, setFilters, showFilters }: Props) => {
+const FiltersColumn = ({ filters, setFilters }: Props) => {
   const { t } = useTranslation();
 
   const numberOptions = Array.from({ length: 10 }).map((_, index) => ({
     label: (index + 1).toString(),
     value: (index + 1).toString(),
   }));
-  if (!showFilters) return null;
   return (
-    <div
-      className={cn(
-        "hidden lg:flex gap-5 bg-bg-1 px-5 rounded-lg py-5 border border-border-2 items-center mb-5 flex-wrap",
-      )}
-    >
+    <div className={cn("hidden lg:flex gap-5 items-center mb-5 flex-wrap")}>
       <div className="flex flex-col gap-2">
         <span className="text-sm text-text-1">
           {t("Properties.filtersColumn.status.label")}

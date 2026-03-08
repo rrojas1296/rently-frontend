@@ -33,7 +33,7 @@ const PropertyCard = ({ property }: Props) => {
         tenantName && "p-0",
       )}
     >
-      <div className={cn(tenantName && "px-5 pt-5")}>
+      <div className={cn(tenantName && "px-4 pt-4")}>
         <div className="flex justify-between items-start mb-3">
           <div className="flex flex-col gap-px">
             <h2 className="font-semibold text-lg">{name}</h2>
@@ -43,24 +43,38 @@ const PropertyCard = ({ property }: Props) => {
             <EllipsisVertical className="w-5 h-5" />
           </Button>
         </div>
-        <Badge
-          type={state[status]}
-          text={t(`Properties.propertyCard.states.${status.toLowerCase()}`)}
-        />
 
-        <div className="w-full h-px bg-border-2 my-4" />
-        <div className="text-text-2 flex gap-4 text-sm">
-          <span>
-            {rooms} {t("Properties.propertyCard.rooms")}
-          </span>
-          <span>
-            {bathrooms} {t("Properties.propertyCard.bathrooms")}
-          </span>
-          <span>
-            {area} {t("Properties.propertyCard.area")}
-          </span>
+        <hr className="w-full text-border-2 my-3" />
+        <div className="grid gap-3">
+          <div className="flex w-full justify-between items-center">
+            <p className="text-sm text-text-2">
+              {t("Properties.propertyCard.status")}
+            </p>
+            <Badge
+              type={state[status]}
+              text={t(`Properties.propertyCard.states.${status.toLowerCase()}`)}
+            />
+          </div>
+          <div className="flex w-full justify-between items-center">
+            <p className="text-sm text-text-2">
+              {t("Properties.propertyCard.rooms")}
+            </p>
+            <p>{rooms}</p>
+          </div>
+          <div className="flex w-full justify-between items-center">
+            <p className="text-sm text-text-2">
+              {t("Properties.propertyCard.bathrooms")}
+            </p>
+            <p>{bathrooms}</p>
+          </div>
+          <div className="flex w-full justify-between items-center">
+            <p className="text-sm text-text-2">
+              {t("Properties.propertyCard.area")}
+            </p>
+            <p>{area}</p>
+          </div>
         </div>
-        <div className="w-full h-px bg-border-2 my-4" />
+        <hr className="w-full text-border-2 my-4" />
 
         <div className="flex flex-col gap-px">
           <h1 className="text-sm text-text-2">

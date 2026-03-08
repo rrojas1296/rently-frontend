@@ -13,6 +13,7 @@ import Loading from "@/shared/components/Loading/Loading";
 import { useDebounce } from "@/shared/hooks/useDebounce";
 import Pagination from "@/shared/components/Pagination/Pagination";
 import useProperties from "@/shared/hooks/usePagination";
+import PropertiesStats from "@/modules/properties/components/PropertiesStats";
 
 const PropertiesPage = () => {
   const { t, i18n } = useTranslation();
@@ -50,8 +51,12 @@ const PropertiesPage = () => {
         </h1>
         <p className="text-text-2 text-sm">{formattedDate}</p>
       </div>
-      <div className="flex gap-5 mb-5 justify-between">
-        <div className="flex gap-5 w-full lg:w-fit">
+      <PropertiesStats />
+      <div className="flex gap-5 mb-5 items-end justify-between">
+        <div className="flex flex-1 flex-col gap-2">
+          <label className="text-sm text-text-1">
+            {t("Properties.searchAndFilters.labelSearch")}
+          </label>
           <Input
             placeholder="Buscar propiedad"
             value={search}
@@ -59,29 +64,6 @@ const PropertiesPage = () => {
             className="w-full lg:w-sm"
             Icon={SearchIcon}
           />
-          <Button
-            onClick={() => {
-              setShowFiltersColumn((prev) => {
-                if (prev)
-                  setFilters({
-                    status: "all",
-                    rooms: "all",
-                    bathrooms: "all",
-                    currency: "all",
-                    price: "",
-                  });
-                return !prev;
-              });
-            }}
-            variant="outlined"
-            className={cn(
-              "text-text-2 hidden lg:flex",
-              showFiltersColumn && "text-primary-400 border-primary-400",
-            )}
-          >
-            <FilterIcon className="w-5 h-5" />
-            {t("Properties.searchAndFilters.filters")}
-          </Button>
         </div>
         <Link to="/properties/new">
           <Button

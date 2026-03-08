@@ -1,6 +1,7 @@
 :root {
   --bg-1: #ffffff;
   --bg-2: #f7f8fb;
+  --bg-3: #f0f2f7;
 
   --text-1: #000000;
   --text-2: #80879b;
@@ -27,6 +28,7 @@
 .dark {
   --bg-1: #0c0d10;
   --bg-2: #13151a;
+  --bg-3: #1a1e25;
 
   --text-1: #ffffff;
   --text-2: #6a6f7f;

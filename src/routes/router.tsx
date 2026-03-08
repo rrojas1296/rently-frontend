@@ -94,24 +94,6 @@ export const router = createBrowserRouter([
           {
             path: "new",
             element: <NewProperty />,
-            children: [
-              {
-                index: true,
-                element: <Navigate to="1" replace />,
-              },
-              {
-                path: "1",
-                element: <MainInformationForm />,
-              },
-              {
-                path: "2",
-                element: <PhysicalDetailsForm />,
-              },
-              {
-                path: "3",
-                element: <FinancialInformationForm />,
-              },
-            ],
           },
         ],
       },
