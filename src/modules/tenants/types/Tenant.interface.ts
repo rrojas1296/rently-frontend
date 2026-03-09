@@ -10,6 +10,7 @@ export interface ITenant {
   name: string;
   paymentStatus: TenantStatus;
   nationality: string;
+  otherNationality?: string;
   email: string;
   phone: string;
   entryDate: string;

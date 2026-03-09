@@ -26,6 +26,7 @@ const TenantCard = ({ tenant, className, style }: Props) => {
     currency,
     monthlyPayment,
     avatarUrl,
+    otherNationality,
   } = tenant;
   const nameInitials = name
     .split(" ")
@@ -92,11 +93,10 @@ const TenantCard = ({ tenant, className, style }: Props) => {
         <div className="flex text-sm w-full justify-between items-center">
           <p className="text-text-2">{t("Tenants.tenantsCard.nationality")}</p>
           <p>
-            {
-              tenantNationality.find((nat) => nat.value === nationality)?.label[
-                locale
-              ]
-            }
+            {nationality === "other"
+              ? otherNationality
+              : tenantNationality.find((nat) => nat.value === nationality)
+                  ?.label[locale]}
           </p>
         </div>
       </div>
