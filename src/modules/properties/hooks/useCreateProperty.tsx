@@ -3,8 +3,10 @@ import { createPropertyService } from "../services/createProperty.service";
 import type { CreatePropertyDto } from "../dtos/createProperty.dto";
 import { useNavigate } from "react-router";
 import { useToast } from "@/shared/store/useToast";
+import { useTranslation } from "react-i18next";
 
 const useCreateProperty = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { setOpen, setContent } = useToast();
   return useMutation({
@@ -17,7 +19,7 @@ const useCreateProperty = () => {
         setOpen(true);
         setContent({
           type: "success",
-          title: "Property created successfully",
+          title: t("NewProperty.messages.successCreated"),
         });
       }, 100);
     },
@@ -27,8 +29,7 @@ const useCreateProperty = () => {
         setOpen(true);
         setContent({
           type: "error",
-          title: "Error",
-          description: "Error creating property",
+          description: t("NewProperty.messages.error"),
         });
       }, 100);
     },

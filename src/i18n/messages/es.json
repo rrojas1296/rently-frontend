@@ -258,17 +258,17 @@
   "NewProperty": {
     "title": "Crear nueva propiedad",
     "description": "Aqui puedes crear una nueva propiedad para empezar a administrarla.",
-    "steps": {
-      "mainInformation": "Información principal",
-      "physicalDetails": "Detalles físicos",
-      "financialInformation": "Información financiera"
+    "buttons": {
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "back": "Atrás"
+    },
+    "messages": {
+      "successCreated": "Propiedad creada con exito.",
+      "error": "Ocurrio un error inesperado."
     },
     "mainInformation": {
       "title": "Información principal",
-      "buttons": {
-        "cancel": "Cancelar",
-        "next": "Siguiente"
-      },
       "form": {
         "name": {
           "placeholder": "Departamento 101",
@@ -299,14 +299,6 @@
             "min": "El piso debe ser mayor a 0"
           }
         },
-        "area": {
-          "placeholder": "100",
-          "label": "Area (m²)",
-          "errors": {
-            "required": "La área es requerida",
-            "min": "La área debe ser mayor a 0"
-          }
-        },
         "status": {
           "label": "Estado",
           "placeholder": "Selecciona un estado",
@@ -323,10 +315,6 @@
     },
     "physicalDetails": {
       "title": "Detalles físicos",
-      "buttons": {
-        "next": "Siguiente",
-        "back": "Atrás"
-      },
       "form": {
         "persons": {
           "placeholder": "2",
@@ -342,6 +330,14 @@
           "errors": {
             "required": "El número de cuartos es requerido",
             "min": "El número de cuartos debe ser mayor a 0"
+          }
+        },
+        "area": {
+          "placeholder": "100",
+          "label": "Area (m²)",
+          "errors": {
+            "required": "La área es requerida",
+            "min": "La área debe ser mayor a 0"
           }
         },
         "bathrooms": {
@@ -382,10 +378,6 @@
     },
     "financialInformation": {
       "title": "Información financiera",
-      "buttons": {
-        "back": "Atrás",
-        "finish": "Finalizar"
-      },
       "form": {
         "monthlyPayment": {
           "placeholder": "1000",
@@ -430,7 +422,26 @@
     "searchAndFilters": {
       "add": "Crear inquilino",
       "search": "Buscar inquilino",
-      "filters": "Filtros"
+      "filters": "Filtros",
+      "labelSearch": "Buscar"
+    },
+    "stats": {
+      "total": {
+        "title": "Total de inquilinos",
+        "subtitle": "+3 en el último mes."
+      },
+      "active": {
+        "title": "Contratos activos",
+        "subtitle": "Este mes."
+      },
+      "overdue": {
+        "title": "En deuda",
+        "subtitle": "Este mes."
+      },
+      "revenue": {
+        "title": "Total pendiente",
+        "subtitle": "Este mes."
+      }
     },
     "tenantsCard": {
       "information": {
@@ -440,6 +451,10 @@
       },
       "entryDate": "Fecha de ingreso",
       "monthlyPayment": "Pago mensual",
+      "statusLabel": "Estado",
+      "email": "Correo",
+      "phone": "Celular",
+      "nationality": "Nacionalidad",
       "status": {
         "paid": "Al dia",
         "due_soon": "Vence pronto",
@@ -475,10 +490,14 @@
   "NewTenant": {
     "title": "Crear nuevo inquilino",
     "description": "Aqui puedes crear un nuevo inquilino para empezar la administracion de tu departamento",
-    "steps": {
-      "tenantInformation": "Informacion del inquilino",
-      "contactInformation": "Informacion de contacto",
-      "contractInformation": "Informacion del contrato"
+    "messages": {
+      "successCreated": "Inquilino creado con exito.",
+      "error": "Ocurrio un error inesperado."
+    },
+    "buttons": {
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "back": "Atras"
     },
     "mainInformation": {
       "title": "Informacion principal",
@@ -489,21 +508,21 @@
       "form": {
         "firstName": {
           "label": "Nombres",
-          "placeholder": "Jorge Ricardo",
+          "placeholder": "Jhon",
           "errors": {
             "required": "Los nombres son requeridos"
           }
         },
         "lastName": {
           "label": "Apellidos",
-          "placeholder": "Mendoza Salazar",
+          "placeholder": "Doe",
           "errors": {
             "required": "Los apellidos son requeridos"
           }
         },
         "documentType": {
           "label": "Tipo de documento",
-          "placeholder": "Dni - Pasaporte",
+          "placeholder": "Dni",
           "errors": {
             "required": "El tipo de documento es requerido"
           },
@@ -514,7 +533,7 @@
         },
         "documentNumber": {
           "label": "Numero de documento",
-          "placeholder": "12345678",
+          "placeholder": "55555555",
           "errors": {
             "required": "El numero de documento es requerido"
           }
@@ -528,10 +547,14 @@
         },
         "nationality": {
           "label": "Nacionalidad",
-          "placeholder": "Peru - Colombia - Chile - etc",
+          "placeholder": "Peru",
           "errors": {
             "required": "La nacionalidad es requerida"
           }
+        },
+        "otherNationality": {
+          "label": "Otra nacionalidad",
+          "placeholder": "Ingresa el nombre de tu pais"
         }
       }
     },
@@ -544,14 +567,14 @@
       "form": {
         "phone": {
           "label": "Celular",
-          "placeholder": "+51 999 999 999",
+          "placeholder": "999 999 999",
           "errors": {
             "required": "El celular es requerido"
           }
         },
         "email": {
           "label": "Correo",
-          "placeholder": "T9a3o@example.com",
+          "placeholder": "correo@gmail.com",
           "errors": {
             "required": "El correo es requerido",
             "invalid": "Ingrese un correo valido"
@@ -559,7 +582,7 @@
         },
         "emergencyPhone": {
           "label": "Telefono de emergencia",
-          "placeholder": "+51 999 999 999",
+          "placeholder": "999 999 999",
           "errors": {
             "required": "Ingrese un numero de celular."
           }

@@ -5,9 +5,6 @@ import PaymentsPage from "../pages/Payments";
 import ReportsPage from "../pages/Reports";
 import RequestsPage from "../pages/Requests";
 import NewProperty from "../modules/properties/components/NewProperty";
-import MainInformationForm from "../modules/properties/components/MainInformationForm";
-import PhysicalDetailsForm from "../modules/properties/components/PhysicalDetailsForm";
-import FinancialInformationForm from "../modules/properties/components/FinancialInformationForm";
 import NewTenant from "../modules/tenants/components/NewTentant/NewTenant";
 import TenantMainInformationForm from "../modules/tenants/components/TenantMainInformationForm/TenantMainInformatioForm";
 import { lazy } from "react";
@@ -63,24 +60,6 @@ export const router = createBrowserRouter([
           {
             path: "new",
             element: <NewTenant />,
-            children: [
-              {
-                index: true,
-                element: <Navigate to="1" replace />,
-              },
-              {
-                path: "1",
-                element: <TenantMainInformationForm />,
-              },
-              {
-                path: "2",
-                element: <TenantsContactInformationForm />,
-              },
-              {
-                path: "3",
-                element: <TenantsContractInformationForm />,
-              },
-            ],
           },
         ],
       },

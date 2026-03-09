@@ -23,16 +23,16 @@ export const createPropertySchema = z.object({
     .min(1, {
       error: "NewProperty.mainInformation.form.floor.errors.min",
     }),
-  area: z
-    .number({
-      error: "NewProperty.mainInformation.form.area.errors.required",
-    })
-    .min(1, {
-      error: "NewProperty.mainInformation.form.area.errors.min",
-    }),
   status: z.enum(PropertyStatusEnum, {
     error: "NewProperty.mainInformation.form.status.errors.required",
   }),
+  area: z
+    .number({
+      error: "NewProperty.physicalDetails.form.area.errors.required",
+    })
+    .min(1, {
+      error: "NewProperty.physicalDetails.form.area.errors.min",
+    }),
   persons: z
     .number({
       error: "NewProperty.physicalDetails.form.persons.errors.required",
@@ -164,8 +164,8 @@ export const physicalDetailsFields: FormField<keyof CreatePropertySchema>[] = [
   },
   {
     name: "area",
-    label: "NewProperty.mainInformation.form.area.label",
-    placeholder: "NewProperty.mainInformation.form.area.placeholder",
+    label: "NewProperty.physicalDetails.form.area.label",
+    placeholder: "NewProperty.physicalDetails.form.area.placeholder",
     required: true,
     type: "number",
   },

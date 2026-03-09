@@ -3,9 +3,11 @@ import { createTenantService } from "../services/createTenant.service";
 import type { CreateTenantDto } from "../dtos/CreateTenant.dto";
 import { useNavigate } from "react-router";
 import { useToast } from "@/shared/store/useToast";
+import { useTranslation } from "react-i18next";
 
 const useCreateTenant = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { setOpen, setContent } = useToast();
   return useMutation({
     mutationKey: ["create-tenant"],
@@ -16,9 +18,19 @@ const useCreateTenant = () => {
         setOpen(true);
         setContent({
           type: "success",
-          title: "Tenant created successfully",
+          title: t("NewTenant.messages.successCreated"),
         });
         navigate("/tenants");
+      }, 100);
+    },
+    onError: () => {
+      setOpen(false);
+      setTimeout(() => {
+        setOpen(true);
+        setContent({
+          type: "error",
+          description: t("NewTenant.messages.error"),
+        });
       }, 100);
     },
   });

@@ -70,30 +70,35 @@ const TenantCard = ({ tenant, className, style }: Props) => {
           <EllipsisVerticalIcon className="w-5 h-5" />
         </Button>
       </div>
-      <Badge
-        type={badgeTypes[paymentStatus]}
-        text={t(`Tenants.tenantsCard.status.${paymentStatus?.toLowerCase()}`)}
-      />
-      <hr className="w-full text-border-2" />
-      <div className="grid grid-cols-12 text-sm gap-y-2">
-        <span className="text-text-2 col-span-5">
-          {t("Tenants.tenantsCard.information.nationality")}
-        </span>
-        <span className="col-span-7">
-          {
-            tenantNationality.find((nat) => nat.value === nationality)?.label[
-              locale
-            ]
-          }
-        </span>
-        <span className="text-text-2 col-span-5">
-          {t("Tenants.tenantsCard.information.email")}
-        </span>
-        <span className="col-span-7 truncate">{email}</span>
-        <span className="text-text-2 col-span-5">
-          {t("Tenants.tenantsCard.information.phone")}
-        </span>
-        <span className="col-span-7">{phone}</span>
+      <hr className="w-full text-border-2 my-3" />
+      <div className="grid gap-3">
+        <div className="flex text-sm w-full justify-between items-center">
+          <p className="text-text-2">{t("Tenants.tenantsCard.statusLabel")}</p>
+          <Badge
+            type={badgeTypes[paymentStatus]}
+            text={t(
+              `Tenants.tenantsCard.status.${paymentStatus.toLowerCase()}`,
+            )}
+          />
+        </div>
+        <div className="flex text-sm w-full justify-between items-center">
+          <p className="text-text-2">{t("Tenants.tenantsCard.phone")}</p>
+          <p>{phone}</p>
+        </div>
+        <div className="flex text-sm w-full justify-between items-center">
+          <p className="text-text-2">{t("Tenants.tenantsCard.email")}</p>
+          <p>{email}</p>
+        </div>
+        <div className="flex text-sm w-full justify-between items-center">
+          <p className="text-text-2">{t("Tenants.tenantsCard.nationality")}</p>
+          <p>
+            {
+              tenantNationality.find((nat) => nat.value === nationality)?.label[
+                locale
+              ]
+            }
+          </p>
+        </div>
       </div>
       <hr className="w-full text-border-2" />
       <div className="flex flex-col gap-px text-sm">

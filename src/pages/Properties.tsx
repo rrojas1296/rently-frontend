@@ -2,12 +2,11 @@ import dayjs from "dayjs";
 import { useTranslation } from "react-i18next";
 import { dateFormats, type Language } from "@/shared/constants/dateFormats";
 import { Button, Input } from "rently-components";
-import { FilterIcon, PlusIcon, SearchIcon } from "lucide-react";
+import { PlusIcon, SearchIcon } from "lucide-react";
 import PropertyCard from "../modules/properties/components/PropertyCard";
 import { Link } from "react-router";
 import FiltersColumn from "../modules/properties/components/FiltersColumn";
 import { useState } from "react";
-import { cn } from "@/shared/utils/cn";
 import NoProperties from "../modules/properties/components/NoProperties";
 import Loading from "@/shared/components/Loading/Loading";
 import { useDebounce } from "@/shared/hooks/useDebounce";
@@ -24,7 +23,6 @@ const PropertiesPage = () => {
 
   const [search, setSearch] = useState("");
   const debounceSearch = useDebounce(search, 500);
-  const [showFiltersColumn, setShowFiltersColumn] = useState(false);
 
   const {
     hasProperties,
@@ -77,11 +75,7 @@ const PropertiesPage = () => {
           </Button>
         </Link>
       </div>
-      <FiltersColumn
-        filters={filters}
-        setFilters={setFilters}
-        showFilters={showFiltersColumn}
-      />
+      <FiltersColumn filters={filters} setFilters={setFilters} />
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 4xl:grid-cols-5 5xl:grid-cols-6">
         {properties.map((property) => (
           <PropertyCard property={property} key={property.id} />

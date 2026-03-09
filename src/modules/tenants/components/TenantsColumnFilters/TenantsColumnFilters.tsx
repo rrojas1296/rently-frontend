@@ -16,10 +16,6 @@ import { TenantStatusEnum } from "../../types/Tenants.enum";
 import { useTenantsFilters } from "../../store/useTenantsFilters";
 import { tenantNationality } from "../../constants/nationality";
 
-interface Props {
-  showFilters: boolean;
-}
-
 const buildingOptions = [
   {
     label: "Edificio 1",
@@ -43,7 +39,7 @@ const buildingOptions = [
   },
 ];
 
-const TenantsColumnFilters = ({ showFilters }: Props) => {
+const TenantsColumnFilters = () => {
   const { t, i18n } = useTranslation();
   const locale = i18n.language as Language;
   const { filters, setFilters } = useTenantsFilters();
@@ -52,14 +48,8 @@ const TenantsColumnFilters = ({ showFilters }: Props) => {
     label: opt.label[locale as Language],
   }));
 
-  if (!showFilters) return null;
-
   return (
-    <div
-      className={cn(
-        "p-5 lg:flex gap-5 overflow-hidden items-end bg-bg-1 border-border-2 rounded-lg border mt-5 hidden",
-      )}
-    >
+    <div className={cn("lg:flex gap-5 items-end mt-5 hidden")}>
       <div className="flex flex-col gap-2">
         <span className="text-sm text-text-1">
           {t("Tenants.filtersColumn.status.label")}

@@ -1,11 +1,10 @@
-import { FilterIcon, PlusIcon } from "lucide-react";
+import { PlusIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button, Input } from "rently-components";
 import TenantCard from "../modules/tenants/components/TenantCard/TenantCard";
 import TenantsColumnFilters from "../modules/tenants/components/TenantsColumnFilters/TenantsColumnFilters";
 import { useMemo, useState } from "react";
 import dayjs from "dayjs";
-import { cn } from "@/shared/utils/cn";
 import { Link } from "react-router";
 import { useTenantsFilters } from "../modules/tenants/store/useTenantsFilters";
 import NoTenantsMessage from "../modules/tenants/components/NoTenantsMessage/NoTenantsMessage";
@@ -14,6 +13,7 @@ import type { TenantStatusEnum } from "@/modules/tenants/types/Tenants.enum";
 import Loading from "@/shared/components/Loading/Loading";
 import Pagination from "@/shared/components/Pagination/Pagination";
 import { useDebounce } from "@/shared/hooks/useDebounce";
+import TenantsStats from "@/modules/tenants/components/TenantsStats/TenantsStats";
 
 export interface Filters {
   status: TenantStatusEnum | "all";
@@ -24,7 +24,6 @@ export interface Filters {
 
 const TenantsPage = () => {
   const { t } = useTranslation();
-  const [showFilters, setShowFilters] = useState(false);
   const { data, isFetching } = useGetTenants();
   const [search, setSearch] = useState("");
   const debouncedSearch = useDebounce(search);
@@ -63,27 +62,18 @@ const TenantsPage = () => {
 
   return data?.hasTenants && !isFetching ? (
     <div className="animate-fade-in">
-      <div className="flex justify-between gap-5">
-        <div className="flex gap-5 w-full lg:w-fit">
+      <TenantsStats />
+      <div className="flex justify-between gap-5 items-end">
+        <div className="flex flex-col gap-2 w-full lg:w-md">
+          <label>{t("Tenants.searchAndFilters.labelSearch")}</label>
           <Input
             className="lg:min-w-sm w-full"
             placeholder={t("Tenants.searchAndFilters.search")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <Button
-            variant="outlined"
-            className={cn(
-              "hidden lg:flex text-text-2",
-              showFilters && "border-primary-400 text-primary-400",
-            )}
-            onClick={() => setShowFilters((prev) => !prev)}
-          >
-            <FilterIcon className="w-5 h-5" />
-            {t("Tenants.searchAndFilters.filters")}
-          </Button>
         </div>
-        <Link to="/tenants/new/1">
+        <Link to="/tenants/new">
           <Button className="w-10 h-10 justify-center shrink-0 p-0 lg:w-fit lg:px-3">
             <PlusIcon className="w-5 h-5" />
             <span className="hidden lg:block">
@@ -92,7 +82,7 @@ const TenantsPage = () => {
           </Button>
         </Link>
       </div>
-      <TenantsColumnFilters showFilters={showFilters} />
+      <TenantsColumnFilters />
       <div className="grid gap-5 mt-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 5xl:grid-cols-5">
         {tenants.slice(0, 10).map((tenant) => (
           <TenantCard key={tenant.id} tenant={tenant} />

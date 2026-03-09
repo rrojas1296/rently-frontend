@@ -21,7 +21,6 @@ import type { PropertyFilters } from "../types/Filters.interface";
 interface Props {
   filters: PropertyFilters;
   setFilters: (filters: PropertyFilters) => void;
-  showFilters: boolean;
 }
 
 const FiltersColumn = ({ filters, setFilters }: Props) => {
