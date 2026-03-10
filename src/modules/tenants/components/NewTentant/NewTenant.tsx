@@ -74,6 +74,8 @@ const NewTenant = () => {
                     required,
                     options,
                     placeholder,
+                    disablePast,
+                    disableFuture,
                   }) => {
                     const opts =
                       name === "nationality"
@@ -95,6 +97,8 @@ const NewTenant = () => {
                         label={t(label)}
                         placeholder={placeholder && t(placeholder)}
                         type={type}
+                        disableFuture={disableFuture}
+                        disablePast={disablePast}
                         required={required}
                         options={name === "property" ? properties : opts}
                         error={error && t(error)}

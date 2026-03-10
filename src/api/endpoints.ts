@@ -15,5 +15,9 @@ export const ENDPOINTS = {
   tenants: {
     create: "/tenants",
     getAll: "/tenants",
+    withPayments: "/tenants/with-payments",
+  },
+  payments: {
+    filters: "/payments/filters",
   },
 };

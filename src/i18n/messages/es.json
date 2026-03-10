@@ -633,5 +633,53 @@
     "title": "Aún no tienes inquilinos",
     "description": "Agrega tu primer inquilino para comenzar a administrar contratos, pagos y solicitudes de mantenimiento desde un solo lugar.",
     "button": "Crear inquilino"
+  },
+  "Payments": {
+    "title": "Pagos",
+    "stats": {
+      "total": {
+        "title": "Total de pagos",
+        "subtitle": "En este mes."
+      },
+      "pending": {
+        "title": "Pendientes",
+        "subtitle": "En este mes."
+      },
+      "overdue": {
+        "title": "En deuda",
+        "subtitle": "En este mes."
+      },
+      "revenue": {
+        "title": "Total recaudado",
+        "subtitle": "En este mes."
+      }
+    },
+    "searchAndFilters": {
+      "tenant": {
+        "label": "Inquilino",
+        "all": "Todos"
+      },
+      "property": {
+        "label": "Propiedad",
+        "all": "Todas"
+      },
+      "currency": {
+        "label": "Moneda",
+        "all": "Todas",
+        "pen": "Soles",
+        "usd": "Dolares",
+        "eur": "Euros"
+      },
+      "paymentMethod": {
+        "label": "Metodo de pago",
+        "all": "Todos",
+        "cash": "Efectivo",
+        "transfer": "Transferencia",
+        "yape": "Yape",
+        "plin": "Plin"
+      },
+      "save": "Ingresar pago",
+      "filters": "Filtros"
+    }
   }
 }
